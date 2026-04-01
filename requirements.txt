@@ -1,0 +1,6 @@
+open_spiel
+numpy
+matplotlib
+tqdm
+pytest
+pyyaml
