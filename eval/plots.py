@@ -12,6 +12,15 @@ Usage:
 
 import json
 
+# Distinct visual styles so overlapping series remain distinguishable
+_ALGO_STYLES = [
+    {"marker": "o", "linestyle": "-",  "markevery": (0, 1), "markersize": 7},
+    {"marker": "s", "linestyle": "--", "markevery": (0, 1), "markersize": 7},
+    {"marker": "^", "linestyle": "-.", "markevery": (0, 1), "markersize": 7},
+    {"marker": "D", "linestyle": ":",  "markevery": (0, 1), "markersize": 6},
+    {"marker": "v", "linestyle": "-",  "markevery": (0, 1), "markersize": 7},
+]
+
 
 def load_results(path):
     """Load experiment results from a JSON file."""
@@ -30,18 +39,28 @@ def plot_root_convergence(results, title=None):
         matplotlib.figure.Figure
     """
     import matplotlib.pyplot as plt
+    from matplotlib.ticker import ScalarFormatter
 
     fig, ax = plt.subplots(figsize=(8, 5))
 
-    for algo_name, data in results.items():
-        iters = [d["iterations"] for d in data]
+    for i, (algo_name, data) in enumerate(results.items()):
+        if "time" in data[0]:
+            xs = [d["time"] for d in data]
+            x_label = "Time (s)"
+        else:
+            xs = [d["iterations"] for d in data]
+            x_label = "Iterations"
         expls = [d["exploitability"] for d in data]
-        ax.plot(iters, expls, marker="o", label=algo_name.upper())
+        style = _ALGO_STYLES[i % len(_ALGO_STYLES)]
+        ax.plot(xs, expls, label=algo_name.upper(), linewidth=2, **style)
 
-    ax.set_xlabel("Iterations")
+    ax.set_xlabel(x_label)
     ax.set_ylabel("Exploitability")
     ax.set_xscale("log")
     ax.set_yscale("log")
+    yfmt = ScalarFormatter()
+    yfmt.set_scientific(False)
+    ax.yaxis.set_major_formatter(yfmt)
     ax.legend()
     ax.grid(True, alpha=0.3)
     if title:
@@ -64,10 +83,11 @@ def plot_aggregate_exploit(results, title=None):
 
     fig, ax = plt.subplots(figsize=(8, 5))
 
-    for algo_name, data in results.items():
+    for i, (algo_name, data) in enumerate(results.items()):
         sims = [d["sims_per_move"] for d in data]
         expls = [d["exploitability"] for d in data]
-        ax.plot(sims, expls, marker="s", label=algo_name.upper())
+        style = _ALGO_STYLES[i % len(_ALGO_STYLES)]
+        ax.plot(sims, expls, label=algo_name.upper(), linewidth=2, **style)
 
     ax.set_xlabel("Simulations per move")
     ax.set_ylabel("Aggregate Exploitability")
@@ -94,6 +114,7 @@ def plot_all_games(all_results, plot_fn, suptitle=None, save_path=None):
         matplotlib.figure.Figure
     """
     import matplotlib.pyplot as plt
+    from matplotlib.ticker import ScalarFormatter
 
     games = list(all_results.keys())
     n = len(games)
@@ -103,19 +124,25 @@ def plot_all_games(all_results, plot_fn, suptitle=None, save_path=None):
 
     for ax, game_name in zip(axes, games):
         game_data = all_results[game_name]
-        for algo_name, data in game_data.items():
-            if "iterations" in data[0]:
+        for i, (algo_name, data) in enumerate(game_data.items()):
+            if "time" in data[0]:
+                x_key, x_label = "time", "Time (s)"
+            elif "iterations" in data[0]:
                 x_key, x_label = "iterations", "Iterations"
             else:
                 x_key, x_label = "sims_per_move", "Sims/move"
             xs = [d[x_key] for d in data]
             ys = [d["exploitability"] for d in data]
-            ax.plot(xs, ys, marker="o", label=algo_name.upper())
+            style = _ALGO_STYLES[i % len(_ALGO_STYLES)]
+            ax.plot(xs, ys, label=algo_name.upper(), linewidth=2, **style)
 
         ax.set_xlabel(x_label)
         ax.set_ylabel("Exploitability")
         ax.set_xscale("log")
         ax.set_yscale("log")
+        yfmt = ScalarFormatter()
+        yfmt.set_scientific(False)
+        ax.yaxis.set_major_formatter(yfmt)
         ax.set_title(game_name)
         ax.legend()
         ax.grid(True, alpha=0.3)

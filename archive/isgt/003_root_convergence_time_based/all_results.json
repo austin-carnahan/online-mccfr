@@ -1,0 +1,440 @@
+{
+  "leduc_poker": {
+    "ismcts": [
+      {
+        "time": 1.0,
+        "iterations": 16084,
+        "exploitability": 1.5606990633897913
+      },
+      {
+        "time": 2.0,
+        "iterations": 30317,
+        "exploitability": 1.2573496155564816
+      },
+      {
+        "time": 5.0,
+        "iterations": 77966,
+        "exploitability": 0.9655350188457771
+      },
+      {
+        "time": 10.0,
+        "iterations": 159335,
+        "exploitability": 0.7853961313065954
+      },
+      {
+        "time": 20.0,
+        "iterations": 325564,
+        "exploitability": 0.6174775510144489
+      },
+      {
+        "time": 30.0,
+        "iterations": 486793,
+        "exploitability": 0.533518256117662
+      },
+      {
+        "time": 60.0,
+        "iterations": 939238,
+        "exploitability": 0.4115969837776774
+      },
+      {
+        "time": 90.0,
+        "iterations": 1350681,
+        "exploitability": 0.3476735994303384
+      },
+      {
+        "time": 120.0,
+        "iterations": 1793494,
+        "exploitability": 0.31265854626553324
+      },
+      {
+        "time": 180.0,
+        "iterations": 2775866,
+        "exploitability": 0.29091746499427945
+      },
+      {
+        "time": 240.0,
+        "iterations": 3707219,
+        "exploitability": 0.28668911910753625
+      },
+      {
+        "time": 300.0,
+        "iterations": 4686063,
+        "exploitability": 0.29476376681096994
+      },
+      {
+        "time": 420.0,
+        "iterations": 6690844,
+        "exploitability": 0.30007088538945736
+      },
+      {
+        "time": 600.0,
+        "iterations": 9613308,
+        "exploitability": 0.3045099501540554
+      }
+    ],
+    "isgt": [
+      {
+        "time": 1.0,
+        "iterations": 2213,
+        "exploitability": 2.5064589593969293
+      },
+      {
+        "time": 2.0,
+        "iterations": 4635,
+        "exploitability": 2.381799281205698
+      },
+      {
+        "time": 5.0,
+        "iterations": 12894,
+        "exploitability": 1.6045078165149143
+      },
+      {
+        "time": 10.0,
+        "iterations": 26837,
+        "exploitability": 1.0466002919963078
+      },
+      {
+        "time": 20.0,
+        "iterations": 55246,
+        "exploitability": 0.7773243409303667
+      },
+      {
+        "time": 30.0,
+        "iterations": 83414,
+        "exploitability": 0.6100606519390663
+      },
+      {
+        "time": 60.0,
+        "iterations": 166418,
+        "exploitability": 0.5100014042768992
+      },
+      {
+        "time": 90.0,
+        "iterations": 249167,
+        "exploitability": 0.4685136583648451
+      },
+      {
+        "time": 120.0,
+        "iterations": 330782,
+        "exploitability": 0.3994054311246092
+      },
+      {
+        "time": 180.0,
+        "iterations": 497191,
+        "exploitability": 0.30011130634786287
+      },
+      {
+        "time": 240.0,
+        "iterations": 665491,
+        "exploitability": 0.2480700337232557
+      },
+      {
+        "time": 300.0,
+        "iterations": 833119,
+        "exploitability": 0.2247366744950944
+      },
+      {
+        "time": 420.0,
+        "iterations": 1168838,
+        "exploitability": 0.17163877636783376
+      },
+      {
+        "time": 600.0,
+        "iterations": 1675946,
+        "exploitability": 0.1484428524518216
+      }
+    ]
+  },
+  "liars_dice": {
+    "ismcts": [
+      {
+        "time": 1.0,
+        "iterations": 11865,
+        "exploitability": 0.6664007735061823
+      },
+      {
+        "time": 4.81,
+        "iterations": 11866,
+        "exploitability": 0.6664003354720296
+      },
+      {
+        "time": 8.56,
+        "iterations": 11867,
+        "exploitability": 0.6664390424474256
+      },
+      {
+        "time": 12.23,
+        "iterations": 11868,
+        "exploitability": 0.6666082066664479
+      },
+      {
+        "time": 20.0,
+        "iterations": 58224,
+        "exploitability": 0.45942200334565997
+      },
+      {
+        "time": 30.0,
+        "iterations": 122490,
+        "exploitability": 0.37020970410955956
+      },
+      {
+        "time": 60.0,
+        "iterations": 435739,
+        "exploitability": 0.26947159830659445
+      },
+      {
+        "time": 90.0,
+        "iterations": 759282,
+        "exploitability": 0.23878542323762442
+      },
+      {
+        "time": 120.0,
+        "iterations": 1077974,
+        "exploitability": 0.22210832807053377
+      },
+      {
+        "time": 180.0,
+        "iterations": 1765002,
+        "exploitability": 0.20305782078245443
+      },
+      {
+        "time": 240.0,
+        "iterations": 2454916,
+        "exploitability": 0.19426859564141963
+      },
+      {
+        "time": 300.0,
+        "iterations": 3154148,
+        "exploitability": 0.19131830793930607
+      },
+      {
+        "time": 420.0,
+        "iterations": 4607712,
+        "exploitability": 0.18600202788064515
+      },
+      {
+        "time": 600.0,
+        "iterations": 6840972,
+        "exploitability": 0.17771879934746398
+      }
+    ],
+    "isgt": [
+      {
+        "time": 1.01,
+        "iterations": 33,
+        "exploitability": 0.7964328689507507
+      },
+      {
+        "time": 5.31,
+        "iterations": 34,
+        "exploitability": 0.7983402214731641
+      },
+      {
+        "time": 9.55,
+        "iterations": 35,
+        "exploitability": 0.7983402214731641
+      },
+      {
+        "time": 13.87,
+        "iterations": 36,
+        "exploitability": 0.7995290311347603
+      },
+      {
+        "time": 20.01,
+        "iterations": 140,
+        "exploitability": 0.8217390741660635
+      },
+      {
+        "time": 30.0,
+        "iterations": 464,
+        "exploitability": 0.8630243950558621
+      },
+      {
+        "time": 60.02,
+        "iterations": 1842,
+        "exploitability": 0.8181621040606457
+      },
+      {
+        "time": 90.01,
+        "iterations": 3321,
+        "exploitability": 0.8116478833228322
+      },
+      {
+        "time": 120.0,
+        "iterations": 4730,
+        "exploitability": 0.8084557012669791
+      },
+      {
+        "time": 180.0,
+        "iterations": 7884,
+        "exploitability": 0.7752046482579176
+      },
+      {
+        "time": 240.01,
+        "iterations": 11019,
+        "exploitability": 0.7346675167934819
+      },
+      {
+        "time": 300.01,
+        "iterations": 14128,
+        "exploitability": 0.6983570182462417
+      },
+      {
+        "time": 420.0,
+        "iterations": 20590,
+        "exploitability": 0.633526540622676
+      },
+      {
+        "time": 600.02,
+        "iterations": 30368,
+        "exploitability": 0.6008462356004898
+      }
+    ]
+  },
+  "goofspiel": {
+    "ismcts": [
+      {
+        "time": 1.0,
+        "iterations": 14353,
+        "exploitability": 0.1275048757143427
+      },
+      {
+        "time": 2.0,
+        "iterations": 28508,
+        "exploitability": 0.11195018506485728
+      },
+      {
+        "time": 5.0,
+        "iterations": 71511,
+        "exploitability": 0.1027289080803009
+      },
+      {
+        "time": 10.0,
+        "iterations": 143186,
+        "exploitability": 0.3429367129442339
+      },
+      {
+        "time": 20.0,
+        "iterations": 285604,
+        "exploitability": 0.19842730530794178
+      },
+      {
+        "time": 30.0,
+        "iterations": 428943,
+        "exploitability": 0.184860186933895
+      },
+      {
+        "time": 60.0,
+        "iterations": 851912,
+        "exploitability": 0.11365231191679795
+      },
+      {
+        "time": 90.0,
+        "iterations": 1281080,
+        "exploitability": 0.0680008061624133
+      },
+      {
+        "time": 120.0,
+        "iterations": 1705606,
+        "exploitability": 0.06863889418558998
+      },
+      {
+        "time": 180.0,
+        "iterations": 2555522,
+        "exploitability": 0.10514171325411384
+      },
+      {
+        "time": 240.0,
+        "iterations": 3410359,
+        "exploitability": 0.12679988888404536
+      },
+      {
+        "time": 300.0,
+        "iterations": 4269796,
+        "exploitability": 0.1399649089883071
+      },
+      {
+        "time": 420.0,
+        "iterations": 5983329,
+        "exploitability": 0.15624123485732094
+      },
+      {
+        "time": 600.0,
+        "iterations": 8535675,
+        "exploitability": 0.17023292208714563
+      }
+    ],
+    "isgt": [
+      {
+        "time": 1.0,
+        "iterations": 11965,
+        "exploitability": 0.04992054574513194
+      },
+      {
+        "time": 2.0,
+        "iterations": 23332,
+        "exploitability": 0.05911308851316857
+      },
+      {
+        "time": 5.0,
+        "iterations": 58851,
+        "exploitability": 0.03799477312311127
+      },
+      {
+        "time": 10.0,
+        "iterations": 118327,
+        "exploitability": 0.027547311685043752
+      },
+      {
+        "time": 20.0,
+        "iterations": 237465,
+        "exploitability": 0.018024890058728985
+      },
+      {
+        "time": 30.0,
+        "iterations": 356524,
+        "exploitability": 0.01882112430495704
+      },
+      {
+        "time": 60.0,
+        "iterations": 706061,
+        "exploitability": 0.01566803520549728
+      },
+      {
+        "time": 90.0,
+        "iterations": 1062942,
+        "exploitability": 0.014114026800399679
+      },
+      {
+        "time": 120.0,
+        "iterations": 1411836,
+        "exploitability": 0.014304082104207975
+      },
+      {
+        "time": 180.0,
+        "iterations": 2117629,
+        "exploitability": 0.013116309252717694
+      },
+      {
+        "time": 240.0,
+        "iterations": 2818947,
+        "exploitability": 0.013062282787885043
+      },
+      {
+        "time": 300.0,
+        "iterations": 3527378,
+        "exploitability": 0.013346032902101918
+      },
+      {
+        "time": 420.0,
+        "iterations": 4912209,
+        "exploitability": 0.012858982940447093
+      },
+      {
+        "time": 600.0,
+        "iterations": 6969972,
+        "exploitability": 0.012469208794536458
+      }
+    ]
+  }
+}

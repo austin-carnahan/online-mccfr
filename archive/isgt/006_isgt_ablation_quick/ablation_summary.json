@@ -1,0 +1,650 @@
+{
+  "goofspiel": {
+    "chance_exp_0.3": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 0.330870955803994
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 0.13290359056866674
+      }
+    ],
+    "chance_exp_0.5": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 0.3279080804973011
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 0.12125037098065877
+      }
+    ],
+    "chance_exp_0.7": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 0.298870237665917
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 0.12406906444327451
+      }
+    ],
+    "chance_linear_4": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 0.3278234608227901
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 0.19601670900572726
+      }
+    ],
+    "chance_poly_1": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 0.31694560891907
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 0.13336948860032632
+      }
+    ],
+    "chance_poly_2": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 0.3338524712465643
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 0.13631205430950483
+      }
+    ],
+    "chance_step_0.01": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 0.36713111774077734
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 0.1997185325196028
+      }
+    ],
+    "chance_step_0.1": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 0.3364829147112163
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 0.14418137479832308
+      }
+    ],
+    "full_exp_0.3": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 0.6761310854948306
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 0.49800873615020014
+      }
+    ],
+    "full_exp_0.5": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 0.5989756975041166
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 0.5099585919226983
+      }
+    ],
+    "full_exp_0.7": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 0.6021418278026962
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 0.49944043513838693
+      }
+    ],
+    "full_linear_4": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 0.6383557747742904
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 0.46712698420564863
+      }
+    ],
+    "full_poly_1": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 0.6359747233643439
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 0.4861173859274444
+      }
+    ],
+    "full_poly_2": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 0.5992723078933889
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 0.5181333463031602
+      }
+    ],
+    "full_step_0.01": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 0.646910764751324
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 0.4869318510413243
+      }
+    ],
+    "full_step_0.1": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 0.6273455471098703
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 0.5196384840869677
+      }
+    ]
+  },
+  "kuhn_poker": {
+    "chance_exp_0.3": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 0.19869903199390504
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 0.13196304600440353
+      }
+    ],
+    "chance_exp_0.5": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 0.2118344202599612
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 0.11551929682724602
+      }
+    ],
+    "chance_exp_0.7": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 0.19685739424231846
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 0.1059661066213588
+      }
+    ],
+    "chance_linear_4": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 0.1857926947572584
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 0.10611554564918613
+      }
+    ],
+    "chance_poly_1": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 0.21348047623096214
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 0.12247963718496865
+      }
+    ],
+    "chance_poly_2": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 0.20137154007483016
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 0.12211349508243555
+      }
+    ],
+    "chance_step_0.01": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 0.20551822126075067
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 0.17981569028516656
+      }
+    ],
+    "chance_step_0.1": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 0.20079279326704136
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 0.1447205029554353
+      }
+    ],
+    "full_exp_0.3": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 0.1881463577827757
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 0.13131182700099522
+      }
+    ],
+    "full_exp_0.5": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 0.1981128122704703
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 0.14371534908522138
+      }
+    ],
+    "full_exp_0.7": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 0.21599056215030743
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 0.13885210248985777
+      }
+    ],
+    "full_linear_4": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 0.22272989316189878
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 0.1263992646923364
+      }
+    ],
+    "full_poly_1": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 0.2031873007009468
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 0.15185539605017068
+      }
+    ],
+    "full_poly_2": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 0.22045191178292928
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 0.14956462964440906
+      }
+    ],
+    "full_step_0.01": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 0.28438737921213064
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 0.19418512198023719
+      }
+    ],
+    "full_step_0.1": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 0.23274522174557147
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 0.16752988925430456
+      }
+    ]
+  },
+  "leduc_poker": {
+    "chance_exp_0.3": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 2.4923414716155827
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 2.26695550996961
+      }
+    ],
+    "chance_exp_0.5": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 2.44540103037696
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 2.2408742059808215
+      }
+    ],
+    "chance_exp_0.7": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 2.489044245974421
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 2.249830213607435
+      }
+    ],
+    "chance_linear_4": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 2.5168407885479525
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 2.2704538957874707
+      }
+    ],
+    "chance_poly_1": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 2.445493989094607
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 2.266657326169729
+      }
+    ],
+    "chance_poly_2": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 2.486163931213656
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 2.2285462914914618
+      }
+    ],
+    "chance_step_0.01": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 2.3964433499653146
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 2.262775196371355
+      }
+    ],
+    "chance_step_0.1": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 2.469530417612893
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 2.2936853691979375
+      }
+    ],
+    "full_exp_0.3": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 2.3071794493498174
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 2.0388069835914857
+      }
+    ],
+    "full_exp_0.5": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 2.2414661697709777
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 1.9945026730145192
+      }
+    ],
+    "full_exp_0.7": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 2.260532620821401
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 2.0408041823049783
+      }
+    ],
+    "full_linear_4": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 2.2466515132743066
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 2.043341587413517
+      }
+    ],
+    "full_poly_1": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 2.2583715054630327
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 1.997169204644507
+      }
+    ],
+    "full_poly_2": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 2.2664901589324558
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 1.986422917994906
+      }
+    ],
+    "full_step_0.01": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 2.228062042306405
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 2.12753344759456
+      }
+    ],
+    "full_step_0.1": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 2.205690938637008
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 2.048712555244572
+      }
+    ]
+  },
+  "liars_dice": {
+    "chance_exp_0.3": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 0.7707793246744674
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 0.7389918070894673
+      }
+    ],
+    "chance_exp_0.5": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 0.7731643807393322
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 0.7386118182277424
+      }
+    ],
+    "chance_exp_0.7": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 0.7734758135918705
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 0.7407986940222451
+      }
+    ],
+    "chance_linear_4": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 0.77048771542434
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 0.7376103700888309
+      }
+    ],
+    "chance_poly_1": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 0.7672210807879296
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 0.7327148708700684
+      }
+    ],
+    "chance_poly_2": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 0.7732834711470287
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 0.7286223466780051
+      }
+    ],
+    "chance_step_0.01": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 0.7764432621654946
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 0.746361055058073
+      }
+    ],
+    "chance_step_0.1": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 0.7699969571415725
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 0.7365813135892672
+      }
+    ],
+    "full_exp_0.3": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 0.7835544698278114
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 0.7759510442707573
+      }
+    ],
+    "full_exp_0.5": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 0.7788158561471368
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 0.7787432519638383
+      }
+    ],
+    "full_exp_0.7": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 0.7750088920548206
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 0.7799899796864683
+      }
+    ],
+    "full_linear_4": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 0.784877062637615
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 0.7777595925612477
+      }
+    ],
+    "full_poly_1": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 0.7830981788196809
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 0.7755722102641632
+      }
+    ],
+    "full_poly_2": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 0.7754663302602645
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 0.7785067254501072
+      }
+    ],
+    "full_step_0.01": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 0.7885450101067351
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 0.7858854422993469
+      }
+    ],
+    "full_step_0.1": [
+      {
+        "sims_per_move": 100,
+        "exploitability": 0.7856666162068486
+      },
+      {
+        "sims_per_move": 500,
+        "exploitability": 0.7860088883745149
+      }
+    ]
+  }
+}

@@ -8,7 +8,7 @@ algorithms using [OpenSpiel](https://github.com/google-deepmind/open_spiel).
 - **OOS** — Online Outcome Sampling (Lisý, Lanctot, Bowling 2015)
 - **ISMCTS** — Information Set Monte Carlo Tree Search (UCT variant)
 - **ISGT** — Information Set Graph Targeting (novel) — proximity-weighted targeting
-  over the information set graph
+  over the Infoset Intersection Graph (IIG)
 
 **Benchmark games:** Leduc Poker, Liar's Dice, Goofspiel (imperfect-info variant)
 
@@ -47,6 +47,12 @@ algorithms using [OpenSpiel](https://github.com/google-deepmind/open_spiel).
 │   └── test_isgt.py        ISGT convergence (placeholder)
 │
 ├── knowledge/              Papers and reference material
+├── visualizations/         Graph visualizations (Kuhn Poker pedagogical figures)
+│   ├── kuhn_game_tree.py   Full game tree with infoset overlay
+│   ├── kuhn_itg.py         Infoset Transition Graph (P1=Q slice)
+│   ├── kuhn_iig.py         Infoset Intersection Graph with level coloring
+│   ├── kuhn_iig_detailed.py IIG with terminal histories overlay
+│   └── output/             Generated PNGs
 └── results/                Experiment outputs (JSON)
     ├── root_convergence/   Per-game and combined root convergence results
     ├── aggregate_exploit/  Per-game and combined aggregate exploitability results
@@ -196,3 +202,89 @@ Both experiment types follow Section 4.2 of the OOS paper:
 - **Root convergence**: Run each algorithm from an empty game state, accumulating iterations. Measure exploitability of the learned strategy at log-spaced checkpoints. Tests how well each algorithm converges when given unbounded computation.
 
 - **Aggregate exploitability**: For each sims-per-move budget, play many matches against a random opponent. Accumulate per-information-set strategy frequencies across matches, then compute exploitability of the combined strategy. Tests real-time decision quality under fixed computation budgets.
+
+## Graph Structures: ITG and IIG
+
+ISGT is built on two graph abstractions over a game's information sets:
+
+### Infoset Transition Graph (ITG)
+
+The ITG captures the **forward gameplay structure** at the infoset level.
+
+- **Nodes** = information sets, labeled as `Player | PrivateCard | PublicHistory`
+- **Directed edges** = player actions connecting one infoset to the next
+- Chance nodes are abstracted away; an action from one infoset can fan out
+  to multiple opponent infosets (since the acting player doesn't know the
+  opponent's private card)
+
+The ITG is *not* the game tree — it compresses all game states that share the
+same information set into a single node.
+
+### Infoset Intersection Graph (IIG)
+
+The IIG captures **cross-world upstream relationships** between information sets.
+
+- **Nodes** = information sets (same as ITG)
+- **Directed edge J → I** exists iff:
+  1. There is a terminal history *z* that passes through both J and I
+  2. Along at least one such *z*, J occurs exactly one player decision before I
+
+Edges in the IIG are induced by *shared terminal histories*, not by sequential
+play along a single trajectory. This means the IIG connects infosets that
+co-occur across different possible worlds — it encodes which past decisions
+could have contributed to the current game state.
+
+### IIG Levels and Distance
+
+Given a current active infoset I₀, we define **upstream BFS levels**:
+
+- **Level 0** = {I₀}
+- **Level k** = all infosets with an IIG edge into any Level k−1 node,
+  not already assigned to a lower level
+
+Nodes reachable from the root but only via edges *away* from I₀ receive
+higher level numbers (graph distance in the undirected IIG). These are
+still part of the game — they can be sampled — but they are structurally
+far from the current decision point.
+
+### Why IIG Distance Matters for Variance Reduction
+
+In online MCCFR, each simulation samples a terminal history and updates
+regret/strategy along it. OOS uses **Information Set Targeting (IST)**:
+a binary signal where histories through the current infoset get full weight
+and everything else gets a flat exploration weight.
+
+ISGT replaces this binary targeting with a **graduated proximity weight**
+based on IIG distance. The insight is:
+
+- **Level 0–1 histories** pass directly through or immediately upstream of I₀.
+  They carry the most relevant counterfactual information for the current
+  decision — updating regrets along these histories directly improves the
+  strategy at I₀.
+- **Level 2+ histories** share strategic context with I₀ through chains of
+  shared terminal histories. Updating these still improves regrets at infosets
+  that interact with I₀, producing indirect but real benefit.
+- **High-distance histories** (e.g., Level 3 in Kuhn Poker's bet branch when
+  I₀ is in the check-bet branch) are structurally far from I₀. They update
+  infosets that don't share terminal outcomes with the current decision.
+  Spending sampling budget on these adds variance without proportional benefit.
+
+By weighting sampling probability as a decreasing function of IIG distance,
+ISGT concentrates updates where they reduce the most regret per simulation,
+while maintaining positive sampling everywhere (required for convergence
+guarantees). The decay function shape (exponential, polynomial, etc.) is
+a tunable hyperparameter.
+
+## Visualizations
+
+Pedagogical figures illustrating the ITG and IIG for a Kuhn Poker slice
+(Player 1 holds Q). Run from the `visualizations/` directory:
+
+```bash
+python kuhn_game_tree.py       # Full game tree with infoset overlay
+python kuhn_itg.py             # ITG: infosets connected by player actions
+python kuhn_iig.py             # IIG: infosets connected by shared terminal histories
+python kuhn_iig_detailed.py    # IIG with terminal history paths overlaid
+```
+
+Output PNGs are saved to `visualizations/output/`.

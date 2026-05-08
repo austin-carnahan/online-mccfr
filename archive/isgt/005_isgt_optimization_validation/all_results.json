@@ -1,0 +1,85 @@
+{
+  "liars_dice": {
+    "isgt": [
+      {
+        "time": 5.0,
+        "iterations": 78635,
+        "exploitability": 0.4492447183515295
+      },
+      {
+        "time": 10.0,
+        "iterations": 88208,
+        "exploitability": 0.42993877227103106
+      },
+      {
+        "time": 30.0,
+        "iterations": 333371,
+        "exploitability": 0.30239039585649197
+      },
+      {
+        "time": 60.0,
+        "iterations": 726986,
+        "exploitability": 0.21641998279625307
+      },
+      {
+        "time": 120.0,
+        "iterations": 1603418,
+        "exploitability": 0.1632823421158105
+      }
+    ],
+    "ismcts": [
+      {
+        "time": 5.0,
+        "iterations": 57988,
+        "exploitability": 0.4610420817227773
+      },
+      {
+        "time": 10.0,
+        "iterations": 71191,
+        "exploitability": 0.4382095744493306
+      },
+      {
+        "time": 30.0,
+        "iterations": 267888,
+        "exploitability": 0.29822221669522253
+      },
+      {
+        "time": 60.0,
+        "iterations": 593338,
+        "exploitability": 0.2518289504569961
+      },
+      {
+        "time": 120.0,
+        "iterations": 1284584,
+        "exploitability": 0.21422524019588532
+      }
+    ],
+    "oos": [
+      {
+        "time": 5.0,
+        "iterations": 74600,
+        "exploitability": 0.5201584032034042
+      },
+      {
+        "time": 10.0,
+        "iterations": 87611,
+        "exploitability": 0.5054459755898529
+      },
+      {
+        "time": 30.0,
+        "iterations": 329052,
+        "exploitability": 0.3298866178003379
+      },
+      {
+        "time": 60.0,
+        "iterations": 719035,
+        "exploitability": 0.2572646620782126
+      },
+      {
+        "time": 120.0,
+        "iterations": 1534876,
+        "exploitability": 0.18966757409916657
+      }
+    ]
+  }
+}

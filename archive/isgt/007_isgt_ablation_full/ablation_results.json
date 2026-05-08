@@ -1,0 +1,2082 @@
+[
+  {
+    "game": "goofspiel",
+    "config": "chance_constant",
+    "bias_mode": "chance",
+    "decay": "constant",
+    "sims_per_move": 100,
+    "exploitability": 0.31207374341973243,
+    "elapsed_s": 18.1,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "chance_constant",
+    "bias_mode": "chance",
+    "decay": "constant",
+    "sims_per_move": 250,
+    "exploitability": 0.18131238035210295,
+    "elapsed_s": 35.7,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "chance_constant",
+    "bias_mode": "chance",
+    "decay": "constant",
+    "sims_per_move": 500,
+    "exploitability": 0.12517297536633298,
+    "elapsed_s": 71.1,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "chance_constant",
+    "bias_mode": "chance",
+    "decay": "constant",
+    "sims_per_move": 1000,
+    "exploitability": 0.0810892251772462,
+    "elapsed_s": 138.2,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "chance_exp_0.3",
+    "bias_mode": "chance",
+    "decay": "exp_0.3",
+    "sims_per_move": 100,
+    "exploitability": 0.3276793147098427,
+    "elapsed_s": 15.9,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "chance_exp_0.3",
+    "bias_mode": "chance",
+    "decay": "exp_0.3",
+    "sims_per_move": 250,
+    "exploitability": 0.19573276207901175,
+    "elapsed_s": 38.0,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "chance_exp_0.3",
+    "bias_mode": "chance",
+    "decay": "exp_0.3",
+    "sims_per_move": 500,
+    "exploitability": 0.13647483345176809,
+    "elapsed_s": 70.6,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "chance_exp_0.3",
+    "bias_mode": "chance",
+    "decay": "exp_0.3",
+    "sims_per_move": 1000,
+    "exploitability": 0.09136104131061723,
+    "elapsed_s": 137.8,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "chance_exp_0.5",
+    "bias_mode": "chance",
+    "decay": "exp_0.5",
+    "sims_per_move": 100,
+    "exploitability": 0.3137029157892929,
+    "elapsed_s": 14.7,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "chance_exp_0.5",
+    "bias_mode": "chance",
+    "decay": "exp_0.5",
+    "sims_per_move": 250,
+    "exploitability": 0.1868903125055681,
+    "elapsed_s": 37.6,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "chance_exp_0.5",
+    "bias_mode": "chance",
+    "decay": "exp_0.5",
+    "sims_per_move": 500,
+    "exploitability": 0.1250872547177346,
+    "elapsed_s": 68.1,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "chance_exp_0.5",
+    "bias_mode": "chance",
+    "decay": "exp_0.5",
+    "sims_per_move": 1000,
+    "exploitability": 0.08439033870232912,
+    "elapsed_s": 136.1,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "chance_exp_0.7",
+    "bias_mode": "chance",
+    "decay": "exp_0.7",
+    "sims_per_move": 100,
+    "exploitability": 0.3116408074151613,
+    "elapsed_s": 14.5,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "chance_exp_0.7",
+    "bias_mode": "chance",
+    "decay": "exp_0.7",
+    "sims_per_move": 250,
+    "exploitability": 0.1854905907710246,
+    "elapsed_s": 34.6,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "chance_exp_0.7",
+    "bias_mode": "chance",
+    "decay": "exp_0.7",
+    "sims_per_move": 500,
+    "exploitability": 0.1268102887471566,
+    "elapsed_s": 69.1,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "chance_exp_0.7",
+    "bias_mode": "chance",
+    "decay": "exp_0.7",
+    "sims_per_move": 1000,
+    "exploitability": 0.08277004754969902,
+    "elapsed_s": 139.4,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "chance_linear_4",
+    "bias_mode": "chance",
+    "decay": "linear_4",
+    "sims_per_move": 100,
+    "exploitability": 0.33008542735908936,
+    "elapsed_s": 14.9,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "chance_linear_4",
+    "bias_mode": "chance",
+    "decay": "linear_4",
+    "sims_per_move": 250,
+    "exploitability": 0.19484274738249555,
+    "elapsed_s": 35.1,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "chance_linear_4",
+    "bias_mode": "chance",
+    "decay": "linear_4",
+    "sims_per_move": 500,
+    "exploitability": 0.16926421584991092,
+    "elapsed_s": 73.3,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "chance_linear_4",
+    "bias_mode": "chance",
+    "decay": "linear_4",
+    "sims_per_move": 1000,
+    "exploitability": 0.1087624157216616,
+    "elapsed_s": 141.9,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "chance_poly_2",
+    "bias_mode": "chance",
+    "decay": "poly_2",
+    "sims_per_move": 100,
+    "exploitability": 0.32101501741219335,
+    "elapsed_s": 14.4,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "chance_poly_2",
+    "bias_mode": "chance",
+    "decay": "poly_2",
+    "sims_per_move": 250,
+    "exploitability": 0.19214195134283468,
+    "elapsed_s": 34.9,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "chance_poly_2",
+    "bias_mode": "chance",
+    "decay": "poly_2",
+    "sims_per_move": 500,
+    "exploitability": 0.131785149134213,
+    "elapsed_s": 68.4,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "chance_poly_2",
+    "bias_mode": "chance",
+    "decay": "poly_2",
+    "sims_per_move": 1000,
+    "exploitability": 0.08675933109785079,
+    "elapsed_s": 141.8,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "full_constant",
+    "bias_mode": "full",
+    "decay": "constant",
+    "sims_per_move": 100,
+    "exploitability": 0.6267094494969176,
+    "elapsed_s": 8.8,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "full_constant",
+    "bias_mode": "full",
+    "decay": "constant",
+    "sims_per_move": 250,
+    "exploitability": 0.5578176144081568,
+    "elapsed_s": 20.1,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "full_constant",
+    "bias_mode": "full",
+    "decay": "constant",
+    "sims_per_move": 500,
+    "exploitability": 0.48725037452531855,
+    "elapsed_s": 39.2,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "full_constant",
+    "bias_mode": "full",
+    "decay": "constant",
+    "sims_per_move": 1000,
+    "exploitability": 0.3970896539603112,
+    "elapsed_s": 65.4,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "full_exp_0.3",
+    "bias_mode": "full",
+    "decay": "exp_0.3",
+    "sims_per_move": 100,
+    "exploitability": 0.6345842146327767,
+    "elapsed_s": 8.6,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "full_exp_0.3",
+    "bias_mode": "full",
+    "decay": "exp_0.3",
+    "sims_per_move": 250,
+    "exploitability": 0.5763854176118824,
+    "elapsed_s": 20.2,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "full_exp_0.3",
+    "bias_mode": "full",
+    "decay": "exp_0.3",
+    "sims_per_move": 500,
+    "exploitability": 0.5028297322116784,
+    "elapsed_s": 39.1,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "full_exp_0.3",
+    "bias_mode": "full",
+    "decay": "exp_0.3",
+    "sims_per_move": 1000,
+    "exploitability": 0.41972918667863024,
+    "elapsed_s": 77.7,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "full_exp_0.5",
+    "bias_mode": "full",
+    "decay": "exp_0.5",
+    "sims_per_move": 100,
+    "exploitability": 0.6347212278176648,
+    "elapsed_s": 8.6,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "full_exp_0.5",
+    "bias_mode": "full",
+    "decay": "exp_0.5",
+    "sims_per_move": 250,
+    "exploitability": 0.560109893601864,
+    "elapsed_s": 20.3,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "full_exp_0.5",
+    "bias_mode": "full",
+    "decay": "exp_0.5",
+    "sims_per_move": 500,
+    "exploitability": 0.48474330166105406,
+    "elapsed_s": 39.5,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "full_exp_0.5",
+    "bias_mode": "full",
+    "decay": "exp_0.5",
+    "sims_per_move": 1000,
+    "exploitability": 0.39824424793475877,
+    "elapsed_s": 77.7,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "full_exp_0.7",
+    "bias_mode": "full",
+    "decay": "exp_0.7",
+    "sims_per_move": 100,
+    "exploitability": 0.6144033168683531,
+    "elapsed_s": 8.7,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "full_exp_0.7",
+    "bias_mode": "full",
+    "decay": "exp_0.7",
+    "sims_per_move": 250,
+    "exploitability": 0.5655997609931782,
+    "elapsed_s": 19.9,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "full_exp_0.7",
+    "bias_mode": "full",
+    "decay": "exp_0.7",
+    "sims_per_move": 500,
+    "exploitability": 0.4924012923661659,
+    "elapsed_s": 39.3,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "full_exp_0.7",
+    "bias_mode": "full",
+    "decay": "exp_0.7",
+    "sims_per_move": 1000,
+    "exploitability": 0.3994220498071799,
+    "elapsed_s": 78.2,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "full_linear_4",
+    "bias_mode": "full",
+    "decay": "linear_4",
+    "sims_per_move": 100,
+    "exploitability": 0.6312044747712355,
+    "elapsed_s": 8.6,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "full_linear_4",
+    "bias_mode": "full",
+    "decay": "linear_4",
+    "sims_per_move": 250,
+    "exploitability": 0.6109448037665776,
+    "elapsed_s": 20.1,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "full_linear_4",
+    "bias_mode": "full",
+    "decay": "linear_4",
+    "sims_per_move": 500,
+    "exploitability": 0.49309710768460036,
+    "elapsed_s": 39.1,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "full_linear_4",
+    "bias_mode": "full",
+    "decay": "linear_4",
+    "sims_per_move": 1000,
+    "exploitability": 0.4051927282992874,
+    "elapsed_s": 74.8,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "full_poly_2",
+    "bias_mode": "full",
+    "decay": "poly_2",
+    "sims_per_move": 100,
+    "exploitability": 0.6266338617095145,
+    "elapsed_s": 8.6,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "full_poly_2",
+    "bias_mode": "full",
+    "decay": "poly_2",
+    "sims_per_move": 250,
+    "exploitability": 0.575413504634766,
+    "elapsed_s": 20.2,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "full_poly_2",
+    "bias_mode": "full",
+    "decay": "poly_2",
+    "sims_per_move": 500,
+    "exploitability": 0.49241202014999064,
+    "elapsed_s": 39.5,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "full_poly_2",
+    "bias_mode": "full",
+    "decay": "poly_2",
+    "sims_per_move": 1000,
+    "exploitability": 0.4117468354164427,
+    "elapsed_s": 77.5,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "oos",
+    "bias_mode": "n/a",
+    "decay": "n/a",
+    "sims_per_move": 100,
+    "exploitability": 0.29315396895090495,
+    "elapsed_s": 11.6,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "oos",
+    "bias_mode": "n/a",
+    "decay": "n/a",
+    "sims_per_move": 250,
+    "exploitability": 0.1703114579450934,
+    "elapsed_s": 29.8,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "oos",
+    "bias_mode": "n/a",
+    "decay": "n/a",
+    "sims_per_move": 500,
+    "exploitability": 0.12578057874320273,
+    "elapsed_s": 49.9,
+    "num_matches": 300
+  },
+  {
+    "game": "goofspiel",
+    "config": "oos",
+    "bias_mode": "n/a",
+    "decay": "n/a",
+    "sims_per_move": 1000,
+    "exploitability": 0.09196390311633645,
+    "elapsed_s": 85.9,
+    "num_matches": 300
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "chance_constant",
+    "bias_mode": "chance",
+    "decay": "constant",
+    "sims_per_move": 100,
+    "exploitability": 0.18888507664114393,
+    "elapsed_s": 3.6,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "chance_constant",
+    "bias_mode": "chance",
+    "decay": "constant",
+    "sims_per_move": 250,
+    "exploitability": 0.1404591585592346,
+    "elapsed_s": 8.8,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "chance_constant",
+    "bias_mode": "chance",
+    "decay": "constant",
+    "sims_per_move": 500,
+    "exploitability": 0.09739932594850256,
+    "elapsed_s": 17.9,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "chance_constant",
+    "bias_mode": "chance",
+    "decay": "constant",
+    "sims_per_move": 1000,
+    "exploitability": 0.06137091864909794,
+    "elapsed_s": 39.5,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "chance_exp_0.3",
+    "bias_mode": "chance",
+    "decay": "exp_0.3",
+    "sims_per_move": 100,
+    "exploitability": 0.19876624974982066,
+    "elapsed_s": 3.8,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "chance_exp_0.3",
+    "bias_mode": "chance",
+    "decay": "exp_0.3",
+    "sims_per_move": 250,
+    "exploitability": 0.1575923331521785,
+    "elapsed_s": 8.8,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "chance_exp_0.3",
+    "bias_mode": "chance",
+    "decay": "exp_0.3",
+    "sims_per_move": 500,
+    "exploitability": 0.11920876614165624,
+    "elapsed_s": 17.4,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "chance_exp_0.3",
+    "bias_mode": "chance",
+    "decay": "exp_0.3",
+    "sims_per_move": 1000,
+    "exploitability": 0.08530952933747371,
+    "elapsed_s": 36.1,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "chance_exp_0.5",
+    "bias_mode": "chance",
+    "decay": "exp_0.5",
+    "sims_per_move": 100,
+    "exploitability": 0.18684661607490438,
+    "elapsed_s": 3.8,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "chance_exp_0.5",
+    "bias_mode": "chance",
+    "decay": "exp_0.5",
+    "sims_per_move": 250,
+    "exploitability": 0.14421285029678105,
+    "elapsed_s": 8.7,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "chance_exp_0.5",
+    "bias_mode": "chance",
+    "decay": "exp_0.5",
+    "sims_per_move": 500,
+    "exploitability": 0.10506299670913585,
+    "elapsed_s": 17.5,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "chance_exp_0.5",
+    "bias_mode": "chance",
+    "decay": "exp_0.5",
+    "sims_per_move": 1000,
+    "exploitability": 0.06603793687254803,
+    "elapsed_s": 35.8,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "chance_exp_0.7",
+    "bias_mode": "chance",
+    "decay": "exp_0.7",
+    "sims_per_move": 100,
+    "exploitability": 0.1855519274996912,
+    "elapsed_s": 3.7,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "chance_exp_0.7",
+    "bias_mode": "chance",
+    "decay": "exp_0.7",
+    "sims_per_move": 250,
+    "exploitability": 0.14528009094285513,
+    "elapsed_s": 8.7,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "chance_exp_0.7",
+    "bias_mode": "chance",
+    "decay": "exp_0.7",
+    "sims_per_move": 500,
+    "exploitability": 0.10002727691000227,
+    "elapsed_s": 17.2,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "chance_exp_0.7",
+    "bias_mode": "chance",
+    "decay": "exp_0.7",
+    "sims_per_move": 1000,
+    "exploitability": 0.06538130968654687,
+    "elapsed_s": 34.8,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "chance_linear_4",
+    "bias_mode": "chance",
+    "decay": "linear_4",
+    "sims_per_move": 100,
+    "exploitability": 0.18813364220243342,
+    "elapsed_s": 3.6,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "chance_linear_4",
+    "bias_mode": "chance",
+    "decay": "linear_4",
+    "sims_per_move": 250,
+    "exploitability": 0.13881609383367532,
+    "elapsed_s": 8.9,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "chance_linear_4",
+    "bias_mode": "chance",
+    "decay": "linear_4",
+    "sims_per_move": 500,
+    "exploitability": 0.10202321268811296,
+    "elapsed_s": 17.6,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "chance_linear_4",
+    "bias_mode": "chance",
+    "decay": "linear_4",
+    "sims_per_move": 1000,
+    "exploitability": 0.0617806279704424,
+    "elapsed_s": 37.4,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "chance_poly_2",
+    "bias_mode": "chance",
+    "decay": "poly_2",
+    "sims_per_move": 100,
+    "exploitability": 0.201172786605346,
+    "elapsed_s": 3.4,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "chance_poly_2",
+    "bias_mode": "chance",
+    "decay": "poly_2",
+    "sims_per_move": 250,
+    "exploitability": 0.1630754032282288,
+    "elapsed_s": 8.9,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "chance_poly_2",
+    "bias_mode": "chance",
+    "decay": "poly_2",
+    "sims_per_move": 500,
+    "exploitability": 0.12362837137189611,
+    "elapsed_s": 17.4,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "chance_poly_2",
+    "bias_mode": "chance",
+    "decay": "poly_2",
+    "sims_per_move": 1000,
+    "exploitability": 0.0838301151599595,
+    "elapsed_s": 38.7,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "full_constant",
+    "bias_mode": "full",
+    "decay": "constant",
+    "sims_per_move": 100,
+    "exploitability": 0.2108595088970744,
+    "elapsed_s": 2.4,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "full_constant",
+    "bias_mode": "full",
+    "decay": "constant",
+    "sims_per_move": 250,
+    "exploitability": 0.17112523016828932,
+    "elapsed_s": 5.3,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "full_constant",
+    "bias_mode": "full",
+    "decay": "constant",
+    "sims_per_move": 500,
+    "exploitability": 0.12858310767987918,
+    "elapsed_s": 11.1,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "full_constant",
+    "bias_mode": "full",
+    "decay": "constant",
+    "sims_per_move": 1000,
+    "exploitability": 0.08697992677550195,
+    "elapsed_s": 22.6,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "full_exp_0.3",
+    "bias_mode": "full",
+    "decay": "exp_0.3",
+    "sims_per_move": 100,
+    "exploitability": 0.21619366159192757,
+    "elapsed_s": 2.2,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "full_exp_0.3",
+    "bias_mode": "full",
+    "decay": "exp_0.3",
+    "sims_per_move": 250,
+    "exploitability": 0.18572896515370674,
+    "elapsed_s": 5.4,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "full_exp_0.3",
+    "bias_mode": "full",
+    "decay": "exp_0.3",
+    "sims_per_move": 500,
+    "exploitability": 0.14532196967747513,
+    "elapsed_s": 12.9,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "full_exp_0.3",
+    "bias_mode": "full",
+    "decay": "exp_0.3",
+    "sims_per_move": 1000,
+    "exploitability": 0.10789887952596847,
+    "elapsed_s": 25.3,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "full_exp_0.5",
+    "bias_mode": "full",
+    "decay": "exp_0.5",
+    "sims_per_move": 100,
+    "exploitability": 0.20696592916966683,
+    "elapsed_s": 4.1,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "full_exp_0.5",
+    "bias_mode": "full",
+    "decay": "exp_0.5",
+    "sims_per_move": 250,
+    "exploitability": 0.170703970775591,
+    "elapsed_s": 7.0,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "full_exp_0.5",
+    "bias_mode": "full",
+    "decay": "exp_0.5",
+    "sims_per_move": 500,
+    "exploitability": 0.1306792579819881,
+    "elapsed_s": 12.2,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "full_exp_0.5",
+    "bias_mode": "full",
+    "decay": "exp_0.5",
+    "sims_per_move": 1000,
+    "exploitability": 0.08982423745550117,
+    "elapsed_s": 22.5,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "full_exp_0.7",
+    "bias_mode": "full",
+    "decay": "exp_0.7",
+    "sims_per_move": 100,
+    "exploitability": 0.21413270583339267,
+    "elapsed_s": 2.3,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "full_exp_0.7",
+    "bias_mode": "full",
+    "decay": "exp_0.7",
+    "sims_per_move": 250,
+    "exploitability": 0.17011929833279751,
+    "elapsed_s": 5.8,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "full_exp_0.7",
+    "bias_mode": "full",
+    "decay": "exp_0.7",
+    "sims_per_move": 500,
+    "exploitability": 0.1343214282149452,
+    "elapsed_s": 10.8,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "full_exp_0.7",
+    "bias_mode": "full",
+    "decay": "exp_0.7",
+    "sims_per_move": 1000,
+    "exploitability": 0.08852472075397105,
+    "elapsed_s": 22.3,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "full_linear_4",
+    "bias_mode": "full",
+    "decay": "linear_4",
+    "sims_per_move": 100,
+    "exploitability": 0.215226828781577,
+    "elapsed_s": 2.6,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "full_linear_4",
+    "bias_mode": "full",
+    "decay": "linear_4",
+    "sims_per_move": 250,
+    "exploitability": 0.17233461645358378,
+    "elapsed_s": 5.6,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "full_linear_4",
+    "bias_mode": "full",
+    "decay": "linear_4",
+    "sims_per_move": 500,
+    "exploitability": 0.13316710583390473,
+    "elapsed_s": 10.8,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "full_linear_4",
+    "bias_mode": "full",
+    "decay": "linear_4",
+    "sims_per_move": 1000,
+    "exploitability": 0.08887229659036266,
+    "elapsed_s": 22.4,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "full_poly_2",
+    "bias_mode": "full",
+    "decay": "poly_2",
+    "sims_per_move": 100,
+    "exploitability": 0.21087218777169167,
+    "elapsed_s": 2.4,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "full_poly_2",
+    "bias_mode": "full",
+    "decay": "poly_2",
+    "sims_per_move": 250,
+    "exploitability": 0.17966238736196818,
+    "elapsed_s": 5.9,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "full_poly_2",
+    "bias_mode": "full",
+    "decay": "poly_2",
+    "sims_per_move": 500,
+    "exploitability": 0.14719856515804552,
+    "elapsed_s": 11.4,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "full_poly_2",
+    "bias_mode": "full",
+    "decay": "poly_2",
+    "sims_per_move": 1000,
+    "exploitability": 0.10923088721208313,
+    "elapsed_s": 22.6,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "oos",
+    "bias_mode": "n/a",
+    "decay": "n/a",
+    "sims_per_move": 100,
+    "exploitability": 0.19674380119902363,
+    "elapsed_s": 3.6,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "oos",
+    "bias_mode": "n/a",
+    "decay": "n/a",
+    "sims_per_move": 250,
+    "exploitability": 0.16394866552686413,
+    "elapsed_s": 8.8,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "oos",
+    "bias_mode": "n/a",
+    "decay": "n/a",
+    "sims_per_move": 500,
+    "exploitability": 0.12516041802557512,
+    "elapsed_s": 18.7,
+    "num_matches": 500
+  },
+  {
+    "game": "kuhn_poker",
+    "config": "oos",
+    "bias_mode": "n/a",
+    "decay": "n/a",
+    "sims_per_move": 1000,
+    "exploitability": 0.08838216681507347,
+    "elapsed_s": 39.4,
+    "num_matches": 500
+  },
+  {
+    "game": "leduc_poker",
+    "config": "chance_constant",
+    "bias_mode": "chance",
+    "decay": "constant",
+    "sims_per_move": 100,
+    "exploitability": 2.4872563337474025,
+    "elapsed_s": 15.6,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "chance_constant",
+    "bias_mode": "chance",
+    "decay": "constant",
+    "sims_per_move": 250,
+    "exploitability": 2.387894821126044,
+    "elapsed_s": 34.7,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "chance_constant",
+    "bias_mode": "chance",
+    "decay": "constant",
+    "sims_per_move": 500,
+    "exploitability": 2.2412928390413294,
+    "elapsed_s": 64.3,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "chance_constant",
+    "bias_mode": "chance",
+    "decay": "constant",
+    "sims_per_move": 1000,
+    "exploitability": 1.9852734754407604,
+    "elapsed_s": 124.6,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "chance_exp_0.3",
+    "bias_mode": "chance",
+    "decay": "exp_0.3",
+    "sims_per_move": 100,
+    "exploitability": 2.4547416640256383,
+    "elapsed_s": 15.5,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "chance_exp_0.3",
+    "bias_mode": "chance",
+    "decay": "exp_0.3",
+    "sims_per_move": 250,
+    "exploitability": 2.3891703722807236,
+    "elapsed_s": 35.2,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "chance_exp_0.3",
+    "bias_mode": "chance",
+    "decay": "exp_0.3",
+    "sims_per_move": 500,
+    "exploitability": 2.2417323760174312,
+    "elapsed_s": 64.5,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "chance_exp_0.3",
+    "bias_mode": "chance",
+    "decay": "exp_0.3",
+    "sims_per_move": 1000,
+    "exploitability": 1.9937476409184964,
+    "elapsed_s": 130.6,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "chance_exp_0.5",
+    "bias_mode": "chance",
+    "decay": "exp_0.5",
+    "sims_per_move": 100,
+    "exploitability": 2.4650874287057216,
+    "elapsed_s": 17.1,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "chance_exp_0.5",
+    "bias_mode": "chance",
+    "decay": "exp_0.5",
+    "sims_per_move": 250,
+    "exploitability": 2.4181436113332926,
+    "elapsed_s": 35.4,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "chance_exp_0.5",
+    "bias_mode": "chance",
+    "decay": "exp_0.5",
+    "sims_per_move": 500,
+    "exploitability": 2.2362397285690667,
+    "elapsed_s": 66.1,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "chance_exp_0.5",
+    "bias_mode": "chance",
+    "decay": "exp_0.5",
+    "sims_per_move": 1000,
+    "exploitability": 1.9862558255720648,
+    "elapsed_s": 129.3,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "chance_exp_0.7",
+    "bias_mode": "chance",
+    "decay": "exp_0.7",
+    "sims_per_move": 100,
+    "exploitability": 2.447351419907402,
+    "elapsed_s": 15.1,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "chance_exp_0.7",
+    "bias_mode": "chance",
+    "decay": "exp_0.7",
+    "sims_per_move": 250,
+    "exploitability": 2.4162720060180547,
+    "elapsed_s": 35.5,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "chance_exp_0.7",
+    "bias_mode": "chance",
+    "decay": "exp_0.7",
+    "sims_per_move": 500,
+    "exploitability": 2.230971396661837,
+    "elapsed_s": 66.8,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "chance_exp_0.7",
+    "bias_mode": "chance",
+    "decay": "exp_0.7",
+    "sims_per_move": 1000,
+    "exploitability": 1.9999259689283742,
+    "elapsed_s": 122.9,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "chance_linear_4",
+    "bias_mode": "chance",
+    "decay": "linear_4",
+    "sims_per_move": 100,
+    "exploitability": 2.4571153850501393,
+    "elapsed_s": 17.0,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "chance_linear_4",
+    "bias_mode": "chance",
+    "decay": "linear_4",
+    "sims_per_move": 250,
+    "exploitability": 2.4015552388486228,
+    "elapsed_s": 32.7,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "chance_linear_4",
+    "bias_mode": "chance",
+    "decay": "linear_4",
+    "sims_per_move": 500,
+    "exploitability": 2.241361935360475,
+    "elapsed_s": 66.7,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "chance_linear_4",
+    "bias_mode": "chance",
+    "decay": "linear_4",
+    "sims_per_move": 1000,
+    "exploitability": 2.045367497562113,
+    "elapsed_s": 126.2,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "chance_poly_2",
+    "bias_mode": "chance",
+    "decay": "poly_2",
+    "sims_per_move": 100,
+    "exploitability": 2.466871544727051,
+    "elapsed_s": 15.7,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "chance_poly_2",
+    "bias_mode": "chance",
+    "decay": "poly_2",
+    "sims_per_move": 250,
+    "exploitability": 2.425778734158495,
+    "elapsed_s": 33.2,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "chance_poly_2",
+    "bias_mode": "chance",
+    "decay": "poly_2",
+    "sims_per_move": 500,
+    "exploitability": 2.2530437537579644,
+    "elapsed_s": 66.4,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "chance_poly_2",
+    "bias_mode": "chance",
+    "decay": "poly_2",
+    "sims_per_move": 1000,
+    "exploitability": 2.014628773885984,
+    "elapsed_s": 130.8,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "full_constant",
+    "bias_mode": "full",
+    "decay": "constant",
+    "sims_per_move": 100,
+    "exploitability": 2.2160159147336924,
+    "elapsed_s": 14.6,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "full_constant",
+    "bias_mode": "full",
+    "decay": "constant",
+    "sims_per_move": 250,
+    "exploitability": 2.130891916491586,
+    "elapsed_s": 25.1,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "full_constant",
+    "bias_mode": "full",
+    "decay": "constant",
+    "sims_per_move": 500,
+    "exploitability": 2.0119102718569675,
+    "elapsed_s": 47.9,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "full_constant",
+    "bias_mode": "full",
+    "decay": "constant",
+    "sims_per_move": 1000,
+    "exploitability": 1.8542889954428798,
+    "elapsed_s": 91.0,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "full_exp_0.3",
+    "bias_mode": "full",
+    "decay": "exp_0.3",
+    "sims_per_move": 100,
+    "exploitability": 2.2778287789083556,
+    "elapsed_s": 12.3,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "full_exp_0.3",
+    "bias_mode": "full",
+    "decay": "exp_0.3",
+    "sims_per_move": 250,
+    "exploitability": 2.155796439579258,
+    "elapsed_s": 25.2,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "full_exp_0.3",
+    "bias_mode": "full",
+    "decay": "exp_0.3",
+    "sims_per_move": 500,
+    "exploitability": 1.9980165668933287,
+    "elapsed_s": 50.4,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "full_exp_0.3",
+    "bias_mode": "full",
+    "decay": "exp_0.3",
+    "sims_per_move": 1000,
+    "exploitability": 1.856275165645704,
+    "elapsed_s": 94.2,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "full_exp_0.5",
+    "bias_mode": "full",
+    "decay": "exp_0.5",
+    "sims_per_move": 100,
+    "exploitability": 2.251329632380556,
+    "elapsed_s": 15.6,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "full_exp_0.5",
+    "bias_mode": "full",
+    "decay": "exp_0.5",
+    "sims_per_move": 250,
+    "exploitability": 2.10571681189475,
+    "elapsed_s": 29.4,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "full_exp_0.5",
+    "bias_mode": "full",
+    "decay": "exp_0.5",
+    "sims_per_move": 500,
+    "exploitability": 2.0004831384780806,
+    "elapsed_s": 47.6,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "full_exp_0.5",
+    "bias_mode": "full",
+    "decay": "exp_0.5",
+    "sims_per_move": 1000,
+    "exploitability": 1.846350844037623,
+    "elapsed_s": 93.4,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "full_exp_0.7",
+    "bias_mode": "full",
+    "decay": "exp_0.7",
+    "sims_per_move": 100,
+    "exploitability": 2.2446338507722206,
+    "elapsed_s": 12.5,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "full_exp_0.7",
+    "bias_mode": "full",
+    "decay": "exp_0.7",
+    "sims_per_move": 250,
+    "exploitability": 2.1106079305428342,
+    "elapsed_s": 27.7,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "full_exp_0.7",
+    "bias_mode": "full",
+    "decay": "exp_0.7",
+    "sims_per_move": 500,
+    "exploitability": 1.9799415045613948,
+    "elapsed_s": 50.4,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "full_exp_0.7",
+    "bias_mode": "full",
+    "decay": "exp_0.7",
+    "sims_per_move": 1000,
+    "exploitability": 1.856002345977526,
+    "elapsed_s": 91.8,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "full_linear_4",
+    "bias_mode": "full",
+    "decay": "linear_4",
+    "sims_per_move": 100,
+    "exploitability": 2.247091252187169,
+    "elapsed_s": 13.2,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "full_linear_4",
+    "bias_mode": "full",
+    "decay": "linear_4",
+    "sims_per_move": 250,
+    "exploitability": 2.152743776508837,
+    "elapsed_s": 25.0,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "full_linear_4",
+    "bias_mode": "full",
+    "decay": "linear_4",
+    "sims_per_move": 500,
+    "exploitability": 2.0198130325202595,
+    "elapsed_s": 48.3,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "full_linear_4",
+    "bias_mode": "full",
+    "decay": "linear_4",
+    "sims_per_move": 1000,
+    "exploitability": 1.8906800617700399,
+    "elapsed_s": 90.9,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "full_poly_2",
+    "bias_mode": "full",
+    "decay": "poly_2",
+    "sims_per_move": 100,
+    "exploitability": 2.202671348585599,
+    "elapsed_s": 14.2,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "full_poly_2",
+    "bias_mode": "full",
+    "decay": "poly_2",
+    "sims_per_move": 250,
+    "exploitability": 2.1301210420740917,
+    "elapsed_s": 25.5,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "full_poly_2",
+    "bias_mode": "full",
+    "decay": "poly_2",
+    "sims_per_move": 500,
+    "exploitability": 1.9691319852022846,
+    "elapsed_s": 49.6,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "full_poly_2",
+    "bias_mode": "full",
+    "decay": "poly_2",
+    "sims_per_move": 1000,
+    "exploitability": 1.835389075772042,
+    "elapsed_s": 96.5,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "oos",
+    "bias_mode": "n/a",
+    "decay": "n/a",
+    "sims_per_move": 100,
+    "exploitability": 2.4512719902966,
+    "elapsed_s": 7.4,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "oos",
+    "bias_mode": "n/a",
+    "decay": "n/a",
+    "sims_per_move": 250,
+    "exploitability": 2.2197609753148173,
+    "elapsed_s": 19.1,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "oos",
+    "bias_mode": "n/a",
+    "decay": "n/a",
+    "sims_per_move": 500,
+    "exploitability": 2.089944314680355,
+    "elapsed_s": 37.7,
+    "num_matches": 300
+  },
+  {
+    "game": "leduc_poker",
+    "config": "oos",
+    "bias_mode": "n/a",
+    "decay": "n/a",
+    "sims_per_move": 1000,
+    "exploitability": 1.7682207254004785,
+    "elapsed_s": 78.9,
+    "num_matches": 300
+  },
+  {
+    "game": "liars_dice",
+    "config": "chance_constant",
+    "bias_mode": "chance",
+    "decay": "constant",
+    "sims_per_move": 100,
+    "exploitability": 0.7652952622966669,
+    "elapsed_s": 78.6,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "chance_constant",
+    "bias_mode": "chance",
+    "decay": "constant",
+    "sims_per_move": 250,
+    "exploitability": 0.7466789671584302,
+    "elapsed_s": 118.2,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "chance_constant",
+    "bias_mode": "chance",
+    "decay": "constant",
+    "sims_per_move": 500,
+    "exploitability": 0.7288615759552923,
+    "elapsed_s": 189.7,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "chance_constant",
+    "bias_mode": "chance",
+    "decay": "constant",
+    "sims_per_move": 1000,
+    "exploitability": 0.7022153861989919,
+    "elapsed_s": 348.3,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "chance_exp_0.3",
+    "bias_mode": "chance",
+    "decay": "exp_0.3",
+    "sims_per_move": 100,
+    "exploitability": 0.7638602494737907,
+    "elapsed_s": 75.0,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "chance_exp_0.3",
+    "bias_mode": "chance",
+    "decay": "exp_0.3",
+    "sims_per_move": 250,
+    "exploitability": 0.7492133691020895,
+    "elapsed_s": 113.5,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "chance_exp_0.3",
+    "bias_mode": "chance",
+    "decay": "exp_0.3",
+    "sims_per_move": 500,
+    "exploitability": 0.7322543442692062,
+    "elapsed_s": 184.7,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "chance_exp_0.3",
+    "bias_mode": "chance",
+    "decay": "exp_0.3",
+    "sims_per_move": 1000,
+    "exploitability": 0.7014738901512899,
+    "elapsed_s": 344.7,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "chance_exp_0.5",
+    "bias_mode": "chance",
+    "decay": "exp_0.5",
+    "sims_per_move": 100,
+    "exploitability": 0.7668669463993718,
+    "elapsed_s": 77.4,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "chance_exp_0.5",
+    "bias_mode": "chance",
+    "decay": "exp_0.5",
+    "sims_per_move": 250,
+    "exploitability": 0.7486091686660901,
+    "elapsed_s": 121.0,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "chance_exp_0.5",
+    "bias_mode": "chance",
+    "decay": "exp_0.5",
+    "sims_per_move": 500,
+    "exploitability": 0.7316757710954818,
+    "elapsed_s": 191.3,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "chance_exp_0.5",
+    "bias_mode": "chance",
+    "decay": "exp_0.5",
+    "sims_per_move": 1000,
+    "exploitability": 0.7038812234144785,
+    "elapsed_s": 361.8,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "chance_exp_0.7",
+    "bias_mode": "chance",
+    "decay": "exp_0.7",
+    "sims_per_move": 100,
+    "exploitability": 0.7673481812940479,
+    "elapsed_s": 75.1,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "chance_exp_0.7",
+    "bias_mode": "chance",
+    "decay": "exp_0.7",
+    "sims_per_move": 250,
+    "exploitability": 0.7471431531389257,
+    "elapsed_s": 119.0,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "chance_exp_0.7",
+    "bias_mode": "chance",
+    "decay": "exp_0.7",
+    "sims_per_move": 500,
+    "exploitability": 0.7343226959256004,
+    "elapsed_s": 184.9,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "chance_exp_0.7",
+    "bias_mode": "chance",
+    "decay": "exp_0.7",
+    "sims_per_move": 1000,
+    "exploitability": 0.7052995492126921,
+    "elapsed_s": 348.7,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "chance_linear_4",
+    "bias_mode": "chance",
+    "decay": "linear_4",
+    "sims_per_move": 100,
+    "exploitability": 0.7648950920060924,
+    "elapsed_s": 73.1,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "chance_linear_4",
+    "bias_mode": "chance",
+    "decay": "linear_4",
+    "sims_per_move": 250,
+    "exploitability": 0.7515677334275882,
+    "elapsed_s": 125.3,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "chance_linear_4",
+    "bias_mode": "chance",
+    "decay": "linear_4",
+    "sims_per_move": 500,
+    "exploitability": 0.731075576661242,
+    "elapsed_s": 197.1,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "chance_linear_4",
+    "bias_mode": "chance",
+    "decay": "linear_4",
+    "sims_per_move": 1000,
+    "exploitability": 0.7083080033528273,
+    "elapsed_s": 337.1,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "chance_poly_2",
+    "bias_mode": "chance",
+    "decay": "poly_2",
+    "sims_per_move": 100,
+    "exploitability": 0.7685370467620645,
+    "elapsed_s": 77.7,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "chance_poly_2",
+    "bias_mode": "chance",
+    "decay": "poly_2",
+    "sims_per_move": 250,
+    "exploitability": 0.7459141905145987,
+    "elapsed_s": 117.8,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "chance_poly_2",
+    "bias_mode": "chance",
+    "decay": "poly_2",
+    "sims_per_move": 500,
+    "exploitability": 0.7220598665211002,
+    "elapsed_s": 189.4,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "chance_poly_2",
+    "bias_mode": "chance",
+    "decay": "poly_2",
+    "sims_per_move": 1000,
+    "exploitability": 0.7076516704498856,
+    "elapsed_s": 329.4,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "full_constant",
+    "bias_mode": "full",
+    "decay": "constant",
+    "sims_per_move": 100,
+    "exploitability": 0.7776498660400215,
+    "elapsed_s": 74.4,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "full_constant",
+    "bias_mode": "full",
+    "decay": "constant",
+    "sims_per_move": 250,
+    "exploitability": 0.7667869402492895,
+    "elapsed_s": 116.8,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "full_constant",
+    "bias_mode": "full",
+    "decay": "constant",
+    "sims_per_move": 500,
+    "exploitability": 0.7650482078170602,
+    "elapsed_s": 203.2,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "full_constant",
+    "bias_mode": "full",
+    "decay": "constant",
+    "sims_per_move": 1000,
+    "exploitability": 0.7645846351192273,
+    "elapsed_s": 340.1,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "full_exp_0.3",
+    "bias_mode": "full",
+    "decay": "exp_0.3",
+    "sims_per_move": 100,
+    "exploitability": 0.7743779887624707,
+    "elapsed_s": 79.7,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "full_exp_0.3",
+    "bias_mode": "full",
+    "decay": "exp_0.3",
+    "sims_per_move": 250,
+    "exploitability": 0.769974664293734,
+    "elapsed_s": 121.5,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "full_exp_0.3",
+    "bias_mode": "full",
+    "decay": "exp_0.3",
+    "sims_per_move": 500,
+    "exploitability": 0.768537361894237,
+    "elapsed_s": 199.4,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "full_exp_0.3",
+    "bias_mode": "full",
+    "decay": "exp_0.3",
+    "sims_per_move": 1000,
+    "exploitability": 0.7628195038922703,
+    "elapsed_s": 372.2,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "full_exp_0.5",
+    "bias_mode": "full",
+    "decay": "exp_0.5",
+    "sims_per_move": 100,
+    "exploitability": 0.7714001277888789,
+    "elapsed_s": 75.2,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "full_exp_0.5",
+    "bias_mode": "full",
+    "decay": "exp_0.5",
+    "sims_per_move": 250,
+    "exploitability": 0.7719348353206382,
+    "elapsed_s": 120.4,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "full_exp_0.5",
+    "bias_mode": "full",
+    "decay": "exp_0.5",
+    "sims_per_move": 500,
+    "exploitability": 0.7690869656987002,
+    "elapsed_s": 197.0,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "full_exp_0.5",
+    "bias_mode": "full",
+    "decay": "exp_0.5",
+    "sims_per_move": 1000,
+    "exploitability": 0.7621124203258687,
+    "elapsed_s": 353.4,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "full_exp_0.7",
+    "bias_mode": "full",
+    "decay": "exp_0.7",
+    "sims_per_move": 100,
+    "exploitability": 0.775983984741901,
+    "elapsed_s": 77.3,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "full_exp_0.7",
+    "bias_mode": "full",
+    "decay": "exp_0.7",
+    "sims_per_move": 250,
+    "exploitability": 0.7761537032829022,
+    "elapsed_s": 124.8,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "full_exp_0.7",
+    "bias_mode": "full",
+    "decay": "exp_0.7",
+    "sims_per_move": 500,
+    "exploitability": 0.7734843343148928,
+    "elapsed_s": 203.8,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "full_exp_0.7",
+    "bias_mode": "full",
+    "decay": "exp_0.7",
+    "sims_per_move": 1000,
+    "exploitability": 0.7693112119886418,
+    "elapsed_s": 343.6,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "full_linear_4",
+    "bias_mode": "full",
+    "decay": "linear_4",
+    "sims_per_move": 100,
+    "exploitability": 0.7777802164870198,
+    "elapsed_s": 76.5,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "full_linear_4",
+    "bias_mode": "full",
+    "decay": "linear_4",
+    "sims_per_move": 250,
+    "exploitability": 0.7734010345766322,
+    "elapsed_s": 120.8,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "full_linear_4",
+    "bias_mode": "full",
+    "decay": "linear_4",
+    "sims_per_move": 500,
+    "exploitability": 0.7746310650330279,
+    "elapsed_s": 202.7,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "full_linear_4",
+    "bias_mode": "full",
+    "decay": "linear_4",
+    "sims_per_move": 1000,
+    "exploitability": 0.7691854866559392,
+    "elapsed_s": 347.3,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "full_poly_2",
+    "bias_mode": "full",
+    "decay": "poly_2",
+    "sims_per_move": 100,
+    "exploitability": 0.7737486395903803,
+    "elapsed_s": 81.3,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "full_poly_2",
+    "bias_mode": "full",
+    "decay": "poly_2",
+    "sims_per_move": 250,
+    "exploitability": 0.7746268337084852,
+    "elapsed_s": 124.1,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "full_poly_2",
+    "bias_mode": "full",
+    "decay": "poly_2",
+    "sims_per_move": 500,
+    "exploitability": 0.7730797323328842,
+    "elapsed_s": 197.1,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "full_poly_2",
+    "bias_mode": "full",
+    "decay": "poly_2",
+    "sims_per_move": 1000,
+    "exploitability": 0.7694895193613456,
+    "elapsed_s": 357.1,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "oos",
+    "bias_mode": "n/a",
+    "decay": "n/a",
+    "sims_per_move": 100,
+    "exploitability": 0.7813999866178885,
+    "elapsed_s": 9.4,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "oos",
+    "bias_mode": "n/a",
+    "decay": "n/a",
+    "sims_per_move": 250,
+    "exploitability": 0.7585653178079206,
+    "elapsed_s": 12.0,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "oos",
+    "bias_mode": "n/a",
+    "decay": "n/a",
+    "sims_per_move": 500,
+    "exploitability": 0.7473765233656042,
+    "elapsed_s": 15.3,
+    "num_matches": 100
+  },
+  {
+    "game": "liars_dice",
+    "config": "oos",
+    "bias_mode": "n/a",
+    "decay": "n/a",
+    "sims_per_move": 1000,
+    "exploitability": 0.6911794637476293,
+    "elapsed_s": 24.0,
+    "num_matches": 100
+  }
+]

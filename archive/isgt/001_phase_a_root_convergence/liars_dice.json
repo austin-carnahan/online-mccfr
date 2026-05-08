@@ -1,0 +1,291 @@
+{
+  "game": "liars_dice",
+  "configs": {
+    "baseline": [
+      {
+        "iterations": 500,
+        "exploitability": 0.8657772256064831
+      },
+      {
+        "iterations": 1000,
+        "exploitability": 0.8341503631407235
+      },
+      {
+        "iterations": 2000,
+        "exploitability": 0.8142923194587022
+      },
+      {
+        "iterations": 5000,
+        "exploitability": 0.805078843474327
+      },
+      {
+        "iterations": 10000,
+        "exploitability": 0.7493097504133039
+      },
+      {
+        "iterations": 20000,
+        "exploitability": 0.6368134756771944
+      }
+    ],
+    "chance_exp(\u03b1=0.5)": [
+      {
+        "iterations": 500,
+        "exploitability": 0.8310873964506483
+      },
+      {
+        "iterations": 1000,
+        "exploitability": 0.8312852404168876
+      },
+      {
+        "iterations": 2000,
+        "exploitability": 0.8105820968750976
+      },
+      {
+        "iterations": 5000,
+        "exploitability": 0.7961602073507684
+      },
+      {
+        "iterations": 10000,
+        "exploitability": 0.7214979655441656
+      },
+      {
+        "iterations": 20000,
+        "exploitability": 0.61198970480113
+      }
+    ],
+    "chance_exp(\u03b1=0.8)": [
+      {
+        "iterations": 500,
+        "exploitability": 0.8178038563658119
+      },
+      {
+        "iterations": 1000,
+        "exploitability": 0.8130439184696187
+      },
+      {
+        "iterations": 2000,
+        "exploitability": 0.7965740954771071
+      },
+      {
+        "iterations": 5000,
+        "exploitability": 0.7653664977045014
+      },
+      {
+        "iterations": 10000,
+        "exploitability": 0.6909373668824592
+      },
+      {
+        "iterations": 20000,
+        "exploitability": 0.6651928571305366
+      }
+    ],
+    "chance_poly(p=2.0)": [
+      {
+        "iterations": 500,
+        "exploitability": 0.8358348642862468
+      },
+      {
+        "iterations": 1000,
+        "exploitability": 0.8435669672415226
+      },
+      {
+        "iterations": 2000,
+        "exploitability": 0.8330731843362662
+      },
+      {
+        "iterations": 5000,
+        "exploitability": 0.822913828216937
+      },
+      {
+        "iterations": 10000,
+        "exploitability": 0.7817073905113585
+      },
+      {
+        "iterations": 20000,
+        "exploitability": 0.7026811181080865
+      }
+    ],
+    "chance_linear(D=4)": [
+      {
+        "iterations": 500,
+        "exploitability": 0.813864889850258
+      },
+      {
+        "iterations": 1000,
+        "exploitability": 0.8134687175906672
+      },
+      {
+        "iterations": 2000,
+        "exploitability": 0.8018853131221602
+      },
+      {
+        "iterations": 5000,
+        "exploitability": 0.7505306241246388
+      },
+      {
+        "iterations": 10000,
+        "exploitability": 0.6947612796688037
+      },
+      {
+        "iterations": 20000,
+        "exploitability": 0.6539161573973122
+      }
+    ],
+    "chance_step(floor=0.01)": [
+      {
+        "iterations": 500,
+        "exploitability": 0.8355224415563465
+      },
+      {
+        "iterations": 1000,
+        "exploitability": 0.8427698803698598
+      },
+      {
+        "iterations": 2000,
+        "exploitability": 0.8276412642519999
+      },
+      {
+        "iterations": 5000,
+        "exploitability": 0.8470779902376091
+      },
+      {
+        "iterations": 10000,
+        "exploitability": 0.8377524293124545
+      },
+      {
+        "iterations": 20000,
+        "exploitability": 0.8186215640684729
+      }
+    ],
+    "full_exp(\u03b1=0.5)": [
+      {
+        "iterations": 500,
+        "exploitability": 0.8250610158546567
+      },
+      {
+        "iterations": 1000,
+        "exploitability": 0.8329964956189075
+      },
+      {
+        "iterations": 2000,
+        "exploitability": 0.8418911231363662
+      },
+      {
+        "iterations": 5000,
+        "exploitability": 0.8194484718676636
+      },
+      {
+        "iterations": 10000,
+        "exploitability": 0.8248357141195477
+      },
+      {
+        "iterations": 20000,
+        "exploitability": 0.8194878443884004
+      }
+    ],
+    "full_exp(\u03b1=0.8)": [
+      {
+        "iterations": 500,
+        "exploitability": 0.8033435996670413
+      },
+      {
+        "iterations": 1000,
+        "exploitability": 0.8163253844528601
+      },
+      {
+        "iterations": 2000,
+        "exploitability": 0.8056233525025847
+      },
+      {
+        "iterations": 5000,
+        "exploitability": 0.7838331885725827
+      },
+      {
+        "iterations": 10000,
+        "exploitability": 0.7527755717836735
+      },
+      {
+        "iterations": 20000,
+        "exploitability": 0.6939674164319326
+      }
+    ],
+    "full_poly(p=2.0)": [
+      {
+        "iterations": 500,
+        "exploitability": 0.8571911270015355
+      },
+      {
+        "iterations": 1000,
+        "exploitability": 0.8741325557250716
+      },
+      {
+        "iterations": 2000,
+        "exploitability": 0.8451897658522214
+      },
+      {
+        "iterations": 5000,
+        "exploitability": 0.8426629786765077
+      },
+      {
+        "iterations": 10000,
+        "exploitability": 0.8384137586051064
+      },
+      {
+        "iterations": 20000,
+        "exploitability": 0.8257084787550635
+      }
+    ],
+    "full_linear(D=4)": [
+      {
+        "iterations": 500,
+        "exploitability": 0.8507019628336221
+      },
+      {
+        "iterations": 1000,
+        "exploitability": 0.8296565527024049
+      },
+      {
+        "iterations": 2000,
+        "exploitability": 0.8247683607637736
+      },
+      {
+        "iterations": 5000,
+        "exploitability": 0.8250490529462018
+      },
+      {
+        "iterations": 10000,
+        "exploitability": 0.8241149240642889
+      },
+      {
+        "iterations": 20000,
+        "exploitability": 0.8157495865302686
+      }
+    ],
+    "full_step(floor=0.01)": [
+      {
+        "iterations": 500,
+        "exploitability": 0.8216593344465677
+      },
+      {
+        "iterations": 1000,
+        "exploitability": 0.8489149824885885
+      },
+      {
+        "iterations": 2000,
+        "exploitability": 0.8489114069811069
+      },
+      {
+        "iterations": 5000,
+        "exploitability": 0.8548873955227199
+      },
+      {
+        "iterations": 10000,
+        "exploitability": 0.8291338520986923
+      },
+      {
+        "iterations": 20000,
+        "exploitability": 0.813358428197594
+      }
+    ]
+  }
+}

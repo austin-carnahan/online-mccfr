@@ -127,9 +127,12 @@ def _make_bot(name, game, player_id, sims, delta):
     elif name == "oos":
         from src.oos import OOSBot
         return OOSBot(game, player_id, num_simulations=sims, delta=delta)
+    elif name == "isgt":
+        from src.isgt import ISGTBot
+        return ISGTBot(game, player_id, num_simulations=sims)
     elif name == "random":
         from open_spiel.python.bots.policy import PolicyBot
         from open_spiel.python import policy as policy_lib
         return PolicyBot(player_id, np.random, policy_lib.UniformRandomPolicy(game))
     else:
-        raise ValueError(f"Unknown bot '{name}'. Available: ismcts, oos, random")
+        raise ValueError(f"Unknown bot '{name}'. Available: ismcts, oos, isgt, random")

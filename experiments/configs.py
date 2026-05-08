@@ -5,6 +5,8 @@ import numpy as np
 from src.games import load_game, GAME_SPECS
 from src.oos import OOSBot, OOSPolicy
 from src.ismcts import make_ismcts_bot
+from src.isgt import ISGTBot, ExponentialDecay
+from src.retrospective import RetroBot
 
 
 # ---------------------------------------------------------------------------
@@ -35,6 +37,39 @@ def make_ismcts_uct(game, num_sims, seed=None, **kwargs):
     bot = make_ismcts_bot(game, player_id=0, max_simulations=num_sims,
                           random_state=rng)
     return bot, lambda: ISMCTSPolicy(game, bot)
+
+
+def make_isgt(game, num_sims, seed=None, **kwargs):
+    """Create an ISGT bot. Returns (bot, policy_extractor)."""
+    epsilon = kwargs.get("epsilon", 0.6)
+    gamma = kwargs.get("gamma", 0.01)
+    bot = ISGTBot(game, player_id=0, num_simulations=num_sims,
+                  epsilon=epsilon, gamma=gamma,
+                  level_weight_fn=ExponentialDecay(0.5),
+                  seed=seed)
+    return bot, lambda: bot.average_policy()
+
+
+def make_retro(game, num_sims, seed=None, **kwargs):
+    """Create a Retrospective Sampling bot. Returns (bot, policy_extractor).
+
+    kwargs:
+        epsilon: Exploration factor (default 0.6).
+        gamma: Regret matching floor (default 0.01).
+        decay_fn: LevelWeightFn instance (default ExponentialDecay(0.5)).
+        diagnostics: If True, enable per-iteration diagnostics tracking.
+    """
+    epsilon = kwargs.get("epsilon", 0.6)
+    gamma = kwargs.get("gamma", 0.01)
+    decay_fn = kwargs.get("decay_fn", ExponentialDecay(0.5))
+    diagnostics = kwargs.get("diagnostics", False)
+
+    bot = RetroBot(game, player_id=0, num_simulations=num_sims,
+                   epsilon=epsilon, gamma=gamma, decay_fn=decay_fn,
+                   seed=seed)
+    if diagnostics:
+        bot.enable_diagnostics()
+    return bot, lambda: bot.average_policy()
 
 
 class ISMCTSPolicy:
@@ -81,19 +116,26 @@ class ISMCTSPolicy:
 ALGORITHM_REGISTRY = {
     "oos": make_oos,
     "ismcts": make_ismcts_uct,
+    "isgt": make_isgt,
+    "retro": make_retro,
 }
 
 # Default algorithm configs for experiments
 DEFAULT_ALGO_CONFIGS = {
-    "oos": {"delta": 0.9, "epsilon": 0.6, "gamma": 0.01},
+    "oos": {"delta": 0.0, "epsilon": 0.6, "gamma": 0.01},
     "ismcts": {},
+    "isgt": {"epsilon": 0.6, "gamma": 0.01},
+    "retro": {"epsilon": 0.6, "gamma": 0.01},
 }
 
 # Games to use in experiments (all from GAME_SPECS)
-EXPERIMENT_GAMES = list(GAME_SPECS.keys())
+EXPERIMENT_GAMES = [g for g in GAME_SPECS if g != "kuhn_poker"]
 
 # Standard simulation budget checkpoints for root convergence
-ROOT_CHECKPOINTS = [100, 500, 1000, 2000, 5000, 10000, 20000, 50000]
+ROOT_CHECKPOINTS = [100, 500, 1000, 2000, 5000, 10000, 20000, 50000, 100000, 200000]
+
+# Wall-clock time checkpoints (seconds) for root convergence
+TIME_CHECKPOINTS = [1, 2, 5, 10, 20, 30, 60, 90, 120, 180, 240, 300, 420, 600]
 
 # Sims-per-move budgets for aggregate exploitability
 AGGREGATE_SIM_BUDGETS = [100, 250, 500]

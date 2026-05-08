@@ -1,0 +1,158 @@
+{
+  "kuhn_poker": {
+    "chance_exp(\u03b1=0.5)": [
+      {
+        "iterations": 500,
+        "exploitability": 0.2733145592350525
+      },
+      {
+        "iterations": 1000,
+        "exploitability": 0.21911552744282664
+      },
+      {
+        "iterations": 2000,
+        "exploitability": 0.19545513013359
+      }
+    ],
+    "baseline": [
+      {
+        "iterations": 500,
+        "exploitability": 0.18670684108423052
+      },
+      {
+        "iterations": 1000,
+        "exploitability": 0.1961528083081066
+      },
+      {
+        "iterations": 2000,
+        "exploitability": 0.17168528015895518
+      }
+    ],
+    "chance_exp(\u03b1=0.8)": [
+      {
+        "iterations": 500,
+        "exploitability": 0.12775341205950316
+      },
+      {
+        "iterations": 1000,
+        "exploitability": 0.08804440192837146
+      },
+      {
+        "iterations": 2000,
+        "exploitability": 0.11215487417106071
+      }
+    ],
+    "chance_poly(p=2.0)": [
+      {
+        "iterations": 500,
+        "exploitability": 0.2324320906551162
+      },
+      {
+        "iterations": 1000,
+        "exploitability": 0.13360285339133285
+      },
+      {
+        "iterations": 2000,
+        "exploitability": 0.09036787178613581
+      }
+    ],
+    "chance_linear(D=4)": [
+      {
+        "iterations": 500,
+        "exploitability": 0.18148671752919562
+      },
+      {
+        "iterations": 1000,
+        "exploitability": 0.1121717874443427
+      },
+      {
+        "iterations": 2000,
+        "exploitability": 0.06791201468022509
+      }
+    ],
+    "chance_step(floor=0.01)": [
+      {
+        "iterations": 500,
+        "exploitability": 0.27242035844740753
+      },
+      {
+        "iterations": 1000,
+        "exploitability": 0.2539082345077349
+      },
+      {
+        "iterations": 2000,
+        "exploitability": 0.176144584476045
+      }
+    ],
+    "full_exp(\u03b1=0.8)": [
+      {
+        "iterations": 500,
+        "exploitability": 0.2159953920486609
+      },
+      {
+        "iterations": 1000,
+        "exploitability": 0.14539316035882766
+      },
+      {
+        "iterations": 2000,
+        "exploitability": 0.04950924160132081
+      }
+    ],
+    "full_exp(\u03b1=0.5)": [
+      {
+        "iterations": 500,
+        "exploitability": 0.2142343711505141
+      },
+      {
+        "iterations": 1000,
+        "exploitability": 0.19210603768647289
+      },
+      {
+        "iterations": 2000,
+        "exploitability": 0.16795059550537247
+      }
+    ],
+    "full_poly(p=2.0)": [
+      {
+        "iterations": 500,
+        "exploitability": 0.12223334086791032
+      },
+      {
+        "iterations": 1000,
+        "exploitability": 0.0837395192679678
+      },
+      {
+        "iterations": 2000,
+        "exploitability": 0.0864754240422845
+      }
+    ],
+    "full_linear(D=4)": [
+      {
+        "iterations": 500,
+        "exploitability": 0.19536280510080412
+      },
+      {
+        "iterations": 1000,
+        "exploitability": 0.1534603148413924
+      },
+      {
+        "iterations": 2000,
+        "exploitability": 0.08230098668688268
+      }
+    ],
+    "full_step(floor=0.01)": [
+      {
+        "iterations": 500,
+        "exploitability": 0.2320069330755774
+      },
+      {
+        "iterations": 1000,
+        "exploitability": 0.2674686528183371
+      },
+      {
+        "iterations": 2000,
+        "exploitability": 0.23284327417617245
+      }
+    ]
+  }
+}

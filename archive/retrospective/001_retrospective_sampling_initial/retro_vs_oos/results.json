@@ -1,0 +1,1009 @@
+{
+  "config": {
+    "games": [
+      "kuhn_poker",
+      "leduc_poker"
+    ],
+    "seed": 42,
+    "workers": 4,
+    "output_dir": "results/retro_vs_oos",
+    "algorithm": [
+      "oos",
+      "retro"
+    ],
+    "delta": 0.9,
+    "epsilon": 0.6,
+    "gamma": 0.01,
+    "bias_mode": "full",
+    "decay_fn": [
+      "level_exp(\u03b1=0.5)",
+      "level_step(floor=0.01)"
+    ],
+    "max_iig_depth": null,
+    "sims_per_move": [
+      50,
+      100,
+      200,
+      500,
+      1000,
+      2000
+    ],
+    "num_matches": [
+      500
+    ]
+  },
+  "results": [
+    {
+      "game": "kuhn_poker",
+      "algorithm": "oos",
+      "delta": 0.9,
+      "epsilon": 0.6,
+      "gamma": 0.01,
+      "bias_mode": "full",
+      "decay_fn": "level_uniform",
+      "max_iig_depth": null,
+      "sims_per_move": 50,
+      "num_matches": 500,
+      "checkpoints": [
+        500
+      ],
+      "seed": 42,
+      "label": "oos",
+      "exploitability": 0.21889364539531506,
+      "curve": [
+        {
+          "match": 500,
+          "exploitability": 0.21889364539531506,
+          "coverage": 12
+        }
+      ],
+      "total_info_sets": 12,
+      "elapsed_s": 1.4
+    },
+    {
+      "game": "kuhn_poker",
+      "algorithm": "oos",
+      "delta": 0.9,
+      "epsilon": 0.6,
+      "gamma": 0.01,
+      "bias_mode": "full",
+      "decay_fn": "level_uniform",
+      "max_iig_depth": null,
+      "sims_per_move": 100,
+      "num_matches": 500,
+      "checkpoints": [
+        500
+      ],
+      "seed": 42,
+      "label": "oos",
+      "exploitability": 0.194860675009662,
+      "curve": [
+        {
+          "match": 500,
+          "exploitability": 0.194860675009662,
+          "coverage": 12
+        }
+      ],
+      "total_info_sets": 12,
+      "elapsed_s": 2.6
+    },
+    {
+      "game": "kuhn_poker",
+      "algorithm": "oos",
+      "delta": 0.9,
+      "epsilon": 0.6,
+      "gamma": 0.01,
+      "bias_mode": "full",
+      "decay_fn": "level_uniform",
+      "max_iig_depth": null,
+      "sims_per_move": 200,
+      "num_matches": 500,
+      "checkpoints": [
+        500
+      ],
+      "seed": 42,
+      "label": "oos",
+      "exploitability": 0.19203728948562376,
+      "curve": [
+        {
+          "match": 500,
+          "exploitability": 0.19203728948562376,
+          "coverage": 12
+        }
+      ],
+      "total_info_sets": 12,
+      "elapsed_s": 6.6
+    },
+    {
+      "game": "kuhn_poker",
+      "algorithm": "oos",
+      "delta": 0.9,
+      "epsilon": 0.6,
+      "gamma": 0.01,
+      "bias_mode": "full",
+      "decay_fn": "level_uniform",
+      "max_iig_depth": null,
+      "sims_per_move": 500,
+      "num_matches": 500,
+      "checkpoints": [
+        500
+      ],
+      "seed": 42,
+      "label": "oos",
+      "exploitability": 0.16988708792298937,
+      "curve": [
+        {
+          "match": 500,
+          "exploitability": 0.16988708792298937,
+          "coverage": 12
+        }
+      ],
+      "total_info_sets": 12,
+      "elapsed_s": 14.0
+    },
+    {
+      "game": "kuhn_poker",
+      "algorithm": "oos",
+      "delta": 0.9,
+      "epsilon": 0.6,
+      "gamma": 0.01,
+      "bias_mode": "full",
+      "decay_fn": "level_uniform",
+      "max_iig_depth": null,
+      "sims_per_move": 1000,
+      "num_matches": 500,
+      "checkpoints": [
+        500
+      ],
+      "seed": 42,
+      "label": "oos",
+      "exploitability": 0.14677275333273343,
+      "curve": [
+        {
+          "match": 500,
+          "exploitability": 0.14677275333273343,
+          "coverage": 12
+        }
+      ],
+      "total_info_sets": 12,
+      "elapsed_s": 25.1
+    },
+    {
+      "game": "kuhn_poker",
+      "algorithm": "oos",
+      "delta": 0.9,
+      "epsilon": 0.6,
+      "gamma": 0.01,
+      "bias_mode": "full",
+      "decay_fn": "level_uniform",
+      "max_iig_depth": null,
+      "sims_per_move": 2000,
+      "num_matches": 500,
+      "checkpoints": [
+        500
+      ],
+      "seed": 42,
+      "label": "oos",
+      "exploitability": 0.12427188325027588,
+      "curve": [
+        {
+          "match": 500,
+          "exploitability": 0.12427188325027588,
+          "coverage": 12
+        }
+      ],
+      "total_info_sets": 12,
+      "elapsed_s": 53.5
+    },
+    {
+      "game": "kuhn_poker",
+      "algorithm": "retro",
+      "delta": 0.9,
+      "epsilon": 0.6,
+      "gamma": 0.01,
+      "bias_mode": "full",
+      "decay_fn": "level_exp(\u03b1=0.5)",
+      "max_iig_depth": null,
+      "sims_per_move": 50,
+      "num_matches": 500,
+      "checkpoints": [
+        500
+      ],
+      "seed": 42,
+      "label": "retro_level_exp(\u03b1=0.5)",
+      "exploitability": 0.2091494815988149,
+      "curve": [
+        {
+          "match": 500,
+          "exploitability": 0.2091494815988149,
+          "coverage": 12
+        }
+      ],
+      "total_info_sets": 12,
+      "elapsed_s": 1.6
+    },
+    {
+      "game": "kuhn_poker",
+      "algorithm": "retro",
+      "delta": 0.9,
+      "epsilon": 0.6,
+      "gamma": 0.01,
+      "bias_mode": "full",
+      "decay_fn": "level_exp(\u03b1=0.5)",
+      "max_iig_depth": null,
+      "sims_per_move": 100,
+      "num_matches": 500,
+      "checkpoints": [
+        500
+      ],
+      "seed": 42,
+      "label": "retro_level_exp(\u03b1=0.5)",
+      "exploitability": 0.180257153330975,
+      "curve": [
+        {
+          "match": 500,
+          "exploitability": 0.180257153330975,
+          "coverage": 12
+        }
+      ],
+      "total_info_sets": 12,
+      "elapsed_s": 3.1
+    },
+    {
+      "game": "kuhn_poker",
+      "algorithm": "retro",
+      "delta": 0.9,
+      "epsilon": 0.6,
+      "gamma": 0.01,
+      "bias_mode": "full",
+      "decay_fn": "level_exp(\u03b1=0.5)",
+      "max_iig_depth": null,
+      "sims_per_move": 200,
+      "num_matches": 500,
+      "checkpoints": [
+        500
+      ],
+      "seed": 42,
+      "label": "retro_level_exp(\u03b1=0.5)",
+      "exploitability": 0.14800223690515363,
+      "curve": [
+        {
+          "match": 500,
+          "exploitability": 0.14800223690515363,
+          "coverage": 12
+        }
+      ],
+      "total_info_sets": 12,
+      "elapsed_s": 6.2
+    },
+    {
+      "game": "kuhn_poker",
+      "algorithm": "retro",
+      "delta": 0.9,
+      "epsilon": 0.6,
+      "gamma": 0.01,
+      "bias_mode": "full",
+      "decay_fn": "level_exp(\u03b1=0.5)",
+      "max_iig_depth": null,
+      "sims_per_move": 500,
+      "num_matches": 500,
+      "checkpoints": [
+        500
+      ],
+      "seed": 42,
+      "label": "retro_level_exp(\u03b1=0.5)",
+      "exploitability": 0.10066515520627345,
+      "curve": [
+        {
+          "match": 500,
+          "exploitability": 0.10066515520627345,
+          "coverage": 12
+        }
+      ],
+      "total_info_sets": 12,
+      "elapsed_s": 18.9
+    },
+    {
+      "game": "kuhn_poker",
+      "algorithm": "retro",
+      "delta": 0.9,
+      "epsilon": 0.6,
+      "gamma": 0.01,
+      "bias_mode": "full",
+      "decay_fn": "level_exp(\u03b1=0.5)",
+      "max_iig_depth": null,
+      "sims_per_move": 1000,
+      "num_matches": 500,
+      "checkpoints": [
+        500
+      ],
+      "seed": 42,
+      "label": "retro_level_exp(\u03b1=0.5)",
+      "exploitability": 0.08254882721194731,
+      "curve": [
+        {
+          "match": 500,
+          "exploitability": 0.08254882721194731,
+          "coverage": 12
+        }
+      ],
+      "total_info_sets": 12,
+      "elapsed_s": 34.7
+    },
+    {
+      "game": "kuhn_poker",
+      "algorithm": "retro",
+      "delta": 0.9,
+      "epsilon": 0.6,
+      "gamma": 0.01,
+      "bias_mode": "full",
+      "decay_fn": "level_exp(\u03b1=0.5)",
+      "max_iig_depth": null,
+      "sims_per_move": 2000,
+      "num_matches": 500,
+      "checkpoints": [
+        500
+      ],
+      "seed": 42,
+      "label": "retro_level_exp(\u03b1=0.5)",
+      "exploitability": 0.08112204848567864,
+      "curve": [
+        {
+          "match": 500,
+          "exploitability": 0.08112204848567864,
+          "coverage": 12
+        }
+      ],
+      "total_info_sets": 12,
+      "elapsed_s": 64.4
+    },
+    {
+      "game": "kuhn_poker",
+      "algorithm": "retro",
+      "delta": 0.9,
+      "epsilon": 0.6,
+      "gamma": 0.01,
+      "bias_mode": "full",
+      "decay_fn": "level_step(floor=0.01)",
+      "max_iig_depth": null,
+      "sims_per_move": 50,
+      "num_matches": 500,
+      "checkpoints": [
+        500
+      ],
+      "seed": 42,
+      "label": "retro_level_step(floor=0.01)",
+      "exploitability": 0.21151308642126396,
+      "curve": [
+        {
+          "match": 500,
+          "exploitability": 0.21151308642126396,
+          "coverage": 12
+        }
+      ],
+      "total_info_sets": 12,
+      "elapsed_s": 1.5
+    },
+    {
+      "game": "kuhn_poker",
+      "algorithm": "retro",
+      "delta": 0.9,
+      "epsilon": 0.6,
+      "gamma": 0.01,
+      "bias_mode": "full",
+      "decay_fn": "level_step(floor=0.01)",
+      "max_iig_depth": null,
+      "sims_per_move": 100,
+      "num_matches": 500,
+      "checkpoints": [
+        500
+      ],
+      "seed": 42,
+      "label": "retro_level_step(floor=0.01)",
+      "exploitability": 0.16990787933120086,
+      "curve": [
+        {
+          "match": 500,
+          "exploitability": 0.16990787933120086,
+          "coverage": 12
+        }
+      ],
+      "total_info_sets": 12,
+      "elapsed_s": 3.0
+    },
+    {
+      "game": "kuhn_poker",
+      "algorithm": "retro",
+      "delta": 0.9,
+      "epsilon": 0.6,
+      "gamma": 0.01,
+      "bias_mode": "full",
+      "decay_fn": "level_step(floor=0.01)",
+      "max_iig_depth": null,
+      "sims_per_move": 200,
+      "num_matches": 500,
+      "checkpoints": [
+        500
+      ],
+      "seed": 42,
+      "label": "retro_level_step(floor=0.01)",
+      "exploitability": 0.1360534396042767,
+      "curve": [
+        {
+          "match": 500,
+          "exploitability": 0.1360534396042767,
+          "coverage": 12
+        }
+      ],
+      "total_info_sets": 12,
+      "elapsed_s": 7.7
+    },
+    {
+      "game": "kuhn_poker",
+      "algorithm": "retro",
+      "delta": 0.9,
+      "epsilon": 0.6,
+      "gamma": 0.01,
+      "bias_mode": "full",
+      "decay_fn": "level_step(floor=0.01)",
+      "max_iig_depth": null,
+      "sims_per_move": 500,
+      "num_matches": 500,
+      "checkpoints": [
+        500
+      ],
+      "seed": 42,
+      "label": "retro_level_step(floor=0.01)",
+      "exploitability": 0.12134799038851299,
+      "curve": [
+        {
+          "match": 500,
+          "exploitability": 0.12134799038851299,
+          "coverage": 12
+        }
+      ],
+      "total_info_sets": 12,
+      "elapsed_s": 16.2
+    },
+    {
+      "game": "kuhn_poker",
+      "algorithm": "retro",
+      "delta": 0.9,
+      "epsilon": 0.6,
+      "gamma": 0.01,
+      "bias_mode": "full",
+      "decay_fn": "level_step(floor=0.01)",
+      "max_iig_depth": null,
+      "sims_per_move": 1000,
+      "num_matches": 500,
+      "checkpoints": [
+        500
+      ],
+      "seed": 42,
+      "label": "retro_level_step(floor=0.01)",
+      "exploitability": 0.11385337261083947,
+      "curve": [
+        {
+          "match": 500,
+          "exploitability": 0.11385337261083947,
+          "coverage": 12
+        }
+      ],
+      "total_info_sets": 12,
+      "elapsed_s": 30.1
+    },
+    {
+      "game": "kuhn_poker",
+      "algorithm": "retro",
+      "delta": 0.9,
+      "epsilon": 0.6,
+      "gamma": 0.01,
+      "bias_mode": "full",
+      "decay_fn": "level_step(floor=0.01)",
+      "max_iig_depth": null,
+      "sims_per_move": 2000,
+      "num_matches": 500,
+      "checkpoints": [
+        500
+      ],
+      "seed": 42,
+      "label": "retro_level_step(floor=0.01)",
+      "exploitability": 0.09846409372816117,
+      "curve": [
+        {
+          "match": 500,
+          "exploitability": 0.09846409372816117,
+          "coverage": 12
+        }
+      ],
+      "total_info_sets": 12,
+      "elapsed_s": 62.8
+    },
+    {
+      "game": "leduc_poker",
+      "algorithm": "oos",
+      "delta": 0.9,
+      "epsilon": 0.6,
+      "gamma": 0.01,
+      "bias_mode": "full",
+      "decay_fn": "level_uniform",
+      "max_iig_depth": null,
+      "sims_per_move": 50,
+      "num_matches": 500,
+      "checkpoints": [
+        500
+      ],
+      "seed": 42,
+      "label": "oos",
+      "exploitability": 2.1932889924036556,
+      "curve": [
+        {
+          "match": 500,
+          "exploitability": 2.1932889924036556,
+          "coverage": 863
+        }
+      ],
+      "total_info_sets": 936,
+      "elapsed_s": 3.9
+    },
+    {
+      "game": "leduc_poker",
+      "algorithm": "oos",
+      "delta": 0.9,
+      "epsilon": 0.6,
+      "gamma": 0.01,
+      "bias_mode": "full",
+      "decay_fn": "level_uniform",
+      "max_iig_depth": null,
+      "sims_per_move": 100,
+      "num_matches": 500,
+      "checkpoints": [
+        500
+      ],
+      "seed": 42,
+      "label": "oos",
+      "exploitability": 2.0401301880016476,
+      "curve": [
+        {
+          "match": 500,
+          "exploitability": 2.0401301880016476,
+          "coverage": 922
+        }
+      ],
+      "total_info_sets": 936,
+      "elapsed_s": 9.4
+    },
+    {
+      "game": "leduc_poker",
+      "algorithm": "oos",
+      "delta": 0.9,
+      "epsilon": 0.6,
+      "gamma": 0.01,
+      "bias_mode": "full",
+      "decay_fn": "level_uniform",
+      "max_iig_depth": null,
+      "sims_per_move": 200,
+      "num_matches": 500,
+      "checkpoints": [
+        500
+      ],
+      "seed": 42,
+      "label": "oos",
+      "exploitability": 1.9777770513922346,
+      "curve": [
+        {
+          "match": 500,
+          "exploitability": 1.9777770513922346,
+          "coverage": 935
+        }
+      ],
+      "total_info_sets": 936,
+      "elapsed_s": 18.0
+    },
+    {
+      "game": "leduc_poker",
+      "algorithm": "oos",
+      "delta": 0.9,
+      "epsilon": 0.6,
+      "gamma": 0.01,
+      "bias_mode": "full",
+      "decay_fn": "level_uniform",
+      "max_iig_depth": null,
+      "sims_per_move": 500,
+      "num_matches": 500,
+      "checkpoints": [
+        500
+      ],
+      "seed": 42,
+      "label": "oos",
+      "exploitability": 1.8801249779573057,
+      "curve": [
+        {
+          "match": 500,
+          "exploitability": 1.8801249779573057,
+          "coverage": 936
+        }
+      ],
+      "total_info_sets": 936,
+      "elapsed_s": 47.4
+    },
+    {
+      "game": "leduc_poker",
+      "algorithm": "oos",
+      "delta": 0.9,
+      "epsilon": 0.6,
+      "gamma": 0.01,
+      "bias_mode": "full",
+      "decay_fn": "level_uniform",
+      "max_iig_depth": null,
+      "sims_per_move": 1000,
+      "num_matches": 500,
+      "checkpoints": [
+        500
+      ],
+      "seed": 42,
+      "label": "oos",
+      "exploitability": 1.773974493799292,
+      "curve": [
+        {
+          "match": 500,
+          "exploitability": 1.773974493799292,
+          "coverage": 936
+        }
+      ],
+      "total_info_sets": 936,
+      "elapsed_s": 94.5
+    },
+    {
+      "game": "leduc_poker",
+      "algorithm": "oos",
+      "delta": 0.9,
+      "epsilon": 0.6,
+      "gamma": 0.01,
+      "bias_mode": "full",
+      "decay_fn": "level_uniform",
+      "max_iig_depth": null,
+      "sims_per_move": 2000,
+      "num_matches": 500,
+      "checkpoints": [
+        500
+      ],
+      "seed": 42,
+      "label": "oos",
+      "exploitability": 1.6983222558807243,
+      "curve": [
+        {
+          "match": 500,
+          "exploitability": 1.6983222558807243,
+          "coverage": 936
+        }
+      ],
+      "total_info_sets": 936,
+      "elapsed_s": 179.2
+    },
+    {
+      "game": "leduc_poker",
+      "algorithm": "retro",
+      "delta": 0.9,
+      "epsilon": 0.6,
+      "gamma": 0.01,
+      "bias_mode": "full",
+      "decay_fn": "level_exp(\u03b1=0.5)",
+      "max_iig_depth": null,
+      "sims_per_move": 50,
+      "num_matches": 500,
+      "checkpoints": [
+        500
+      ],
+      "seed": 42,
+      "label": "retro_level_exp(\u03b1=0.5)",
+      "exploitability": 2.114752820868219,
+      "curve": [
+        {
+          "match": 500,
+          "exploitability": 2.114752820868219,
+          "coverage": 870
+        }
+      ],
+      "total_info_sets": 936,
+      "elapsed_s": 4.7
+    },
+    {
+      "game": "leduc_poker",
+      "algorithm": "retro",
+      "delta": 0.9,
+      "epsilon": 0.6,
+      "gamma": 0.01,
+      "bias_mode": "full",
+      "decay_fn": "level_exp(\u03b1=0.5)",
+      "max_iig_depth": null,
+      "sims_per_move": 100,
+      "num_matches": 500,
+      "checkpoints": [
+        500
+      ],
+      "seed": 42,
+      "label": "retro_level_exp(\u03b1=0.5)",
+      "exploitability": 2.0957727970637143,
+      "curve": [
+        {
+          "match": 500,
+          "exploitability": 2.0957727970637143,
+          "coverage": 918
+        }
+      ],
+      "total_info_sets": 936,
+      "elapsed_s": 9.4
+    },
+    {
+      "game": "leduc_poker",
+      "algorithm": "retro",
+      "delta": 0.9,
+      "epsilon": 0.6,
+      "gamma": 0.01,
+      "bias_mode": "full",
+      "decay_fn": "level_exp(\u03b1=0.5)",
+      "max_iig_depth": null,
+      "sims_per_move": 200,
+      "num_matches": 500,
+      "checkpoints": [
+        500
+      ],
+      "seed": 42,
+      "label": "retro_level_exp(\u03b1=0.5)",
+      "exploitability": 1.8952783348951403,
+      "curve": [
+        {
+          "match": 500,
+          "exploitability": 1.8952783348951403,
+          "coverage": 936
+        }
+      ],
+      "total_info_sets": 936,
+      "elapsed_s": 23.4
+    },
+    {
+      "game": "leduc_poker",
+      "algorithm": "retro",
+      "delta": 0.9,
+      "epsilon": 0.6,
+      "gamma": 0.01,
+      "bias_mode": "full",
+      "decay_fn": "level_exp(\u03b1=0.5)",
+      "max_iig_depth": null,
+      "sims_per_move": 500,
+      "num_matches": 500,
+      "checkpoints": [
+        500
+      ],
+      "seed": 42,
+      "label": "retro_level_exp(\u03b1=0.5)",
+      "exploitability": 1.8168358524600514,
+      "curve": [
+        {
+          "match": 500,
+          "exploitability": 1.8168358524600514,
+          "coverage": 936
+        }
+      ],
+      "total_info_sets": 936,
+      "elapsed_s": 52.4
+    },
+    {
+      "game": "leduc_poker",
+      "algorithm": "retro",
+      "delta": 0.9,
+      "epsilon": 0.6,
+      "gamma": 0.01,
+      "bias_mode": "full",
+      "decay_fn": "level_exp(\u03b1=0.5)",
+      "max_iig_depth": null,
+      "sims_per_move": 1000,
+      "num_matches": 500,
+      "checkpoints": [
+        500
+      ],
+      "seed": 42,
+      "label": "retro_level_exp(\u03b1=0.5)",
+      "exploitability": 1.6869073556112988,
+      "curve": [
+        {
+          "match": 500,
+          "exploitability": 1.6869073556112988,
+          "coverage": 936
+        }
+      ],
+      "total_info_sets": 936,
+      "elapsed_s": 101.0
+    },
+    {
+      "game": "leduc_poker",
+      "algorithm": "retro",
+      "delta": 0.9,
+      "epsilon": 0.6,
+      "gamma": 0.01,
+      "bias_mode": "full",
+      "decay_fn": "level_exp(\u03b1=0.5)",
+      "max_iig_depth": null,
+      "sims_per_move": 2000,
+      "num_matches": 500,
+      "checkpoints": [
+        500
+      ],
+      "seed": 42,
+      "label": "retro_level_exp(\u03b1=0.5)",
+      "exploitability": 1.4958382147603992,
+      "curve": [
+        {
+          "match": 500,
+          "exploitability": 1.4958382147603992,
+          "coverage": 936
+        }
+      ],
+      "total_info_sets": 936,
+      "elapsed_s": 204.1
+    },
+    {
+      "game": "leduc_poker",
+      "algorithm": "retro",
+      "delta": 0.9,
+      "epsilon": 0.6,
+      "gamma": 0.01,
+      "bias_mode": "full",
+      "decay_fn": "level_step(floor=0.01)",
+      "max_iig_depth": null,
+      "sims_per_move": 50,
+      "num_matches": 500,
+      "checkpoints": [
+        500
+      ],
+      "seed": 42,
+      "label": "retro_level_step(floor=0.01)",
+      "exploitability": 2.109188620228303,
+      "curve": [
+        {
+          "match": 500,
+          "exploitability": 2.109188620228303,
+          "coverage": 886
+        }
+      ],
+      "total_info_sets": 936,
+      "elapsed_s": 4.4
+    },
+    {
+      "game": "leduc_poker",
+      "algorithm": "retro",
+      "delta": 0.9,
+      "epsilon": 0.6,
+      "gamma": 0.01,
+      "bias_mode": "full",
+      "decay_fn": "level_step(floor=0.01)",
+      "max_iig_depth": null,
+      "sims_per_move": 100,
+      "num_matches": 500,
+      "checkpoints": [
+        500
+      ],
+      "seed": 42,
+      "label": "retro_level_step(floor=0.01)",
+      "exploitability": 1.9873516542090692,
+      "curve": [
+        {
+          "match": 500,
+          "exploitability": 1.9873516542090692,
+          "coverage": 926
+        }
+      ],
+      "total_info_sets": 936,
+      "elapsed_s": 10.8
+    },
+    {
+      "game": "leduc_poker",
+      "algorithm": "retro",
+      "delta": 0.9,
+      "epsilon": 0.6,
+      "gamma": 0.01,
+      "bias_mode": "full",
+      "decay_fn": "level_step(floor=0.01)",
+      "max_iig_depth": null,
+      "sims_per_move": 200,
+      "num_matches": 500,
+      "checkpoints": [
+        500
+      ],
+      "seed": 42,
+      "label": "retro_level_step(floor=0.01)",
+      "exploitability": 1.9112582375501692,
+      "curve": [
+        {
+          "match": 500,
+          "exploitability": 1.9112582375501692,
+          "coverage": 932
+        }
+      ],
+      "total_info_sets": 936,
+      "elapsed_s": 20.8
+    },
+    {
+      "game": "leduc_poker",
+      "algorithm": "retro",
+      "delta": 0.9,
+      "epsilon": 0.6,
+      "gamma": 0.01,
+      "bias_mode": "full",
+      "decay_fn": "level_step(floor=0.01)",
+      "max_iig_depth": null,
+      "sims_per_move": 500,
+      "num_matches": 500,
+      "checkpoints": [
+        500
+      ],
+      "seed": 42,
+      "label": "retro_level_step(floor=0.01)",
+      "exploitability": 1.7797443184123292,
+      "curve": [
+        {
+          "match": 500,
+          "exploitability": 1.7797443184123292,
+          "coverage": 936
+        }
+      ],
+      "total_info_sets": 936,
+      "elapsed_s": 48.6
+    },
+    {
+      "game": "leduc_poker",
+      "algorithm": "retro",
+      "delta": 0.9,
+      "epsilon": 0.6,
+      "gamma": 0.01,
+      "bias_mode": "full",
+      "decay_fn": "level_step(floor=0.01)",
+      "max_iig_depth": null,
+      "sims_per_move": 1000,
+      "num_matches": 500,
+      "checkpoints": [
+        500
+      ],
+      "seed": 42,
+      "label": "retro_level_step(floor=0.01)",
+      "exploitability": 1.6655064086275564,
+      "curve": [
+        {
+          "match": 500,
+          "exploitability": 1.6655064086275564,
+          "coverage": 936
+        }
+      ],
+      "total_info_sets": 936,
+      "elapsed_s": 98.9
+    },
+    {
+      "game": "leduc_poker",
+      "algorithm": "retro",
+      "delta": 0.9,
+      "epsilon": 0.6,
+      "gamma": 0.01,
+      "bias_mode": "full",
+      "decay_fn": "level_step(floor=0.01)",
+      "max_iig_depth": null,
+      "sims_per_move": 2000,
+      "num_matches": 500,
+      "checkpoints": [
+        500
+      ],
+      "seed": 42,
+      "label": "retro_level_step(floor=0.01)",
+      "exploitability": 1.4774567488618722,
+      "curve": [
+        {
+          "match": 500,
+          "exploitability": 1.4774567488618722,
+          "coverage": 936
+        }
+      ],
+      "total_info_sets": 936,
+      "elapsed_s": 190.7
+    }
+  ]
+}

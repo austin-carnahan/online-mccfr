@@ -1,0 +1,148 @@
+{
+  "leduc_poker": {
+    "oos": [
+      {
+        "time": 1.0,
+        "iterations": 11840,
+        "exploitability": 1.6685031677660038
+      },
+      {
+        "time": 2.0,
+        "iterations": 22921,
+        "exploitability": 1.147543767619072
+      },
+      {
+        "time": 5.0,
+        "iterations": 58759,
+        "exploitability": 0.7428187742291776
+      },
+      {
+        "time": 10.0,
+        "iterations": 116791,
+        "exploitability": 0.561171218415276
+      },
+      {
+        "time": 20.0,
+        "iterations": 222338,
+        "exploitability": 0.4835100690447713
+      },
+      {
+        "time": 30.0,
+        "iterations": 333057,
+        "exploitability": 0.3983040791187872
+      },
+      {
+        "time": 60.0,
+        "iterations": 689146,
+        "exploitability": 0.24721199219615475
+      },
+      {
+        "time": 90.0,
+        "iterations": 1024864,
+        "exploitability": 0.18673358172183827
+      },
+      {
+        "time": 120.0,
+        "iterations": 1379666,
+        "exploitability": 0.18520786230815842
+      },
+      {
+        "time": 180.0,
+        "iterations": 2097588,
+        "exploitability": 0.1237565322638469
+      },
+      {
+        "time": 240.0,
+        "iterations": 2830198,
+        "exploitability": 0.103947128152803
+      },
+      {
+        "time": 300.0,
+        "iterations": 3579069,
+        "exploitability": 0.09463692497124337
+      },
+      {
+        "time": 420.0,
+        "iterations": 5021370,
+        "exploitability": 0.08532526035691465
+      },
+      {
+        "time": 600.0,
+        "iterations": 7166068,
+        "exploitability": 0.0755472115419697
+      }
+    ],
+    "ismcts": [
+      {
+        "time": 1.0,
+        "iterations": 15633,
+        "exploitability": 1.5629104787357835
+      },
+      {
+        "time": 2.0,
+        "iterations": 29358,
+        "exploitability": 1.2744797423345293
+      },
+      {
+        "time": 5.0,
+        "iterations": 76176,
+        "exploitability": 0.973216689545189
+      },
+      {
+        "time": 10.0,
+        "iterations": 156018,
+        "exploitability": 0.788986898772541
+      },
+      {
+        "time": 20.0,
+        "iterations": 320654,
+        "exploitability": 0.6210930051135203
+      },
+      {
+        "time": 30.0,
+        "iterations": 472666,
+        "exploitability": 0.5379693684372717
+      },
+      {
+        "time": 60.0,
+        "iterations": 962092,
+        "exploitability": 0.40786930978038605
+      },
+      {
+        "time": 90.0,
+        "iterations": 1471776,
+        "exploitability": 0.3354012072120989
+      },
+      {
+        "time": 120.0,
+        "iterations": 1984927,
+        "exploitability": 0.30723015111939167
+      },
+      {
+        "time": 180.0,
+        "iterations": 2988624,
+        "exploitability": 0.28707931282840937
+      },
+      {
+        "time": 240.0,
+        "iterations": 3964101,
+        "exploitability": 0.2825879110623542
+      },
+      {
+        "time": 300.0,
+        "iterations": 4948878,
+        "exploitability": 0.2957745444847748
+      },
+      {
+        "time": 420.0,
+        "iterations": 6946789,
+        "exploitability": 0.30040240043648697
+      },
+      {
+        "time": 600.0,
+        "iterations": 9903600,
+        "exploitability": 0.3051006207802403
+      }
+    ]
+  }
+}

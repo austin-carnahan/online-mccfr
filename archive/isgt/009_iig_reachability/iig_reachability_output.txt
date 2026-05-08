@@ -1,0 +1,118 @@
+IIG Reachability Test
+======================================================================
+For each infoset, how many terminals are reachable via upstream BFS?
+If < 100%, shaped decay functions underweight unreachable terminals.
+
+======================================================================
+kuhn_poker
+======================================================================
+  Infosets: 12
+  Terminals: 30
+  IIG edges: 18
+
+  Upstream BFS size (infosets reached):
+    min: 1  max: 6  avg: 3.2  (of 12 total)
+
+  Terminal coverage via upstream BFS:
+    min: 33.3%  max: 100.0%  avg: 66.7%
+    Full coverage (100%): 3/12 infosets
+
+  ⚠ NOT ALL TERMINALS REACHABLE via upstream BFS!
+    Shaped decays will underweight 66.7% of terminals
+    at the worst-case infoset.
+
+  Bottom 5 infosets by coverage:
+    P0|0                                 coverage=33.3%  upstream=1  |Z(I)|=10
+    P0|1                                 coverage=33.3%  upstream=1  |Z(I)|=10
+    P0|2                                 coverage=33.3%  upstream=1  |Z(I)|=10
+    P1|0b                                coverage=66.7%  upstream=3  |Z(I)|=4
+    P1|0p                                coverage=66.7%  upstream=3  |Z(I)|=6
+
+  Max upstream BFS depth:
+    min: 0  max: 2  avg: 1.0
+
+======================================================================
+leduc_poker
+======================================================================
+  Infosets: 936
+  Terminals: 5520
+  IIG edges: 3570
+
+  Upstream BFS size (infosets reached):
+    min: 1  max: 38  avg: 22.4  (of 936 total)
+
+  Terminal coverage via upstream BFS:
+    min: 16.7%  max: 100.0%  avg: 99.3%
+    Full coverage (100%): 918/936 infosets
+
+  ⚠ NOT ALL TERMINALS REACHABLE via upstream BFS!
+    Shaped decays will underweight 83.3% of terminals
+    at the worst-case infoset.
+
+  Bottom 5 infosets by coverage:
+    P0|[Observer: 0][Private: 0][Round 1][Player: 0][Pot: 2][Money: 99 99][Round1: ][Round2: ]  coverage=16.7%  upstream=1  |Z(I)|=920
+    P0|[Observer: 0][Private: 1][Round 1][Player: 0][Pot: 2][Money: 99 99][Round1: ][Round2: ]  coverage=16.7%  upstream=1  |Z(I)|=920
+    P0|[Observer: 0][Private: 2][Round 1][Player: 0][Pot: 2][Money: 99 99][Round1: ][Round2: ]  coverage=16.7%  upstream=1  |Z(I)|=920
+    P0|[Observer: 0][Private: 3][Round 1][Player: 0][Pot: 2][Money: 99 99][Round1: ][Round2: ]  coverage=16.7%  upstream=1  |Z(I)|=920
+    P0|[Observer: 0][Private: 4][Round 1][Player: 0][Pot: 2][Money: 99 99][Round1: ][Round2: ]  coverage=16.7%  upstream=1  |Z(I)|=920
+
+  Max upstream BFS depth:
+    min: 0  max: 7  avg: 4.2
+
+======================================================================
+liars_dice
+======================================================================
+  Infosets: 24576
+  Terminals: 147420
+  IIG edges: 147420
+
+  Upstream BFS size (infosets reached):
+    min: 1  max: 73  avg: 37.0  (of 24576 total)
+
+  Terminal coverage via upstream BFS:
+    min: 16.7%  max: 100.0%  avg: 100.0%
+    Full coverage (100%): 24570/24576 infosets
+
+  ⚠ NOT ALL TERMINALS REACHABLE via upstream BFS!
+    Shaped decays will underweight 83.3% of terminals
+    at the worst-case infoset.
+
+  Bottom 5 infosets by coverage:
+    P0|1                                 coverage=16.7%  upstream=1  |Z(I)|=24570
+    P0|2                                 coverage=16.7%  upstream=1  |Z(I)|=24570
+    P0|3                                 coverage=16.7%  upstream=1  |Z(I)|=24570
+    P0|4                                 coverage=16.7%  upstream=1  |Z(I)|=24570
+    P0|5                                 coverage=16.7%  upstream=1  |Z(I)|=24570
+
+  Max upstream BFS depth:
+    min: 0  max: 12  avg: 6.0
+
+======================================================================
+goofspiel
+======================================================================
+  Infosets: 162
+  Terminals: 576
+  IIG edges: 273
+
+  Upstream BFS size (infosets reached):
+    min: 1  max: 16  avg: 7.3  (of 162 total)
+
+  Terminal coverage via upstream BFS:
+    min: 100.0%  max: 100.0%  avg: 100.0%
+    Full coverage (100%): 162/162 infosets
+
+  ✓ All terminals reachable from every infoset via upstream BFS.
+
+  Max upstream BFS depth:
+    min: 0  max: 5  avg: 4.2
+
+
+======================================================================
+CROSS-GAME SUMMARY
+======================================================================
+Game                 Infosets  Terminals  Min Cov  Avg Cov     Full
+----------------------------------------------------------------------
+kuhn_poker                 12         30   33.3%   66.7%     3/12
+leduc_poker               936       5520   16.7%   99.3%  918/936
+liars_dice              24576     147420   16.7%  100.0% 24570/24576
+goofspiel                 162        576  100.0%  100.0%  162/162

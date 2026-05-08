@@ -1,0 +1,1130 @@
+{
+  "table_of_contents": [
+    {
+      "title": "Variance Reduction in Monte Carlo Counterfactual Regret Minimization (VR-MCCFR) for Extensive Form Games using Baselines",
+      "heading_level": null,
+      "page_id": 0,
+      "polygon": [
+        [
+          81.28125,
+          98.2265625
+        ],
+        [
+          530.25,
+          98.2265625
+        ],
+        [
+          530.25,
+          127.6171875
+        ],
+        [
+          81.28125,
+          127.6171875
+        ]
+      ]
+    },
+    {
+      "title": "Abstract",
+      "heading_level": null,
+      "page_id": 0,
+      "polygon": [
+        [
+          153.298828125,
+          217.3359375
+        ],
+        [
+          192.75,
+          217.3359375
+        ],
+        [
+          192.75,
+          225.75
+        ],
+        [
+          153.298828125,
+          225.75
+        ]
+      ]
+    },
+    {
+      "title": "Introduction",
+      "heading_level": null,
+      "page_id": 0,
+      "polygon": [
+        [
+          139.5,
+          469.08984375
+        ],
+        [
+          207.0,
+          469.08984375
+        ],
+        [
+          207.0,
+          478.5
+        ],
+        [
+          139.5,
+          478.5
+        ]
+      ]
+    },
+    {
+      "title": "Related Work",
+      "heading_level": null,
+      "page_id": 1,
+      "polygon": [
+        [
+          135.75,
+          471.75
+        ],
+        [
+          210.0,
+          471.75
+        ],
+        [
+          210.0,
+          481.5
+        ],
+        [
+          135.75,
+          481.5
+        ]
+      ]
+    },
+    {
+      "title": "Background",
+      "heading_level": null,
+      "page_id": 1,
+      "polygon": [
+        [
+          405.75,
+          257.25
+        ],
+        [
+          471.55078125,
+          257.25
+        ],
+        [
+          471.55078125,
+          267.99609375
+        ],
+        [
+          405.75,
+          267.99609375
+        ]
+      ]
+    },
+    {
+      "title": "Counterfactual Regret Minimization",
+      "heading_level": null,
+      "page_id": 2,
+      "polygon": [
+        [
+          52.5,
+          119.49609375
+        ],
+        [
+          225.75,
+          119.49609375
+        ],
+        [
+          225.75,
+          129.75
+        ],
+        [
+          52.5,
+          129.75
+        ]
+      ]
+    },
+    {
+      "title": "Monte Carlo CFR",
+      "heading_level": null,
+      "page_id": 2,
+      "polygon": [
+        [
+          317.953125,
+          54.52734375
+        ],
+        [
+          404.25,
+          54.52734375
+        ],
+        [
+          404.25,
+          64.5
+        ],
+        [
+          317.953125,
+          64.5
+        ]
+      ]
+    },
+    {
+      "title": "Control Variates",
+      "heading_level": null,
+      "page_id": 2,
+      "polygon": [
+        [
+          318.75,
+          361.1953125
+        ],
+        [
+          397.5,
+          361.1953125
+        ],
+        [
+          397.5,
+          370.5
+        ],
+        [
+          318.75,
+          370.5
+        ]
+      ]
+    },
+    {
+      "title": "Reinforcement Learning Mapping",
+      "heading_level": null,
+      "page_id": 2,
+      "polygon": [
+        [
+          318.0,
+          536.25
+        ],
+        [
+          479.25,
+          536.25
+        ],
+        [
+          479.25,
+          546.75
+        ],
+        [
+          318.0,
+          546.75
+        ]
+      ]
+    },
+    {
+      "title": "Monte Carlo CFR with Baselines",
+      "heading_level": null,
+      "page_id": 3,
+      "polygon": [
+        [
+          87.0,
+          252.140625
+        ],
+        [
+          258.0,
+          252.140625
+        ],
+        [
+          258.0,
+          261.75
+        ],
+        [
+          87.0,
+          261.75
+        ]
+      ]
+    },
+    {
+      "title": "Recursive Bootstrapping",
+      "heading_level": null,
+      "page_id": 3,
+      "polygon": [
+        [
+          52.294921875,
+          669.0
+        ],
+        [
+          170.25,
+          669.0
+        ],
+        [
+          170.25,
+          678.75
+        ],
+        [
+          52.294921875,
+          678.75
+        ]
+      ]
+    },
+    {
+      "title": "Choice of Baselines",
+      "heading_level": null,
+      "page_id": 4,
+      "polygon": [
+        [
+          52.892578125,
+          450.52734375
+        ],
+        [
+          144.0,
+          450.52734375
+        ],
+        [
+          144.0,
+          462.0
+        ],
+        [
+          52.892578125,
+          462.0
+        ]
+      ]
+    },
+    {
+      "title": "Summary of the Full Algorithm",
+      "heading_level": null,
+      "page_id": 4,
+      "polygon": [
+        [
+          317.056640625,
+          232.8046875
+        ],
+        [
+          468.0,
+          232.8046875
+        ],
+        [
+          468.0,
+          243.75
+        ],
+        [
+          317.056640625,
+          243.75
+        ]
+      ]
+    },
+    {
+      "title": "Experimental Results",
+      "heading_level": null,
+      "page_id": 4,
+      "polygon": [
+        [
+          381.90234375,
+          502.734375
+        ],
+        [
+          493.5,
+          502.734375
+        ],
+        [
+          493.5,
+          513.75
+        ],
+        [
+          381.90234375,
+          513.75
+        ]
+      ]
+    },
+    {
+      "title": "Convergence",
+      "heading_level": null,
+      "page_id": 5,
+      "polygon": [
+        [
+          52.5,
+          149.66015625
+        ],
+        [
+          114.75,
+          149.66015625
+        ],
+        [
+          114.75,
+          159.71484375
+        ],
+        [
+          52.5,
+          159.71484375
+        ]
+      ]
+    },
+    {
+      "title": "Observed Variance",
+      "heading_level": null,
+      "page_id": 5,
+      "polygon": [
+        [
+          52.5,
+          378.75
+        ],
+        [
+          143.25,
+          378.75
+        ],
+        [
+          143.25,
+          387.87890625
+        ],
+        [
+          52.5,
+          387.87890625
+        ]
+      ]
+    },
+    {
+      "title": "Evaluation of Bootstrapping and Baseline\nDependence on Actions",
+      "heading_level": null,
+      "page_id": 5,
+      "polygon": [
+        [
+          52.5,
+          554.25
+        ],
+        [
+          248.25,
+          554.25
+        ],
+        [
+          248.25,
+          577.7578125
+        ],
+        [
+          52.5,
+          577.7578125
+        ]
+      ]
+    },
+    {
+      "title": "Conclusions",
+      "heading_level": null,
+      "page_id": 5,
+      "polygon": [
+        [
+          407.00390625,
+          654.71484375
+        ],
+        [
+          470.25,
+          654.71484375
+        ],
+        [
+          470.25,
+          665.25
+        ],
+        [
+          407.00390625,
+          665.25
+        ]
+      ]
+    },
+    {
+      "title": "References",
+      "heading_level": null,
+      "page_id": 6,
+      "polygon": [
+        [
+          409.5,
+          110.98828125
+        ],
+        [
+          466.5,
+          110.98828125
+        ],
+        [
+          466.5,
+          120.0
+        ],
+        [
+          409.5,
+          120.0
+        ]
+      ]
+    },
+    {
+      "title": "Appendices",
+      "heading_level": null,
+      "page_id": 8,
+      "polygon": [
+        [
+          62.25,
+          53.3671875
+        ],
+        [
+          123.0,
+          53.3671875
+        ],
+        [
+          123.0,
+          65.25
+        ],
+        [
+          62.25,
+          65.25
+        ]
+      ]
+    },
+    {
+      "title": "MCCFR and MCCFR+ comparison",
+      "heading_level": null,
+      "page_id": 8,
+      "polygon": [
+        [
+          80.0859375,
+          77.25
+        ],
+        [
+          265.5,
+          77.25
+        ],
+        [
+          265.5,
+          88.171875
+        ],
+        [
+          80.0859375,
+          88.171875
+        ]
+      ]
+    },
+    {
+      "title": "Vector Form of CFR",
+      "heading_level": null,
+      "page_id": 8,
+      "polygon": [
+        [
+          119.25,
+          416.25
+        ],
+        [
+          226.5,
+          416.25
+        ],
+        [
+          226.5,
+          426.0
+        ],
+        [
+          119.25,
+          426.0
+        ]
+      ]
+    },
+    {
+      "title": "Proofs",
+      "heading_level": null,
+      "page_id": 8,
+      "polygon": [
+        [
+          420.75,
+          401.02734375
+        ],
+        [
+          456.01171875,
+          401.02734375
+        ],
+        [
+          456.01171875,
+          412.5
+        ],
+        [
+          420.75,
+          412.5
+        ]
+      ]
+    },
+    {
+      "title": "Proof of Lemma 1",
+      "heading_level": null,
+      "page_id": 8,
+      "polygon": [
+        [
+          315.861328125,
+          431.96484375
+        ],
+        [
+          403.5,
+          431.96484375
+        ],
+        [
+          403.5,
+          441.75
+        ],
+        [
+          315.861328125,
+          441.75
+        ]
+      ]
+    },
+    {
+      "title": "Proof of Lemma 2",
+      "heading_level": null,
+      "page_id": 8,
+      "polygon": [
+        [
+          318.0,
+          543.33984375
+        ],
+        [
+          404.25,
+          543.33984375
+        ],
+        [
+          404.25,
+          552.0
+        ],
+        [
+          318.0,
+          552.0
+        ]
+      ]
+    },
+    {
+      "title": "Proof of Lemma 3",
+      "heading_level": null,
+      "page_id": 9,
+      "polygon": [
+        [
+          318.0,
+          333.75
+        ],
+        [
+          404.25,
+          333.75
+        ],
+        [
+          404.25,
+          343.01953125
+        ],
+        [
+          318.0,
+          343.01953125
+        ]
+      ]
+    },
+    {
+      "title": "Kuhn Example",
+      "heading_level": null,
+      "page_id": 10,
+      "polygon": [
+        [
+          133.5,
+          458.25
+        ],
+        [
+          212.25,
+          458.25
+        ],
+        [
+          212.25,
+          469.08984375
+        ],
+        [
+          133.5,
+          469.08984375
+        ]
+      ]
+    }
+  ],
+  "page_stats": [
+    {
+      "page_id": 0,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          97
+        ],
+        [
+          "Span",
+          58
+        ],
+        [
+          "Text",
+          7
+        ],
+        [
+          "SectionHeader",
+          3
+        ],
+        [
+          "PageHeader",
+          1
+        ],
+        [
+          "Picture",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "PictureGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 1,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Span",
+          150
+        ],
+        [
+          "Line",
+          131
+        ],
+        [
+          "Text",
+          16
+        ],
+        [
+          "SectionHeader",
+          2
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 2,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Span",
+          197
+        ],
+        [
+          "Line",
+          115
+        ],
+        [
+          "Text",
+          14
+        ],
+        [
+          "Equation",
+          6
+        ],
+        [
+          "SectionHeader",
+          4
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 3,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          112
+        ],
+        [
+          "Span",
+          83
+        ],
+        [
+          "Text",
+          18
+        ],
+        [
+          "Equation",
+          7
+        ],
+        [
+          "SectionHeader",
+          2
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 4,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Span",
+          113
+        ],
+        [
+          "Line",
+          101
+        ],
+        [
+          "Text",
+          11
+        ],
+        [
+          "ListItem",
+          9
+        ],
+        [
+          "Equation",
+          3
+        ],
+        [
+          "SectionHeader",
+          3
+        ],
+        [
+          "Figure",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "FigureGroup",
+          1
+        ],
+        [
+          "ListGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 5,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          110
+        ],
+        [
+          "Span",
+          39
+        ],
+        [
+          "Text",
+          6
+        ],
+        [
+          "SectionHeader",
+          4
+        ],
+        [
+          "Figure",
+          2
+        ],
+        [
+          "Caption",
+          2
+        ],
+        [
+          "FigureGroup",
+          2
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 6,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          130
+        ],
+        [
+          "Span",
+          58
+        ],
+        [
+          "Text",
+          15
+        ],
+        [
+          "Figure",
+          2
+        ],
+        [
+          "Caption",
+          2
+        ],
+        [
+          "FigureGroup",
+          2
+        ],
+        [
+          "SectionHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 7,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          133
+        ],
+        [
+          "Span",
+          66
+        ],
+        [
+          "ListItem",
+          24
+        ],
+        [
+          "ListGroup",
+          2
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 8,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Line",
+          111
+        ],
+        [
+          "Span",
+          60
+        ],
+        [
+          "Text",
+          11
+        ],
+        [
+          "SectionHeader",
+          6
+        ],
+        [
+          "Equation",
+          2
+        ],
+        [
+          "Figure",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "FigureGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 9,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Span",
+          99
+        ],
+        [
+          "Line",
+          85
+        ],
+        [
+          "Text",
+          15
+        ],
+        [
+          "Equation",
+          7
+        ],
+        [
+          "SectionHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 10,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "Span",
+          38
+        ],
+        [
+          "Line",
+          37
+        ],
+        [
+          "Text",
+          6
+        ],
+        [
+          "Equation",
+          2
+        ],
+        [
+          "SectionHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 11,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "TableCell",
+          49
+        ],
+        [
+          "Span",
+          15
+        ],
+        [
+          "Line",
+          12
+        ],
+        [
+          "Table",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "TableGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 12,
+      "text_extraction_method": "surya",
+      "block_counts": [
+        [
+          "TableCell",
+          49
+        ],
+        [
+          "Span",
+          23
+        ],
+        [
+          "Line",
+          6
+        ],
+        [
+          "Table",
+          1
+        ],
+        [
+          "Caption",
+          1
+        ],
+        [
+          "TableGroup",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    }
+  ],
+  "debug_data_path": "debug_data/VR-MCCFR"
+}

@@ -1,0 +1,285 @@
+Optional module pokerkit_wrapper was not importable: No module named 'pokerkit'
+ISGT Ablation: 208 jobs (192 ISGT + 16 OOS baseline)
+  Games: ['kuhn_poker', 'leduc_poker', 'liars_dice', 'goofspiel']
+  Matches per game: {kuhn_poker: 500, leduc_poker: 300, liars_dice: 100, goofspiel: 300}
+  Workers: 6
+  Budgets: [100, 250, 500, 1000]
+  Decays: ['exp_0.3', 'exp_0.5', 'exp_0.7', 'poly_2', 'linear_4', 'constant']
+
+Optional module pokerkit_wrapper was not importable: No module named 'pokerkit'
+Optional module pokerkit_wrapper was not importable: No module named 'pokerkit'
+Optional module pokerkit_wrapper was not importable: No module named 'pokerkit'
+Optional module pokerkit_wrapper was not importable: No module named 'pokerkit'
+Optional module pokerkit_wrapper was not importable: No module named 'pokerkit'
+Optional module pokerkit_wrapper was not importable: No module named 'pokerkit'
+  [   1/208] kuhn_poker      chance_exp_0.3            sims=  100  expl=0.198766  (3.8s)  ETA 13.8m
+  [   2/208] kuhn_poker      chance_exp_0.5            sims=  100  expl=0.186847  (3.8s)  ETA 7.0m
+  [   3/208] kuhn_poker      chance_exp_0.5            sims=  250  expl=0.144213  (8.7s)  ETA 10.2m
+  [   4/208] kuhn_poker      chance_exp_0.3            sims=  250  expl=0.157592  (8.8s)  ETA 7.7m
+  [   5/208] kuhn_poker      chance_exp_0.7            sims=  100  expl=0.185552  (3.7s)  ETA 8.5m
+  [   6/208] kuhn_poker      chance_exp_0.3            sims=  500  expl=0.119209  (17.4s)  ETA 9.9m
+  [   7/208] kuhn_poker      chance_exp_0.7            sims=  250  expl=0.145280  (8.7s)  ETA 8.5m
+  [   8/208] kuhn_poker      chance_poly_2             sims=  100  expl=0.201173  (3.4s)  ETA 8.8m
+  [   9/208] kuhn_poker      chance_exp_0.5            sims=  500  expl=0.105063  (17.5s)  ETA 7.9m
+  [  10/208] kuhn_poker      chance_exp_0.7            sims=  500  expl=0.100027  (17.2s)  ETA 9.9m
+  [  11/208] kuhn_poker      chance_poly_2             sims=  250  expl=0.163075  (8.9s)  ETA 9.0m
+  [  12/208] kuhn_poker      chance_linear_4           sims=  100  expl=0.188134  (3.6s)  ETA 9.2m
+  [  13/208] kuhn_poker      chance_exp_0.3            sims= 1000  expl=0.085310  (36.1s)  ETA 9.1m
+  [  14/208] kuhn_poker      chance_poly_2             sims=  500  expl=0.123628  (17.4s)  ETA 9.0m
+  [  15/208] kuhn_poker      chance_exp_0.5            sims= 1000  expl=0.066038  (35.8s)  ETA 8.5m
+  [  16/208] kuhn_poker      chance_linear_4           sims=  250  expl=0.138816  (8.9s)  ETA 8.5m
+  [  17/208] kuhn_poker      chance_constant           sims=  100  expl=0.188885  (3.6s)  ETA 8.1m
+  [  18/208] kuhn_poker      chance_constant           sims=  250  expl=0.140459  (8.8s)  ETA 9.0m
+  [  19/208] kuhn_poker      chance_exp_0.7            sims= 1000  expl=0.065381  (34.8s)  ETA 8.7m
+  [  20/208] kuhn_poker      chance_linear_4           sims=  500  expl=0.102023  (17.6s)  ETA 8.5m
+  [  21/208] kuhn_poker      full_exp_0.3              sims=  100  expl=0.216194  (2.2s)  ETA 8.1m
+  [  22/208] kuhn_poker      full_exp_0.3              sims=  250  expl=0.185729  (5.4s)  ETA 8.4m
+  [  23/208] kuhn_poker      chance_constant           sims=  500  expl=0.097399  (17.9s)  ETA 8.2m
+  [  24/208] kuhn_poker      full_exp_0.5              sims=  100  expl=0.206966  (4.1s)  ETA 8.3m
+  [  25/208] kuhn_poker      full_exp_0.3              sims=  500  expl=0.145322  (12.9s)  ETA 8.3m
+  [  26/208] kuhn_poker      chance_poly_2             sims= 1000  expl=0.083830  (38.7s)  ETA 8.0m
+  [  27/208] kuhn_poker      full_exp_0.5              sims=  250  expl=0.170704  (7.0s)  ETA 8.1m
+  [  28/208] kuhn_poker      full_exp_0.7              sims=  100  expl=0.214133  (2.3s)  ETA 8.0m
+  [  29/208] kuhn_poker      chance_linear_4           sims= 1000  expl=0.061781  (37.4s)  ETA 7.9m
+  [  30/208] kuhn_poker      full_exp_0.5              sims=  500  expl=0.130679  (12.2s)  ETA 7.9m
+  [  31/208] kuhn_poker      full_exp_0.7              sims=  250  expl=0.170119  (5.8s)  ETA 7.6m
+  [  32/208] kuhn_poker      full_poly_2               sims=  100  expl=0.210872  (2.4s)  ETA 7.6m
+  [  33/208] kuhn_poker      full_exp_0.3              sims= 1000  expl=0.107899  (25.3s)  ETA 7.5m
+  [  34/208] kuhn_poker      full_exp_0.7              sims=  500  expl=0.134321  (10.8s)  ETA 7.4m
+  [  35/208] kuhn_poker      full_poly_2               sims=  250  expl=0.179662  (5.9s)  ETA 7.3m
+  [  36/208] kuhn_poker      chance_constant           sims= 1000  expl=0.061371  (39.5s)  ETA 7.2m
+  [  37/208] kuhn_poker      full_exp_0.5              sims= 1000  expl=0.089824  (22.5s)  ETA 7.0m
+  [  38/208] kuhn_poker      full_linear_4             sims=  100  expl=0.215227  (2.6s)  ETA 6.8m
+  [  39/208] kuhn_poker      full_poly_2               sims=  500  expl=0.147199  (11.4s)  ETA 6.9m
+  [  40/208] kuhn_poker      full_linear_4             sims=  250  expl=0.172335  (5.6s)  ETA 6.7m
+  [  41/208] kuhn_poker      full_constant             sims=  100  expl=0.210860  (2.4s)  ETA 6.7m
+  [  42/208] kuhn_poker      full_constant             sims=  250  expl=0.171125  (5.3s)  ETA 6.7m
+  [  43/208] kuhn_poker      full_linear_4             sims=  500  expl=0.133167  (10.8s)  ETA 6.5m
+  [  44/208] kuhn_poker      full_exp_0.7              sims= 1000  expl=0.088525  (22.3s)  ETA 6.3m
+  [  45/208] kuhn_poker      oos                       sims=  100  expl=0.196744  (3.6s)  ETA 6.4m
+  [  46/208] kuhn_poker      full_constant             sims=  500  expl=0.128583  (11.1s)  ETA 6.4m
+  [  47/208] kuhn_poker      full_poly_2               sims= 1000  expl=0.109231  (22.6s)  ETA 6.3m
+  [  48/208] kuhn_poker      oos                       sims=  250  expl=0.163949  (8.8s)  ETA 6.2m
+  [  49/208] kuhn_poker      full_linear_4             sims= 1000  expl=0.088872  (22.4s)  ETA 6.1m
+  [  50/208] kuhn_poker      oos                       sims=  500  expl=0.125160  (18.7s)  ETA 6.5m
+  [  51/208] kuhn_poker      full_constant             sims= 1000  expl=0.086980  (22.6s)  ETA 6.4m
+  [  52/208] leduc_poker     chance_exp_0.3            sims=  100  expl=2.454742  (15.5s)  ETA 6.3m
+  [  53/208] leduc_poker     chance_exp_0.5            sims=  100  expl=2.465087  (17.1s)  ETA 6.9m
+  [  54/208] leduc_poker     chance_exp_0.3            sims=  250  expl=2.389170  (35.2s)  ETA 6.9m
+  [  55/208] kuhn_poker      oos                       sims= 1000  expl=0.088382  (39.4s)  ETA 6.9m
+  [  56/208] leduc_poker     chance_exp_0.5            sims=  250  expl=2.418144  (35.4s)  ETA 7.3m
+  [  57/208] leduc_poker     chance_exp_0.7            sims=  100  expl=2.447351  (15.1s)  ETA 7.2m
+  [  58/208] leduc_poker     chance_exp_0.3            sims=  500  expl=2.241732  (64.5s)  ETA 7.7m
+  [  59/208] leduc_poker     chance_exp_0.7            sims=  250  expl=2.416272  (35.5s)  ETA 8.3m
+  [  60/208] leduc_poker     chance_exp_0.5            sims=  500  expl=2.236240  (66.1s)  ETA 8.5m
+  [  61/208] leduc_poker     chance_poly_2             sims=  100  expl=2.466872  (15.7s)  ETA 8.5m
+  [  62/208] leduc_poker     chance_exp_0.7            sims=  500  expl=2.230971  (66.8s)  ETA 9.1m
+  [  63/208] leduc_poker     chance_poly_2             sims=  250  expl=2.425779  (33.2s)  ETA 9.2m
+  [  64/208] leduc_poker     chance_exp_0.3            sims= 1000  expl=1.993748  (130.6s)  ETA 9.6m
+  [  65/208] leduc_poker     chance_linear_4           sims=  100  expl=2.457115  (17.0s)  ETA 9.5m
+  [  66/208] leduc_poker     chance_exp_0.5            sims= 1000  expl=1.986256  (129.3s)  ETA 9.9m
+  [  67/208] leduc_poker     chance_poly_2             sims=  500  expl=2.253044  (66.4s)  ETA 9.8m
+  [  68/208] leduc_poker     chance_linear_4           sims=  250  expl=2.401555  (32.7s)  ETA 9.9m
+  [  69/208] leduc_poker     chance_constant           sims=  100  expl=2.487256  (15.6s)  ETA 9.9m
+  [  70/208] leduc_poker     chance_exp_0.7            sims= 1000  expl=1.999926  (122.9s)  ETA 9.9m
+  [  71/208] leduc_poker     chance_constant           sims=  250  expl=2.387895  (34.7s)  ETA 10.4m
+  [  72/208] leduc_poker     chance_linear_4           sims=  500  expl=2.241362  (66.7s)  ETA 10.2m
+  [  73/208] leduc_poker     full_exp_0.3              sims=  100  expl=2.277829  (12.3s)  ETA 10.3m
+  [  74/208] leduc_poker     full_exp_0.3              sims=  250  expl=2.155796  (25.2s)  ETA 10.6m
+  [  75/208] leduc_poker     chance_constant           sims=  500  expl=2.241293  (64.3s)  ETA 10.6m
+  [  76/208] leduc_poker     chance_poly_2             sims= 1000  expl=2.014629  (130.8s)  ETA 10.5m
+  [  77/208] leduc_poker     full_exp_0.5              sims=  100  expl=2.251330  (15.6s)  ETA 10.6m
+  [  78/208] leduc_poker     full_exp_0.3              sims=  500  expl=1.998017  (50.4s)  ETA 10.7m
+  [  79/208] leduc_poker     full_exp_0.5              sims=  250  expl=2.105717  (29.4s)  ETA 10.6m
+  [  80/208] leduc_poker     chance_linear_4           sims= 1000  expl=2.045367  (126.2s)  ETA 10.7m
+  [  81/208] leduc_poker     full_exp_0.7              sims=  100  expl=2.244634  (12.5s)  ETA 10.6m
+  [  82/208] leduc_poker     full_exp_0.5              sims=  500  expl=2.000483  (47.6s)  ETA 10.8m
+  [  83/208] leduc_poker     chance_constant           sims= 1000  expl=1.985273  (124.6s)  ETA 10.7m
+  [  84/208] leduc_poker     full_exp_0.7              sims=  250  expl=2.110608  (27.7s)  ETA 10.6m
+  [  85/208] leduc_poker     full_poly_2               sims=  100  expl=2.202671  (14.2s)  ETA 10.6m
+  [  86/208] leduc_poker     full_exp_0.3              sims= 1000  expl=1.856275  (94.2s)  ETA 10.5m
+  [  87/208] leduc_poker     full_exp_0.7              sims=  500  expl=1.979942  (50.4s)  ETA 10.5m
+  [  88/208] leduc_poker     full_poly_2               sims=  250  expl=2.130121  (25.5s)  ETA 10.3m
+  [  89/208] leduc_poker     full_linear_4             sims=  100  expl=2.247091  (13.2s)  ETA 10.4m
+  [  90/208] leduc_poker     full_exp_0.5              sims= 1000  expl=1.846351  (93.4s)  ETA 10.5m
+  [  91/208] leduc_poker     full_linear_4             sims=  250  expl=2.152744  (25.0s)  ETA 10.3m
+  [  92/208] leduc_poker     full_poly_2               sims=  500  expl=1.969132  (49.6s)  ETA 10.3m
+  [  93/208] leduc_poker     full_constant             sims=  100  expl=2.216016  (14.6s)  ETA 10.2m
+  [  94/208] leduc_poker     full_exp_0.7              sims= 1000  expl=1.856002  (91.8s)  ETA 10.4m
+  [  95/208] leduc_poker     full_constant             sims=  250  expl=2.130892  (25.1s)  ETA 10.2m
+  [  96/208] leduc_poker     full_linear_4             sims=  500  expl=2.019813  (48.3s)  ETA 10.0m
+  [  97/208] leduc_poker     oos                       sims=  100  expl=2.451272  (7.4s)  ETA 10.0m
+  [  98/208] leduc_poker     oos                       sims=  250  expl=2.219761  (19.1s)  ETA 10.0m
+  [  99/208] leduc_poker     full_poly_2               sims= 1000  expl=1.835389  (96.5s)  ETA 9.9m
+  [ 100/208] leduc_poker     full_constant             sims=  500  expl=2.011910  (47.9s)  ETA 9.8m
+  [ 101/208] leduc_poker     oos                       sims=  500  expl=2.089944  (37.7s)  ETA 9.9m
+  [ 102/208] leduc_poker     full_linear_4             sims= 1000  expl=1.890680  (90.9s)  ETA 9.9m
+  [ 103/208] leduc_poker     full_constant             sims= 1000  expl=1.854289  (91.0s)  ETA 10.3m
+  [ 104/208] leduc_poker     oos                       sims= 1000  expl=1.768221  (78.9s)  ETA 10.2m
+  [ 105/208] liars_dice      chance_exp_0.3            sims=  100  expl=0.763860  (75.0s)  ETA 10.1m
+  [ 106/208] liars_dice      chance_exp_0.3            sims=  250  expl=0.749213  (113.5s)  ETA 10.5m
+  [ 107/208] liars_dice      chance_exp_0.5            sims=  100  expl=0.766867  (77.4s)  ETA 10.8m
+  [ 108/208] liars_dice      chance_exp_0.5            sims=  250  expl=0.748609  (121.0s)  ETA 11.4m
+  [ 109/208] liars_dice      chance_exp_0.3            sims=  500  expl=0.732254  (184.7s)  ETA 11.3m
+  [ 110/208] liars_dice      chance_exp_0.7            sims=  100  expl=0.767348  (75.1s)  ETA 11.3m
+  [ 111/208] liars_dice      chance_exp_0.5            sims=  500  expl=0.731676  (191.3s)  ETA 11.8m
+  [ 112/208] liars_dice      chance_exp_0.7            sims=  250  expl=0.747143  (119.0s)  ETA 12.2m
+  [ 113/208] liars_dice      chance_poly_2             sims=  100  expl=0.768537  (77.7s)  ETA 12.5m
+  [ 114/208] liars_dice      chance_exp_0.3            sims= 1000  expl=0.701474  (344.7s)  ETA 12.6m
+  [ 115/208] liars_dice      chance_exp_0.7            sims=  500  expl=0.734323  (184.9s)  ETA 12.6m
+  [ 116/208] liars_dice      chance_poly_2             sims=  250  expl=0.745914  (117.8s)  ETA 12.9m
+  [ 117/208] liars_dice      chance_linear_4           sims=  100  expl=0.764895  (73.1s)  ETA 13.1m
+  [ 118/208] liars_dice      chance_exp_0.5            sims= 1000  expl=0.703881  (361.8s)  ETA 13.0m
+  [ 119/208] liars_dice      chance_poly_2             sims=  500  expl=0.722060  (189.4s)  ETA 13.5m
+  [ 120/208] liars_dice      chance_linear_4           sims=  250  expl=0.751568  (125.3s)  ETA 13.5m
+  [ 121/208] liars_dice      chance_exp_0.7            sims= 1000  expl=0.705300  (348.7s)  ETA 13.3m
+  [ 122/208] liars_dice      chance_constant           sims=  100  expl=0.765295  (78.6s)  ETA 13.6m
+  [ 123/208] liars_dice      chance_linear_4           sims=  500  expl=0.731076  (197.1s)  ETA 13.9m
+  [ 124/208] liars_dice      chance_constant           sims=  250  expl=0.746679  (118.2s)  ETA 13.8m
+  [ 125/208] liars_dice      chance_poly_2             sims= 1000  expl=0.707652  (329.4s)  ETA 13.8m
+  [ 126/208] liars_dice      full_exp_0.3              sims=  100  expl=0.774378  (79.7s)  ETA 14.0m
+  [ 127/208] liars_dice      chance_constant           sims=  500  expl=0.728862  (189.7s)  ETA 13.8m
+  [ 128/208] liars_dice      full_exp_0.3              sims=  250  expl=0.769975  (121.5s)  ETA 14.0m
+  [ 129/208] liars_dice      chance_linear_4           sims= 1000  expl=0.708308  (337.1s)  ETA 13.9m
+  [ 130/208] liars_dice      full_exp_0.5              sims=  100  expl=0.771400  (75.2s)  ETA 13.8m
+  [ 131/208] liars_dice      full_exp_0.3              sims=  500  expl=0.768537  (199.4s)  ETA 14.2m
+  [ 132/208] liars_dice      full_exp_0.5              sims=  250  expl=0.771935  (120.4s)  ETA 14.1m
+  [ 133/208] liars_dice      chance_constant           sims= 1000  expl=0.702215  (348.3s)  ETA 14.2m
+  [ 134/208] liars_dice      full_exp_0.7              sims=  100  expl=0.775984  (77.3s)  ETA 14.1m
+  [ 135/208] liars_dice      full_exp_0.5              sims=  500  expl=0.769087  (197.0s)  ETA 14.0m
+  [ 136/208] liars_dice      full_exp_0.7              sims=  250  expl=0.776154  (124.8s)  ETA 14.1m
+  [ 137/208] liars_dice      full_poly_2               sims=  100  expl=0.773749  (81.3s)  ETA 14.2m
+  [ 138/208] liars_dice      full_exp_0.3              sims= 1000  expl=0.762820  (372.2s)  ETA 14.1m
+  [ 139/208] liars_dice      full_exp_0.7              sims=  500  expl=0.773484  (203.8s)  ETA 14.2m
+  [ 140/208] liars_dice      full_poly_2               sims=  250  expl=0.774627  (124.1s)  ETA 13.9m
+  [ 141/208] liars_dice      full_exp_0.5              sims= 1000  expl=0.762112  (353.4s)  ETA 13.7m
+  [ 142/208] liars_dice      full_linear_4             sims=  100  expl=0.777780  (76.5s)  ETA 13.9m
+  [ 143/208] liars_dice      full_poly_2               sims=  500  expl=0.773080  (197.1s)  ETA 13.9m
+  [ 144/208] liars_dice      full_linear_4             sims=  250  expl=0.773401  (120.8s)  ETA 13.7m
+  [ 145/208] liars_dice      full_exp_0.7              sims= 1000  expl=0.769311  (343.6s)  ETA 13.6m
+  [ 146/208] liars_dice      full_constant             sims=  100  expl=0.777650  (74.4s)  ETA 13.6m
+  [ 147/208] liars_dice      full_linear_4             sims=  500  expl=0.774631  (202.7s)  ETA 13.4m
+  [ 148/208] liars_dice      oos                       sims=  100  expl=0.781400  (9.4s)  ETA 13.2m
+  [ 149/208] liars_dice      oos                       sims=  250  expl=0.758565  (12.0s)  ETA 12.9m
+  [ 150/208] liars_dice      full_constant             sims=  250  expl=0.766787  (116.8s)  ETA 12.7m
+  [ 151/208] liars_dice      oos                       sims=  500  expl=0.747377  (15.3s)  ETA 12.4m
+  [ 152/208] liars_dice      oos                       sims= 1000  expl=0.691179  (24.0s)  ETA 12.2m
+  [ 153/208] goofspiel       chance_exp_0.3            sims=  100  expl=0.327679  (15.9s)  ETA 11.9m
+  [ 154/208] liars_dice      full_poly_2               sims= 1000  expl=0.769490  (357.1s)  ETA 11.8m
+  [ 155/208] goofspiel       chance_exp_0.3            sims=  250  expl=0.195733  (38.0s)  ETA 11.5m
+  [ 156/208] goofspiel       chance_exp_0.5            sims=  100  expl=0.313703  (14.7s)  ETA 11.3m
+  [ 157/208] goofspiel       chance_exp_0.3            sims=  500  expl=0.136475  (70.6s)  ETA 11.2m
+  [ 158/208] liars_dice      full_constant             sims=  500  expl=0.765048  (203.2s)  ETA 11.0m
+  [ 159/208] goofspiel       chance_exp_0.5            sims=  250  expl=0.186890  (37.6s)  ETA 10.7m
+  [ 160/208] goofspiel       chance_exp_0.7            sims=  100  expl=0.311641  (14.5s)  ETA 10.5m
+  [ 161/208] goofspiel       chance_exp_0.7            sims=  250  expl=0.185491  (34.6s)  ETA 10.3m
+  [ 162/208] goofspiel       chance_exp_0.5            sims=  500  expl=0.125087  (68.1s)  ETA 10.1m
+  [ 163/208] liars_dice      full_linear_4             sims= 1000  expl=0.769185  (347.3s)  ETA 9.9m
+  [ 164/208] goofspiel       chance_poly_2             sims=  100  expl=0.321015  (14.4s)  ETA 9.7m
+  [ 165/208] goofspiel       chance_exp_0.3            sims= 1000  expl=0.091361  (137.8s)  ETA 9.4m
+  [ 166/208] goofspiel       chance_poly_2             sims=  250  expl=0.192142  (34.9s)  ETA 9.3m
+  [ 167/208] goofspiel       chance_exp_0.7            sims=  500  expl=0.126810  (69.1s)  ETA 9.0m
+  [ 168/208] goofspiel       chance_linear_4           sims=  100  expl=0.330085  (14.9s)  ETA 8.8m
+  [ 169/208] goofspiel       chance_exp_0.5            sims= 1000  expl=0.084390  (136.1s)  ETA 8.5m
+  [ 170/208] goofspiel       chance_poly_2             sims=  500  expl=0.131785  (68.4s)  ETA 8.3m
+  [ 171/208] goofspiel       chance_linear_4           sims=  250  expl=0.194843  (35.1s)  ETA 8.1m
+  [ 172/208] liars_dice      full_constant             sims= 1000  expl=0.764585  (340.1s)  ETA 7.9m
+  [ 173/208] goofspiel       chance_constant           sims=  100  expl=0.312074  (18.1s)  ETA 7.6m
+  [ 174/208] goofspiel       chance_exp_0.7            sims= 1000  expl=0.082770  (139.4s)  ETA 7.4m
+  [ 175/208] goofspiel       chance_linear_4           sims=  500  expl=0.169264  (73.3s)  ETA 7.2m
+  [ 176/208] goofspiel       chance_constant           sims=  250  expl=0.181312  (35.7s)  ETA 6.9m
+  [ 177/208] goofspiel       full_exp_0.3              sims=  100  expl=0.634584  (8.6s)  ETA 6.7m
+  [ 178/208] goofspiel       full_exp_0.3              sims=  250  expl=0.576385  (20.2s)  ETA 6.5m
+  [ 179/208] goofspiel       full_exp_0.3              sims=  500  expl=0.502830  (39.1s)  ETA 6.3m
+  [ 180/208] goofspiel       chance_constant           sims=  500  expl=0.125173  (71.1s)  ETA 6.1m
+  [ 181/208] goofspiel       chance_poly_2             sims= 1000  expl=0.086759  (141.8s)  ETA 5.8m
+  [ 182/208] goofspiel       full_exp_0.5              sims=  100  expl=0.634721  (8.6s)  ETA 5.6m
+  [ 183/208] goofspiel       full_exp_0.5              sims=  250  expl=0.560110  (20.3s)  ETA 5.4m
+  [ 184/208] goofspiel       full_exp_0.7              sims=  100  expl=0.614403  (8.7s)  ETA 5.1m
+  [ 185/208] goofspiel       chance_linear_4           sims= 1000  expl=0.108762  (141.9s)  ETA 4.9m
+  [ 186/208] goofspiel       full_exp_0.5              sims=  500  expl=0.484743  (39.5s)  ETA 4.7m
+  [ 187/208] goofspiel       full_exp_0.7              sims=  250  expl=0.565600  (19.9s)  ETA 4.5m
+  [ 188/208] goofspiel       full_exp_0.3              sims= 1000  expl=0.419729  (77.7s)  ETA 4.2m
+  [ 189/208] goofspiel       full_poly_2               sims=  100  expl=0.626634  (8.6s)  ETA 4.0m
+  [ 190/208] goofspiel       chance_constant           sims= 1000  expl=0.081089  (138.2s)  ETA 3.8m
+  [ 191/208] goofspiel       full_exp_0.7              sims=  500  expl=0.492401  (39.3s)  ETA 3.6m
+  [ 192/208] goofspiel       full_poly_2               sims=  250  expl=0.575414  (20.2s)  ETA 3.3m
+  [ 193/208] goofspiel       full_linear_4             sims=  100  expl=0.631204  (8.6s)  ETA 3.1m
+  [ 194/208] goofspiel       full_exp_0.5              sims= 1000  expl=0.398244  (77.7s)  ETA 2.9m
+  [ 195/208] goofspiel       full_linear_4             sims=  250  expl=0.610945  (20.1s)  ETA 2.7m
+  [ 196/208] goofspiel       full_poly_2               sims=  500  expl=0.492412  (39.5s)  ETA 2.5m
+  [ 197/208] goofspiel       full_constant             sims=  100  expl=0.626709  (8.8s)  ETA 2.3m
+  [ 198/208] goofspiel       full_constant             sims=  250  expl=0.557818  (20.1s)  ETA 2.1m
+  [ 199/208] goofspiel       full_exp_0.7              sims= 1000  expl=0.399422  (78.2s)  ETA 1.8m
+  [ 200/208] goofspiel       full_linear_4             sims=  500  expl=0.493097  (39.1s)  ETA 1.6m
+  [ 201/208] goofspiel       oos                       sims=  100  expl=0.293154  (11.6s)  ETA 1.4m
+  [ 202/208] goofspiel       full_constant             sims=  500  expl=0.487250  (39.2s)  ETA 1.2m
+  [ 203/208] goofspiel       full_poly_2               sims= 1000  expl=0.411747  (77.5s)  ETA 1.0m
+  [ 204/208] goofspiel       oos                       sims=  250  expl=0.170311  (29.8s)  ETA 0.8m
+  [ 205/208] goofspiel       full_linear_4             sims= 1000  expl=0.405193  (74.8s)  ETA 0.6m
+  [ 206/208] goofspiel       oos                       sims=  500  expl=0.125781  (49.9s)  ETA 0.4m
+  [ 207/208] goofspiel       full_constant             sims= 1000  expl=0.397090  (65.4s)  ETA 0.2m
+  [ 208/208] goofspiel       oos                       sims= 1000  expl=0.091964  (85.9s)  ETA 0.0m
+
+Done in 42.8 minutes (208 completed, 0 failed).
+Results saved to results/isgt_ablation_full/
+
+=============================================================================================
+Game            Config                        sims=100     sims=250     sims=500    sims=1000
+=============================================================================================
+kuhn_poker      chance_constant               0.188885    0.140459    0.097399    0.061371
+kuhn_poker      chance_exp_0.3                0.198766    0.157592    0.119209    0.085310
+kuhn_poker      chance_exp_0.5                0.186847    0.144213    0.105063    0.066038
+kuhn_poker      chance_exp_0.7                0.185552    0.145280    0.100027    0.065381
+kuhn_poker      chance_linear_4               0.188134    0.138816    0.102023    0.061781
+kuhn_poker      chance_poly_2                 0.201173    0.163075    0.123628    0.083830
+kuhn_poker      full_constant                 0.210860    0.171125    0.128583    0.086980
+kuhn_poker      full_exp_0.3                  0.216194    0.185729    0.145322    0.107899
+kuhn_poker      full_exp_0.5                  0.206966    0.170704    0.130679    0.089824
+kuhn_poker      full_exp_0.7                  0.214133    0.170119    0.134321    0.088525
+kuhn_poker      full_linear_4                 0.215227    0.172335    0.133167    0.088872
+kuhn_poker      full_poly_2                   0.210872    0.179662    0.147199    0.109231
+kuhn_poker      oos                           0.196744    0.163949    0.125160    0.088382
+
+leduc_poker     chance_constant               2.487256    2.387895    2.241293    1.985273
+leduc_poker     chance_exp_0.3                2.454742    2.389170    2.241732    1.993748
+leduc_poker     chance_exp_0.5                2.465087    2.418144    2.236240    1.986256
+leduc_poker     chance_exp_0.7                2.447351    2.416272    2.230971    1.999926
+leduc_poker     chance_linear_4               2.457115    2.401555    2.241362    2.045367
+leduc_poker     chance_poly_2                 2.466872    2.425779    2.253044    2.014629
+leduc_poker     full_constant                 2.216016    2.130892    2.011910    1.854289
+leduc_poker     full_exp_0.3                  2.277829    2.155796    1.998017    1.856275
+leduc_poker     full_exp_0.5                  2.251330    2.105717    2.000483    1.846351
+leduc_poker     full_exp_0.7                  2.244634    2.110608    1.979942    1.856002
+leduc_poker     full_linear_4                 2.247091    2.152744    2.019813    1.890680
+leduc_poker     full_poly_2                   2.202671    2.130121    1.969132    1.835389
+leduc_poker     oos                           2.451272    2.219761    2.089944    1.768221
+
+liars_dice      chance_constant               0.765295    0.746679    0.728862    0.702215
+liars_dice      chance_exp_0.3                0.763860    0.749213    0.732254    0.701474
+liars_dice      chance_exp_0.5                0.766867    0.748609    0.731676    0.703881
+liars_dice      chance_exp_0.7                0.767348    0.747143    0.734323    0.705300
+liars_dice      chance_linear_4               0.764895    0.751568    0.731076    0.708308
+liars_dice      chance_poly_2                 0.768537    0.745914    0.722060    0.707652
+liars_dice      full_constant                 0.777650    0.766787    0.765048    0.764585
+liars_dice      full_exp_0.3                  0.774378    0.769975    0.768537    0.762820
+liars_dice      full_exp_0.5                  0.771400    0.771935    0.769087    0.762112
+liars_dice      full_exp_0.7                  0.775984    0.776154    0.773484    0.769311
+liars_dice      full_linear_4                 0.777780    0.773401    0.774631    0.769185
+liars_dice      full_poly_2                   0.773749    0.774627    0.773080    0.769490
+liars_dice      oos                           0.781400    0.758565    0.747377    0.691179
+
+goofspiel       chance_constant               0.312074    0.181312    0.125173    0.081089
+goofspiel       chance_exp_0.3                0.327679    0.195733    0.136475    0.091361
+goofspiel       chance_exp_0.5                0.313703    0.186890    0.125087    0.084390
+goofspiel       chance_exp_0.7                0.311641    0.185491    0.126810    0.082770
+goofspiel       chance_linear_4               0.330085    0.194843    0.169264    0.108762
+goofspiel       chance_poly_2                 0.321015    0.192142    0.131785    0.086759
+goofspiel       full_constant                 0.626709    0.557818    0.487250    0.397090
+goofspiel       full_exp_0.3                  0.634584    0.576385    0.502830    0.419729
+goofspiel       full_exp_0.5                  0.634721    0.560110    0.484743    0.398244
+goofspiel       full_exp_0.7                  0.614403    0.565600    0.492401    0.399422
+goofspiel       full_linear_4                 0.631204    0.610945    0.493097    0.405193
+goofspiel       full_poly_2                   0.626634    0.575414    0.492412    0.411747
+goofspiel       oos                           0.293154    0.170311    0.125781    0.091964
+
