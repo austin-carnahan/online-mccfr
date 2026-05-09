@@ -480,6 +480,11 @@ class MixtureLOTRBot(pyspiel.Bot):
         (sampled_idx, coin_diverge).  s-update is performed by the
         caller using the prefix rule (see module docstring).
         """
+        if tau >= 1.0:
+            return target_idx, False
+        if tau <= 0.0:
+            return int(self._rng.choice(num_actions, p=pi)), True
+
         u_coin = self._rng_uniform()
         coin_diverge = (u_coin >= tau)
         if not coin_diverge:
@@ -674,13 +679,17 @@ class MixtureLOTRBot(pyspiel.Bot):
         num_actions = len(actions)
         depth = len(state.history())
 
-        in_prefix = (not diverged) and (depth in self._depth_to_position) \
-            and (depth < len(self._match_history)) \
-            and (self._match_history[depth] in actions)
+        in_history = depth < len(self._match_history)
+        in_observable_position = depth in self._depth_to_position
+        target = self._match_history[depth] if in_history else None
+        target_idx = actions.index(target) if target in actions else None
+
+        in_prefix = (not diverged) and in_observable_position \
+            and (target_idx is not None)
+        illegal_prefix_target = (not diverged) and in_observable_position \
+            and in_history and (target_idx is None)
 
         if in_prefix:
-            target = self._match_history[depth]
-            target_idx = actions.index(target)
             d = self._depth_to_position[depth]
             tau_d = self._schedule.tau(d, self._D)
 
@@ -710,6 +719,46 @@ class MixtureLOTRBot(pyspiel.Bot):
                                      my_reach, rho * opp_reach,
                                      new_s, new_diverged)
             return (rho * x, l_out, u)
+        elif illegal_prefix_target:
+            # The match-history chance outcome is observable but impossible
+            # in the sampled state (e.g. P1's real Kuhn card was already
+            # dealt as hidden P0 card).  OOS treats this chance node as
+            # naturally sampled for both targeted and untargeted scenarios,
+            # but the prefix-position coin still decides whether later
+            # observable targets remain forced on this realized walk.
+            d = self._depth_to_position[depth]
+            tau_d = self._schedule.tau(d, self._D)
+            if tau_d >= 1.0:
+                miss = False
+            elif tau_d <= 0.0:
+                miss = True
+            else:
+                miss = self._rng_uniform() >= tau_d
+
+            sampled_idx = self._rng.choice(num_actions, p=probs_arr)
+            action = actions[sampled_idx]
+            rho = float(probs_arr[sampled_idx])
+            new_s = s * rho
+            new_diverged = miss
+
+            if self._tracking:
+                if miss:
+                    self._cur_prefix_survived = False
+                    self._cur_chance_diverged = True
+                    if self._cur_diverge_depth == -1:
+                        self._cur_diverge_depth = d
+                neg_log_q = -math.log(max(rho, 1e-300))
+                if d not in self._depth_neg_log_q_sum:
+                    self._depth_neg_log_q_sum[d] = 0.0
+                    self._depth_neg_log_q_count[d] = 0
+                self._depth_neg_log_q_sum[d] += neg_log_q
+                self._depth_neg_log_q_count[d] += 1
+
+            state.apply_action(action)
+            x, l_out, u = self._walk(state, update_player,
+                                     my_reach, rho * opp_reach,
+                                     new_s, new_diverged)
+            return (rho * x, l_out, u)
         else:
             # Hidden chance, beyond match history, or already diverged:
             # sample from natural π.  All arms multiply by ρ.
@@ -726,9 +775,8 @@ class MixtureLOTRBot(pyspiel.Bot):
             # zeroing those s[k].)
             if depth in self._depth_to_position \
                     and depth < len(self._match_history) \
-                    and self._match_history[depth] in actions:
+                    and target_idx is not None:
                 d = self._depth_to_position[depth]
-                target_idx = actions.index(self._match_history[depth])
                 # Re-derive new_s under the prefix rule (overwrite the
                 # naive ρ-multiplied version).
                 new_s = s.copy()

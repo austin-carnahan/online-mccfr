@@ -166,10 +166,9 @@ def _merge_bot_strategy(bot, player_id, global_strategy):
             avg_strat = tables[AVG_POLICY_INDEX]
             if avg_strat.sum() == 0:
                 continue
-            for p in range(len(global_strategy)):
-                if info_key not in global_strategy[p]:
-                    global_strategy[p][info_key] = np.zeros_like(avg_strat)
-                global_strategy[p][info_key] += avg_strat
+            if info_key not in global_strategy[player_id]:
+                global_strategy[player_id][info_key] = np.zeros_like(avg_strat)
+            global_strategy[player_id][info_key] += avg_strat
 
 
 def _compute_coverage(global_strategy, iig):
