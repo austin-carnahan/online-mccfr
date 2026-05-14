@@ -1,4 +1,4 @@
-"""Average-strategy delta parity diagnostic for OOS vs Mixture LOTR.
+"""Average-strategy delta parity diagnostic for OOS vs LOTR.
 
 Logs every opponent-node average-strategy update row:
 
@@ -9,7 +9,7 @@ where
     delta_avg = opp_reach * policy[a] / denominator
 
 OOS uses denominator = delta*s1 + (1-delta)*s2 at the opponent node.
-Mixture LOTR uses denominator = l_here = dot(arm_probs, s) at the same
+LOTR uses denominator = l_here = dot(arm_probs, s) at the same
 node. Regret and average-strategy updates are still applied, so this is
 a learning-run diagnostic rather than a frozen-policy diagnostic.
 """
@@ -22,9 +22,9 @@ from collections import defaultdict
 import numpy as np
 import pyspiel
 
-from src import mixture_lotr as mix_mod
+from src import lotr as lotr_mod
 from src import oos as oos_mod
-from src.mixture_lotr import MixtureLOTRBot, step
+from src.lotr import LOTRBot, step
 from src.oos import OOSBot
 
 
@@ -185,7 +185,7 @@ def install_oos_avg_trace(bot):
     bot._walk = walk_wrapper
 
 
-def install_mixture_avg_trace(bot):
+def install_lotr_avg_trace(bot):
     _install_episode_counter(bot, "_episode")
 
     orig_sample_realized_action = bot._sample_realized_action
@@ -226,18 +226,18 @@ def install_mixture_avg_trace(bot):
             x, l_out, u = bot._playout(state, update_player, new_s)
             return (x * uniform_p, l_out, u)
 
-        if mix_mod._HAS_FAST_OPS:
-            regrets_view = bot._infostates[info_key][mix_mod.REGRET_INDEX]
+        if lotr_mod._HAS_FAST_OPS:
+            regrets_view = bot._infostates[info_key][lotr_mod.REGRET_INDEX]
             if cur_player == update_player:
-                policy, sample_policy, _auto_idx = mix_mod.regret_match_sample_eps(
+                policy, sample_policy, _auto_idx = lotr_mod.regret_match_sample_eps(
                     regrets_view, bot._gamma, bot._epsilon, bot._rng)
             else:
-                policy, _auto_idx = mix_mod.regret_match_sample(
+                policy, _auto_idx = lotr_mod.regret_match_sample(
                     regrets_view, bot._gamma, bot._rng)
                 sample_policy = policy
         else:
             policy = bot._regret_matching(
-                bot._infostates[info_key][mix_mod.REGRET_INDEX])
+                bot._infostates[info_key][lotr_mod.REGRET_INDEX])
             if cur_player == update_player:
                 uniform = np.ones(num_actions, dtype=np.float64) / num_actions
                 sample_policy = bot._epsilon * uniform + (1.0 - bot._epsilon) * policy
@@ -285,26 +285,26 @@ def install_mixture_avg_trace(bot):
 
         if cur_player == update_player:
             W = u * opp_reach / max(l_out, 1e-30)
-            if mix_mod._HAS_FAST_OPS:
-                mix_mod.update_regrets(
-                    bot._infostates[info_key][mix_mod.REGRET_INDEX],
+            if lotr_mod._HAS_FAST_OPS:
+                lotr_mod.update_regrets(
+                    bot._infostates[info_key][lotr_mod.REGRET_INDEX],
                     sampled_idx, c, x, W, num_actions)
             else:
                 for action_idx in range(num_actions):
                     if action_idx == sampled_idx:
-                        bot._infostates[info_key][mix_mod.REGRET_INDEX][action_idx] += (c - x) * W
+                        bot._infostates[info_key][lotr_mod.REGRET_INDEX][action_idx] += (c - x) * W
                     else:
-                        bot._infostates[info_key][mix_mod.REGRET_INDEX][action_idx] += -x * W
+                        bot._infostates[info_key][lotr_mod.REGRET_INDEX][action_idx] += -x * W
         else:
             _record_avg_rows(bot, update_player, info_key, legal_actions,
                              sampled_idx, policy, opp_reach, l_here)
-            if mix_mod._HAS_FAST_OPS:
-                mix_mod.update_avg_strategy(
-                    bot._infostates[info_key][mix_mod.AVG_POLICY_INDEX],
+            if lotr_mod._HAS_FAST_OPS:
+                lotr_mod.update_avg_strategy(
+                    bot._infostates[info_key][lotr_mod.AVG_POLICY_INDEX],
                     policy, opp_reach, l_here, num_actions)
             else:
                 for action_idx in range(num_actions):
-                    bot._infostates[info_key][mix_mod.AVG_POLICY_INDEX][action_idx] += (
+                    bot._infostates[info_key][lotr_mod.AVG_POLICY_INDEX][action_idx] += (
                         opp_reach * policy[action_idx] / max(l_here, 1e-30)
                     )
 
@@ -319,7 +319,7 @@ def run_bot(name, factory, history):
     if name.startswith("OOS"):
         install_oos_avg_trace(bot)
     else:
-        install_mixture_avg_trace(bot)
+        install_lotr_avg_trace(bot)
     bot._num_simulations = N_ITERS
     bot.step_with_policy(state)
     return bot
@@ -394,9 +394,9 @@ def compare(label, history):
                                 epsilon=0.4, gamma=0.01, seed=SEED),
             history,
         ),
-        "v4": run_bot(
-            "v4_avg",
-            lambda game: MixtureLOTRBot(game, 0, num_simulations=N_ITERS,
+        "LOTR": run_bot(
+            "LOTR_avg",
+            lambda game: LOTRBot(game, 0, num_simulations=N_ITERS,
                                         schedule=step(0.5, 0), epsilon=0.4,
                                         gamma=0.01, seed=SEED),
             history,
@@ -404,15 +404,15 @@ def compare(label, history):
     }
 
     oos_records = bots["OOS"]._avg_records
-    mix_records = bots["v4"]._avg_records
-    mismatch_count, max_abs, first_mismatch = paired_compare(oos_records, mix_records)
+    lotr_records = bots["LOTR"]._avg_records
+    mismatch_count, max_abs, first_mismatch = paired_compare(oos_records, lotr_records)
     summaries = {name: summarize(bot._avg_records) for name, bot in bots.items()}
 
     print(f"iters={N_ITERS} seed={SEED} learning run "
           f"align_deterministic_tau={ALIGN_DETERMINISTIC_TAU}")
     print(f"OOS avg-records={len(oos_records)}")
-    print(f"v4  avg-records={len(mix_records)}  "
-          f"D={bots['v4']._D} depth_to_position={dict(bots['v4']._depth_to_position)}")
+    print(f"LOTR  avg-records={len(lotr_records)}  "
+          f"D={bots['LOTR']._D} depth_to_position={dict(bots['LOTR']._depth_to_position)}")
     print(f"paired row mismatches={mismatch_count}")
     print("max abs paired field diffs: " + "  ".join(
         f"{field}={max_abs[field]:.3g}" for field in FLOAT_FIELDS
@@ -426,22 +426,22 @@ def compare(label, history):
               f"sampled={left['sampled_action']} policy={left['policy']:.6f} "
               f"opp={left['opp_reach']:.6f} denom={left['denom']:.6f} "
               f"davg={left['delta_avg']:.6f}")
-        print(f"  v4  info={right['info']} action={right['action']} "
+        print(f"  LOTR  info={right['info']} action={right['action']} "
               f"sampled={right['sampled_action']} policy={right['policy']:.6f} "
               f"opp={right['opp_reach']:.6f} denom={right['denom']:.6f} "
               f"davg={right['delta_avg']:.6f}")
 
-    keys = sorted(set(summaries["OOS"]) | set(summaries["v4"]))
+    keys = sorted(set(summaries["OOS"]) | set(summaries["LOTR"]))
     print()
-    print(f"{'key':22s} {'n_oos':>7s} {'n_v4':>7s} {'p_oos':>7s} {'p_v4':>7s} "
-          f"{'mean_avg_oos':>12s} {'mean_avg_v4':>12s} {'diff':>11s} "
-          f"{'den_oos':>9s} {'den_v4':>9s} {'opp_oos':>9s} {'opp_v4':>9s}")
+    print(f"{'key':22s} {'n_oos':>7s} {'n_lotr':>7s} {'p_oos':>7s} {'p_lotr':>7s} "
+          f"{'mean_avg_oos':>12s} {'mean_avg_lotr':>12s} {'diff':>11s} "
+          f"{'den_oos':>9s} {'den_lotr':>9s} {'opp_oos':>9s} {'opp_lotr':>9s}")
     diffs = []
     for key in keys:
         left = summaries["OOS"].get(key)
-        right = summaries["v4"].get(key)
+        right = summaries["LOTR"].get(key)
         if left is None:
-            left = _zero_like_summary(summaries["v4"])
+            left = _zero_like_summary(summaries["LOTR"])
         if right is None:
             right = _zero_like_summary(summaries["OOS"])
         diff = right["mean_delta"] - left["mean_delta"]
@@ -452,7 +452,7 @@ def compare(label, history):
               f"{left['mean_denom']:9.4f} {right['mean_denom']:9.4f} "
               f"{left['mean_opp_reach']:9.4f} {right['mean_opp_reach']:9.4f}")
 
-    tv = 0.5 * sum(abs(summaries["v4"].get(key, {"p": 0.0})["p"] -
+    tv = 0.5 * sum(abs(summaries["LOTR"].get(key, {"p": 0.0})["p"] -
                        summaries["OOS"].get(key, {"p": 0.0})["p"])
                    for key in keys)
     total_mass = {
@@ -466,15 +466,15 @@ def compare(label, history):
     print()
     print(f"key-distribution TV distance: {tv:.5f}")
     print(f"E[delta_avg per action-record]: OOS={total_mass['OOS']:.5f} "
-          f"v4={total_mass['v4']:.5f} diff={total_mass['v4'] - total_mass['OOS']:+.5f}")
+          f"LOTR={total_mass['LOTR']:.5f} diff={total_mass['LOTR'] - total_mass['OOS']:+.5f}")
     print(f"E[delta_avg^2 per action-record]: OOS={total_sq_mass['OOS']:.5f} "
-          f"v4={total_sq_mass['v4']:.5f} diff={total_sq_mass['v4'] - total_sq_mass['OOS']:+.5f}")
+          f"LOTR={total_sq_mass['LOTR']:.5f} diff={total_sq_mass['LOTR'] - total_sq_mass['OOS']:+.5f}")
     print("largest mean delta_avg differences:")
     for _abs_diff, key, left, right, diff in sorted(diffs, reverse=True)[:6]:
         print(f"  {_fmt_key(key):22s} diff={diff:+.5f}  "
               f"OOS(avg={left['mean_delta']:.5f}, denom={left['mean_denom']:.4f}, "
               f"opp={left['mean_opp_reach']:.4f})  "
-              f"v4(avg={right['mean_delta']:.5f}, denom={right['mean_denom']:.4f}, "
+              f"LOTR(avg={right['mean_delta']:.5f}, denom={right['mean_denom']:.4f}, "
               f"opp={right['mean_opp_reach']:.4f})")
 
 

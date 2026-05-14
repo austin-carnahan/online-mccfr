@@ -1,6 +1,6 @@
 """Trajectory probability match test.
 
-Run a fixed Kuhn pre-act state through OOS_d05 and v4_step_r05 and
+Run a fixed Kuhn pre-act state through OOS_d05 and LOTR_step_r05 and
 compare for every realized leaf:
 
     * Empirical P_q(z) — the bot's actual sampling distribution
@@ -8,7 +8,7 @@ compare for every realized leaf:
         stationary proposal.
     * P_emp(z) · E[1/l_recorded | realized=z] — should be near 1 if
         l is the true marginal at every realization.
-    * For v4: per-mode mean l_recorded, with step(ρ,0) modes labelled
+    * For LOTR: per-mode mean l_recorded, with step(ρ,0) modes labelled
         as arm0/free or armD/forced.
 
 If l = P_q(z), then E[1/l_recorded · 𝟙{realized=z}] = 1 for every
@@ -25,7 +25,7 @@ from collections import defaultdict
 import pyspiel
 
 from src.oos import OOSBot
-from src.mixture_lotr import MixtureLOTRBot, step
+from src.lotr import LOTRBot, step
 
 
 def install_trace(bot):
@@ -191,8 +191,8 @@ def main():
             ("OOS_d05",
              lambda g: OOSBot(g, 0, num_simulations=n_iters, delta=0.5,
                               epsilon=0.4, gamma=0.01, seed=seed)),
-            ("v4_step_r05",
-             lambda g: MixtureLOTRBot(g, 0, num_simulations=n_iters,
+            ("LOTR_step_r05",
+             lambda g: LOTRBot(g, 0, num_simulations=n_iters,
                                       schedule=step(0.5, 0), epsilon=0.4,
                                       gamma=0.01, seed=seed)),
         ]

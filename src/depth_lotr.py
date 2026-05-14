@@ -47,10 +47,15 @@ Properties (all clean):
   - cumulative survival to D is exactly 1 − ρ
   - τ(d) ∈ [0, 1] for all ρ ≤ 1 and any nonneg w
 
-Built-in depth profiles:
-  - uniform(ρ)        w(d) ∝ 1         (flat — no depth preference)
-  - late_linear(ρ)    w(d) ∝ d + 1     (more divergence near the active node)
-  - early_linear(ρ)   w(d) ∝ D − d     (more divergence near the root)
+Built-in depth profiles (indexed on backoff k = D − d, distance from active):
+  - uniform(ρ)        w(k) = 1     (flat — equal mass per backoff position)
+  - near_active(ρ)    w(k) = 1/k   (mass concentrates at active end)
+  - far_backoff(ρ)    w(k) = k     (mass concentrates at root end)
+  - step_at(ρ, k0)    w(k) = δ_{k,k0}  (all mass at one backoff position)
+  - max_backoff(ρ)    w(k) = δ_{k,D}   (all mass at the root; OOS-equivalent)
+
+Conditional on diverging, P(backoff=k | diverged, D) = w(k) / Σ_j w(j).
+The shape w is what the user specifies; ρ controls the total budget.
 
 q(z) is *not* affected by the (ρ, w) reparameterization — it remains a
 product of realized local probabilities.  In particular w(d) never
@@ -151,42 +156,107 @@ class WeightedExplorationSchedule(LOTRSchedule):
 
 
 def uniform(rho):
-    """w(d) ∝ 1.  Exploration spread evenly across prefix depths."""
+    """Uniform shape on backoff: w(k) = 1.
+
+    Conditional on diverging, each available backoff position is equally
+    likely.  P(backoff=k | diverged, D) = 1/D for k = 1..D.
+    """
     return WeightedExplorationSchedule(
         rho, lambda d, D: 1.0, f"uniform(ρ={rho})"
     )
 
 
-def late_linear(rho):
-    """w(d) ∝ d + 1.  More exploration near the active decision."""
+def near_active(rho):
+    """Near-active shape on backoff: w(k) = 1/k.
+
+    Mass concentrates at the active end.  P(backoff=k | diverged, D) ∝ 1/k
+    so the step before active (k=1) gets the most mass, falling toward
+    the root (k=D).
+    """
     return WeightedExplorationSchedule(
-        rho, lambda d, D: d + 1, f"late_linear(ρ={rho})"
+        rho, lambda d, D: 1.0 / max(D - d, 1), f"near_active(ρ={rho})"
     )
 
 
-def early_linear(rho):
-    """w(d) ∝ D − d.  More exploration near the root."""
+def far_backoff(rho):
+    """Far-backoff shape on backoff: w(k) = k.
+
+    Mass concentrates at the root end.  P(backoff=k | diverged, D) ∝ k
+    so the root (k=D) gets the most mass, falling toward active (k=1).
+    """
     return WeightedExplorationSchedule(
-        rho, lambda d, D: D - d, f"early_linear(ρ={rho})"
+        rho, lambda d, D: float(D - d), f"far_backoff(ρ={rho})"
+    )
+
+
+def step_at(rho, k0):
+    """Step at a specific backoff distance: w(k) = 1 if k==k0 else 0.
+
+    All divergence budget concentrated at one backoff position.  At
+    states with D < k0 this falls back to a single coin at the root.
+    """
+    return WeightedExplorationSchedule(
+        rho,
+        lambda d, D, _k0=k0: 1.0 if (D - d) == _k0 else (
+            1.0 if d == 0 and _k0 > D else 0.0
+        ),
+        f"step_at(ρ={rho},k={k0})",
+    )
+
+
+def max_backoff(rho):
+    """All divergence at maximum backoff (the root): w(k) = 1 if k==D else 0.
+
+    Equivalent to step(ρ, depth=0): every state places its entire ρ budget
+    on a single coin at d=0.  This recovers OOS's targeted/untargeted
+    dichotomy as a LOTR special case and is the only canonical shape
+    that genuinely depends on D.
+    """
+    return WeightedExplorationSchedule(
+        rho, lambda d, D: 1.0 if d == 0 else 0.0, f"max_backoff(ρ={rho})"
     )
 
 
 def step(rho, depth=0):
     """Step depth profile: all divergence budget concentrated at one depth.
 
-    With depth=0 (default) this places a single divergence coin at the
-    root of the prefix and then forces τ(d)=1 for d>0.  In effect every
-    episode flips one coin: with probability ρ it diverges at d=0 and
-    samples freely from σ_ε for the rest of the trajectory; otherwise
-    it follows the full target prefix.  This recovers OOS's
-    targeted/untargeted dichotomy as a special case of LOTR while
-    preserving LOTR's product-form local sampling.
+    Depth-indexed counterpart of step_at.  step(ρ, depth=0) is identical
+    to max_backoff(ρ) and recovers OOS's targeted/untargeted dichotomy.
     """
     return WeightedExplorationSchedule(
         rho,
         lambda d, D, _k=depth: 1.0 if d == _k else 0.0,
         f"step(ρ={rho},d={depth})",
     )
+
+
+# ─────────────────────────────────────────────────────────────────────────
+# Legacy aliases (depth-indexed shapes, retained for compatibility)
+# ─────────────────────────────────────────────────────────────────────────
+
+def late_linear(rho):
+    """LEGACY: w(d) ∝ d + 1.  Depth-indexed linear-toward-active.
+
+    Prefer near_active(rho) for the cleaner backoff-indexed form.
+    """
+    return WeightedExplorationSchedule(
+        rho, lambda d, D: d + 1, f"late_linear(ρ={rho})"
+    )
+
+
+def early_linear(rho):
+    """LEGACY: w(d) ∝ D − d.  Depth-indexed linear-toward-root.
+
+    Prefer far_backoff(rho) for the cleaner backoff-indexed form.
+    """
+    return WeightedExplorationSchedule(
+        rho, lambda d, D: D - d, f"early_linear(ρ={rho})"
+    )
+
+
+def local_uniform(rho):
+    """LEGACY alias for uniform(rho)."""
+    return uniform(rho)
 
 
 def resolve_schedule(name):
@@ -206,6 +276,22 @@ def resolve_schedule(name):
         body = name[len("step("):-1]
         parts = dict(p.split("=") for p in body.split(","))
         return step(float(parts["ρ"]), int(parts.get("d", 0)))
+    if name.startswith("step_at("):
+        body = name[len("step_at("):-1]
+        parts = dict(p.split("=") for p in body.split(","))
+        return step_at(float(parts["ρ"]), int(parts.get("k", 1)))
+    if name.startswith("near_active("):
+        rho = float(name.split("=")[1].rstrip(")"))
+        return near_active(rho)
+    if name.startswith("far_backoff("):
+        rho = float(name.split("=")[1].rstrip(")"))
+        return far_backoff(rho)
+    if name.startswith("max_backoff("):
+        rho = float(name.split("=")[1].rstrip(")"))
+        return max_backoff(rho)
+    if name.startswith("local_uniform("):
+        rho = float(name.split("=")[1].rstrip(")"))
+        return local_uniform(rho)
     raise ValueError(f"Unknown schedule: {name}")
 
 

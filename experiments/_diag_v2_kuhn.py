@@ -23,7 +23,7 @@ from src.oos import OOSBot
 from src.depth_lotr import DepthLOTRBot, step as depth_step
 from src.every_node_lotr import EveryNodeLOTRBot, step as every_step
 from src.observable_node_lotr import ObservableNodeLOTRBot, step as obs_step
-from src.mixture_lotr import MixtureLOTRBot, step as mix_step
+from src.lotr import LOTRBot, step as lotr_step
 
 EPSILON, GAMMA = 0.4, 0.01
 SIMS, MATCHES = 50_000, 50
@@ -62,10 +62,10 @@ def make_bot(algo, game, player, seed):
         return ObservableNodeLOTRBot(game, player, num_simulations=SIMS,
                                      epsilon=EPSILON, gamma=GAMMA,
                                      schedule=obs_step(0.5, 0), seed=seed, tracking=False)
-    if algo == "v4":
-        return MixtureLOTRBot(game, player, num_simulations=SIMS,
+    if algo == "lotr":
+        return LOTRBot(game, player, num_simulations=SIMS,
                               epsilon=EPSILON, gamma=GAMMA,
-                              schedule=mix_step(0.5, 0), seed=seed, tracking=False)
+                              schedule=lotr_step(0.5, 0), seed=seed, tracking=False)
     raise ValueError(algo)
 
 
@@ -111,7 +111,7 @@ def run(algo, game, seed_base=42):
 def main():
     game = pyspiel.load_game("kuhn_poker")
     print(f"Diagnostic: sims={SIMS}  matches={MATCHES}\n")
-    algos = ["oos", "v1", "v2", "v3", "v4"]
+    algos = ["oos", "v1", "v2", "v3", "lotr"]
     res = {}
     for a in algos:
         print(f"  Running {a} ...", flush=True)
@@ -120,7 +120,7 @@ def main():
     print("=" * 140)
     print("Per-infoset avg strategy vs Kuhn Nash (alpha=1/3)")
     print("=" * 140)
-    print(f"{'info':6s} {'eq':>14s}  {'oos':>26s}  {'v1':>26s}  {'v2':>26s}  {'v3':>26s}  {'v4':>26s}")
+    print(f"{'info':6s} {'eq':>14s}  {'oos':>26s}  {'v1':>26s}  {'v2':>26s}  {'v3':>26s}  {'lotr':>26s}")
     tot = {a: 0.0 for a in algos}
     for k in sorted(EQ.keys()):
         eq = EQ[k]

@@ -1,4 +1,4 @@
-"""Regret-delta parity diagnostic for OOS vs Mixture LOTR.
+"""Regret-delta parity diagnostic for OOS vs LOTR.
 
 Runs the same fixed Kuhn states as _traj_match.py, but records every
 regret update row at update-player infosets:
@@ -20,9 +20,9 @@ from collections import defaultdict
 import numpy as np
 import pyspiel
 
-from src import mixture_lotr as mix_mod
+from src import lotr as lotr_mod
 from src import oos as oos_mod
-from src.mixture_lotr import MixtureLOTRBot, step
+from src.lotr import LOTRBot, step
 from src.oos import OOSBot
 
 
@@ -186,7 +186,7 @@ def install_oos_regret_trace(bot):
     bot._walk = walk_wrapper
 
 
-def install_mixture_regret_trace(bot):
+def install_lotr_regret_trace(bot):
     bot._regret_records = []
     bot._trace_iter = -1
 
@@ -236,18 +236,18 @@ def install_mixture_regret_trace(bot):
             x, l_out, u = bot._playout(state, update_player, new_s)
             return (x * uniform_p, l_out, u)
 
-        if mix_mod._HAS_FAST_OPS:
-            regrets_view = bot._infostates[info_key][mix_mod.REGRET_INDEX]
+        if lotr_mod._HAS_FAST_OPS:
+            regrets_view = bot._infostates[info_key][lotr_mod.REGRET_INDEX]
             if cur_player == update_player:
-                policy, sample_policy, _auto_idx = mix_mod.regret_match_sample_eps(
+                policy, sample_policy, _auto_idx = lotr_mod.regret_match_sample_eps(
                     regrets_view, bot._gamma, bot._epsilon, bot._rng)
             else:
-                policy, _auto_idx = mix_mod.regret_match_sample(
+                policy, _auto_idx = lotr_mod.regret_match_sample(
                     regrets_view, bot._gamma, bot._rng)
                 sample_policy = policy
         else:
             policy = bot._regret_matching(
-                bot._infostates[info_key][mix_mod.REGRET_INDEX])
+                bot._infostates[info_key][lotr_mod.REGRET_INDEX])
             if cur_player == update_player:
                 uniform = np.ones(num_actions, dtype=np.float64) / num_actions
                 sample_policy = bot._epsilon * uniform + (1.0 - bot._epsilon) * policy
@@ -297,24 +297,24 @@ def install_mixture_regret_trace(bot):
             W = u * opp_reach / max(l_out, 1e-30)
             _record_regret_rows(bot, update_player, info_key, legal_actions,
                                 sampled_idx, c, x, u, opp_reach, l_out, W)
-            if mix_mod._HAS_FAST_OPS:
-                mix_mod.update_regrets(
-                    bot._infostates[info_key][mix_mod.REGRET_INDEX],
+            if lotr_mod._HAS_FAST_OPS:
+                lotr_mod.update_regrets(
+                    bot._infostates[info_key][lotr_mod.REGRET_INDEX],
                     sampled_idx, c, x, W, num_actions)
             else:
                 for action_idx in range(num_actions):
                     if action_idx == sampled_idx:
-                        bot._infostates[info_key][mix_mod.REGRET_INDEX][action_idx] += (c - x) * W
+                        bot._infostates[info_key][lotr_mod.REGRET_INDEX][action_idx] += (c - x) * W
                     else:
-                        bot._infostates[info_key][mix_mod.REGRET_INDEX][action_idx] += -x * W
+                        bot._infostates[info_key][lotr_mod.REGRET_INDEX][action_idx] += -x * W
         else:
-            if mix_mod._HAS_FAST_OPS:
-                mix_mod.update_avg_strategy(
-                    bot._infostates[info_key][mix_mod.AVG_POLICY_INDEX],
+            if lotr_mod._HAS_FAST_OPS:
+                lotr_mod.update_avg_strategy(
+                    bot._infostates[info_key][lotr_mod.AVG_POLICY_INDEX],
                     policy, opp_reach, l_here, num_actions)
             else:
                 for action_idx in range(num_actions):
-                    bot._infostates[info_key][mix_mod.AVG_POLICY_INDEX][action_idx] += (
+                    bot._infostates[info_key][lotr_mod.AVG_POLICY_INDEX][action_idx] += (
                         opp_reach * policy[action_idx] / max(l_here, 1e-30)
                     )
 
@@ -329,7 +329,7 @@ def run_bot(name, factory, history):
     if name.startswith("OOS"):
         install_oos_regret_trace(bot)
     else:
-        install_mixture_regret_trace(bot)
+        install_lotr_regret_trace(bot)
     bot._num_simulations = N_ITERS
     bot.step_with_policy(state)
     return bot
@@ -404,9 +404,9 @@ def compare(label, history):
                                 epsilon=0.4, gamma=0.01, seed=SEED),
             history,
         ),
-        "v4": run_bot(
-            "v4_step_r05",
-            lambda game: MixtureLOTRBot(game, 0, num_simulations=N_ITERS,
+        "LOTR": run_bot(
+            "LOTR_step_r05",
+            lambda game: LOTRBot(game, 0, num_simulations=N_ITERS,
                                         schedule=step(0.5, 0), epsilon=0.4,
                                         gamma=0.01, seed=SEED),
             history,
@@ -414,14 +414,14 @@ def compare(label, history):
     }
 
     oos_records = bots["OOS"]._regret_records
-    mix_records = bots["v4"]._regret_records
-    mismatch_count, max_abs, first_mismatch = paired_compare(oos_records, mix_records)
+    lotr_records = bots["LOTR"]._regret_records
+    mismatch_count, max_abs, first_mismatch = paired_compare(oos_records, lotr_records)
     summaries = {name: summarize(bot._regret_records) for name, bot in bots.items()}
     print(f"iters={N_ITERS} seed={SEED} learning run "
           f"align_deterministic_tau={ALIGN_DETERMINISTIC_TAU}")
     print(f"OOS records={len(oos_records)}")
-    print(f"v4  records={len(bots['v4']._regret_records)}  "
-          f"D={bots['v4']._D} depth_to_position={dict(bots['v4']._depth_to_position)}")
+    print(f"LOTR  records={len(bots['LOTR']._regret_records)}  "
+          f"D={bots['LOTR']._D} depth_to_position={dict(bots['LOTR']._depth_to_position)}")
     print(f"paired row mismatches={mismatch_count}")
     print("max abs paired field diffs: " + "  ".join(
         f"{field}={max_abs[field]:.3g}" for field in FLOAT_FIELDS
@@ -436,24 +436,24 @@ def compare(label, history):
               f"x={left['x']:.6f} pi_opp={left['pi_opp']:.6f} "
               f"l={left['l']:.6f} W={left['W']:.6f} "
               f"dR={left['delta_R']:.6f}")
-        print(f"  v4  info={right['info']} action={right['action']} "
+        print(f"  LOTR  info={right['info']} action={right['action']} "
               f"sampled={right['sampled_action']} c={right['c']:.6f} "
               f"x={right['x']:.6f} pi_opp={right['pi_opp']:.6f} "
               f"l={right['l']:.6f} W={right['W']:.6f} "
               f"dR={right['delta_R']:.6f}")
 
-    keys = sorted(set(summaries["OOS"]) | set(summaries["v4"]))
+    keys = sorted(set(summaries["OOS"]) | set(summaries["LOTR"]))
     print()
-    print(f"{'key':22s} {'n_oos':>7s} {'n_v4':>7s} {'p_oos':>7s} {'p_v4':>7s} "
-          f"{'mean_dR_oos':>12s} {'mean_dR_v4':>12s} {'diff':>11s} "
-          f"{'rms_oos':>10s} {'rms_v4':>10s} {'W_oos':>9s} {'W_v4':>9s} "
-          f"{'l_oos':>9s} {'l_v4':>9s}")
+    print(f"{'key':22s} {'n_oos':>7s} {'n_lotr':>7s} {'p_oos':>7s} {'p_lotr':>7s} "
+          f"{'mean_dR_oos':>12s} {'mean_dR_lotr':>12s} {'diff':>11s} "
+          f"{'rms_oos':>10s} {'rms_lotr':>10s} {'W_oos':>9s} {'W_lotr':>9s} "
+          f"{'l_oos':>9s} {'l_lotr':>9s}")
     diffs = []
     for key in keys:
         left = summaries["OOS"].get(key)
-        right = summaries["v4"].get(key)
+        right = summaries["LOTR"].get(key)
         if left is None:
-            left = {field: 0.0 for field in next(iter(summaries["v4"].values())).keys()}
+            left = {field: 0.0 for field in next(iter(summaries["LOTR"].values())).keys()}
         if right is None:
             right = {field: 0.0 for field in next(iter(summaries["OOS"].values())).keys()}
         diff = right["mean_delta"] - left["mean_delta"]
@@ -465,7 +465,7 @@ def compare(label, history):
               f"{left['mean_W']:9.4f} {right['mean_W']:9.4f} "
               f"{left['mean_l']:9.4f} {right['mean_l']:9.4f}")
 
-    tv = 0.5 * sum(abs(summaries["v4"].get(key, {"p": 0.0})["p"] -
+    tv = 0.5 * sum(abs(summaries["LOTR"].get(key, {"p": 0.0})["p"] -
                        summaries["OOS"].get(key, {"p": 0.0})["p"])
                    for key in keys)
     total_mass = {
@@ -483,24 +483,24 @@ def compare(label, history):
     print()
     print(f"key-distribution TV distance: {tv:.5f}")
     print(f"E[delta_R per action-record]: OOS={total_mass['OOS']:+.5f} "
-          f"v4={total_mass['v4']:+.5f} diff={total_mass['v4'] - total_mass['OOS']:+.5f}")
+          f"LOTR={total_mass['LOTR']:+.5f} diff={total_mass['LOTR'] - total_mass['OOS']:+.5f}")
     print(f"E[|delta_R| per action-record]: OOS={total_abs_mass['OOS']:.5f} "
-          f"v4={total_abs_mass['v4']:.5f} diff={total_abs_mass['v4'] - total_abs_mass['OOS']:+.5f}")
+          f"LOTR={total_abs_mass['LOTR']:.5f} diff={total_abs_mass['LOTR'] - total_abs_mass['OOS']:+.5f}")
     print(f"E[delta_R^2 per action-record]: OOS={total_sq_mass['OOS']:.5f} "
-          f"v4={total_sq_mass['v4']:.5f} diff={total_sq_mass['v4'] - total_sq_mass['OOS']:+.5f}")
+          f"LOTR={total_sq_mass['LOTR']:.5f} diff={total_sq_mass['LOTR'] - total_sq_mass['OOS']:+.5f}")
     print("largest mean delta_R differences:")
     for abs_diff, key, left, right, diff in sorted(diffs, reverse=True)[:6]:
         print(f"  {_fmt_key(key):22s} diff={diff:+.5f}  "
               f"OOS(dR={left['mean_delta']:+.5f}, c={left['mean_c']:.4f}, "
               f"x={left['mean_x']:.4f}, pi_opp={left['mean_pi_opp']:.4f})  "
-              f"v4(dR={right['mean_delta']:+.5f}, c={right['mean_c']:.4f}, "
+              f"LOTR(dR={right['mean_delta']:+.5f}, c={right['mean_c']:.4f}, "
               f"x={right['mean_x']:.4f}, pi_opp={right['mean_pi_opp']:.4f})")
     mass_diffs = []
     for key in keys:
         left = summaries["OOS"].get(key)
-        right = summaries["v4"].get(key)
+        right = summaries["LOTR"].get(key)
         if left is None:
-            left = {field: 0.0 for field in next(iter(summaries["v4"].values())).keys()}
+            left = {field: 0.0 for field in next(iter(summaries["LOTR"].values())).keys()}
         if right is None:
             right = {field: 0.0 for field in next(iter(summaries["OOS"].values())).keys()}
         diff = right["mass_delta"] - left["mass_delta"]
@@ -508,8 +508,8 @@ def compare(label, history):
     print("largest E[delta_R * 1_key] differences:")
     for abs_diff, key, left, right, diff in sorted(mass_diffs, reverse=True)[:6]:
         print(f"  {_fmt_key(key):22s} diff={diff:+.5f}  "
-              f"OOS={left['mass_delta']:+.5f} v4={right['mass_delta']:+.5f}  "
-              f"p(OOS)={left['p']:.4f} p(v4)={right['p']:.4f}")
+              f"OOS={left['mass_delta']:+.5f} LOTR={right['mass_delta']:+.5f}  "
+              f"p(OOS)={left['p']:.4f} p(LOTR)={right['p']:.4f}")
 
 
 def main():

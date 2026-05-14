@@ -7,14 +7,14 @@ next chance node.
 
 This diagnostic compares:
   - OOS delta=0.5
-    - production Mixture LOTR step(0.5, 0)
-    - a shadow Mixture variant that also flips the coin at an illegal
-    observable chance target but otherwise samples the chance outcome
-    naturally and updates s by the natural probability for every arm.
+    - production LOTR step(0.5, 0)
+    - a shadow LOTR variant that also flips the coin at an illegal
+        observable chance target but otherwise samples the chance outcome
+        naturally and updates s by the natural probability for every arm.
 
 The key check is the P0 action after that illegal chance branch.  OOS
 should still have free-sampling mass there on untargeted iterations.
-Production Mixture should now match that OOS-shaped free-sampling mass.
+Production LOTR should now match that OOS-shaped free-sampling mass.
 """
 
 from __future__ import annotations
@@ -24,7 +24,7 @@ from collections import Counter, defaultdict
 import numpy as np
 import pyspiel
 
-from src.mixture_lotr import MixtureLOTRBot, step
+from src.lotr import LOTRBot, step
 from src.oos import OOSBot, REGRET_INDEX, AVG_POLICY_INDEX
 
 
@@ -177,7 +177,7 @@ def install_oos_chance_trace(bot):
     bot._handle_chance = handle_chance_wrapper
 
 
-def install_mixture_chance_trace(bot, shadow_fix=False):
+def install_lotr_chance_trace(bot, shadow_fix=False):
     orig_handle_chance = bot._handle_chance
     orig_sample_realized_action = bot._sample_realized_action
 
@@ -272,7 +272,7 @@ def run_bot(name, factory, is_oos=False, shadow_fix=False):
     if is_oos:
         install_oos_chance_trace(bot)
     else:
-        install_mixture_chance_trace(bot, shadow_fix=shadow_fix)
+        install_lotr_chance_trace(bot, shadow_fix=shadow_fix)
     bot._num_simulations = N_ITERS
     bot.step_with_policy(state)
     return name, bot
@@ -289,7 +289,7 @@ def summarize(name, bot):
     post_decision_diverged = Counter()
 
     for trace in illegal:
-        mode = trace.get("mode") or "mix"
+        mode = trace.get("mode") or "lotr"
         mode_action_counts[mode][trace["leaf"][2]] += 1
         calls_after = [call for call in trace["sample_calls"] if call["after_illegal"]]
         after_illegal_call_counts[len(calls_after)] += 1
@@ -316,7 +316,7 @@ def summarize(name, bot):
         print(f"  mode={mode}: counts={dict(sorted(counts.items()))} "
               f"non_target_rate={non_target / total if total else 0.0:.3f}")
     if after_illegal_call_counts:
-        print(f"Mixture sample_realized_action calls after illegal: {dict(sorted(after_illegal_call_counts.items()))}")
+        print(f"LOTR sample_realized_action calls after illegal: {dict(sorted(after_illegal_call_counts.items()))}")
     if illegal_coin_counts:
         print(f"shadow illegal coin diverged counts: {dict(sorted(illegal_coin_counts.items()))}")
     if post_decision_diverged:
@@ -349,14 +349,14 @@ def main():
             is_oos=True,
         ),
         run_bot(
-            "Mixture_current_step_r05",
-            lambda game: MixtureLOTRBot(
+            "LOTR_current_step_r05",
+            lambda game: LOTRBot(
                 game, PLAYER_ID, num_simulations=N_ITERS,
                 schedule=step(0.5, 0), epsilon=0.4, gamma=1.0, seed=SEED),
         ),
         run_bot(
-            "Mixture_shadow_illegal_coin",
-            lambda game: MixtureLOTRBot(
+            "LOTR_shadow_illegal_coin",
+            lambda game: LOTRBot(
                 game, PLAYER_ID, num_simulations=N_ITERS,
                 schedule=step(0.5, 0), epsilon=0.4, gamma=1.0, seed=SEED),
             shadow_fix=True,

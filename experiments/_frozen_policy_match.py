@@ -1,4 +1,4 @@
-"""Frozen-policy/no-learning parity diagnostic for OOS vs Mixture LOTR.
+"""Frozen-policy/no-learning parity diagnostic for OOS vs LOTR.
 
 This is the stationary-policy version of _regret_delta_match.py. It
 prepopulates every Kuhn decision infoset with zero regrets, disables all
@@ -17,9 +17,9 @@ from collections import defaultdict
 import numpy as np
 import pyspiel
 
-from src import mixture_lotr as mix_mod
+from src import lotr as lotr_mod
 from src import oos as oos_mod
-from src.mixture_lotr import MixtureLOTRBot, step
+from src.lotr import LOTRBot, step
 from src.oos import OOSBot
 
 
@@ -205,7 +205,7 @@ def install_oos_frozen_trace(bot):
     bot._walk = walk_wrapper
 
 
-def install_mixture_frozen_trace(bot):
+def install_lotr_frozen_trace(bot):
     bot._regret_records = []
     bot._trace_iter = -1
 
@@ -244,20 +244,20 @@ def install_mixture_frozen_trace(bot):
         depth = len(state.history())
 
         if info_key not in bot._infostates:
-            raise RuntimeError(f"Missing prepopulated Mixture infoset: {info_key}")
+            raise RuntimeError(f"Missing prepopulated LOTR infoset: {info_key}")
 
-        if mix_mod._HAS_FAST_OPS:
-            regrets_view = bot._infostates[info_key][mix_mod.REGRET_INDEX]
+        if lotr_mod._HAS_FAST_OPS:
+            regrets_view = bot._infostates[info_key][lotr_mod.REGRET_INDEX]
             if cur_player == update_player:
-                policy, sample_policy, _auto_idx = mix_mod.regret_match_sample_eps(
+                policy, sample_policy, _auto_idx = lotr_mod.regret_match_sample_eps(
                     regrets_view, bot._gamma, bot._epsilon, bot._rng)
             else:
-                policy, _auto_idx = mix_mod.regret_match_sample(
+                policy, _auto_idx = lotr_mod.regret_match_sample(
                     regrets_view, bot._gamma, bot._rng)
                 sample_policy = policy
         else:
             policy = bot._regret_matching(
-                bot._infostates[info_key][mix_mod.REGRET_INDEX])
+                bot._infostates[info_key][lotr_mod.REGRET_INDEX])
             if cur_player == update_player:
                 uniform = np.ones(num_actions, dtype=np.float64) / num_actions
                 sample_policy = bot._epsilon * uniform + (1.0 - bot._epsilon) * policy
@@ -319,7 +319,7 @@ def run_bot(name, factory, history):
     if name.startswith("OOS"):
         install_oos_frozen_trace(bot)
     else:
-        install_mixture_frozen_trace(bot)
+        install_lotr_frozen_trace(bot)
     bot._num_simulations = N_ITERS
     bot.step_with_policy(state)
     after = max_table_abs(bot)
@@ -403,9 +403,9 @@ def compare(label, history):
                                 epsilon=0.4, gamma=0.01, seed=SEED),
             history,
         ),
-        "v4": run_bot(
-            "v4_frozen",
-            lambda game: MixtureLOTRBot(game, 0, num_simulations=N_ITERS,
+        "LOTR": run_bot(
+            "LOTR_frozen",
+            lambda game: LOTRBot(game, 0, num_simulations=N_ITERS,
                                         schedule=step(0.5, 0), epsilon=0.4,
                                         gamma=0.01, seed=SEED),
             history,
@@ -413,8 +413,8 @@ def compare(label, history):
     }
 
     oos_records = bots["OOS"]._regret_records
-    mix_records = bots["v4"]._regret_records
-    mismatch_count, max_abs, first_mismatch = paired_compare(oos_records, mix_records)
+    lotr_records = bots["LOTR"]._regret_records
+    mismatch_count, max_abs, first_mismatch = paired_compare(oos_records, lotr_records)
     summaries = {name: summarize(bot._regret_records) for name, bot in bots.items()}
 
     print(f"iters={N_ITERS} seed={SEED} full-tree zero-regret policy, no updates "
@@ -422,10 +422,10 @@ def compare(label, history):
     print(f"OOS records={len(oos_records)}  "
           f"table max abs before={bots['OOS']._frozen_before_max_abs:.3g} "
           f"after={bots['OOS']._frozen_after_max_abs:.3g}")
-    print(f"v4  records={len(mix_records)}  "
-          f"D={bots['v4']._D} depth_to_position={dict(bots['v4']._depth_to_position)}  "
-          f"table max abs before={bots['v4']._frozen_before_max_abs:.3g} "
-          f"after={bots['v4']._frozen_after_max_abs:.3g}")
+    print(f"LOTR  records={len(lotr_records)}  "
+          f"D={bots['LOTR']._D} depth_to_position={dict(bots['LOTR']._depth_to_position)}  "
+          f"table max abs before={bots['LOTR']._frozen_before_max_abs:.3g} "
+          f"after={bots['LOTR']._frozen_after_max_abs:.3g}")
     print(f"paired row mismatches={mismatch_count}")
     print("max abs paired field diffs: " + "  ".join(
         f"{field}={max_abs[field]:.3g}" for field in FLOAT_FIELDS
@@ -440,24 +440,24 @@ def compare(label, history):
               f"x={left['x']:.6f} pi_opp={left['pi_opp']:.6f} "
               f"l={left['l']:.6f} W={left['W']:.6f} "
               f"dR={left['delta_R']:.6f}")
-        print(f"  v4  info={right['info']} action={right['action']} "
+        print(f"  LOTR  info={right['info']} action={right['action']} "
               f"sampled={right['sampled_action']} c={right['c']:.6f} "
               f"x={right['x']:.6f} pi_opp={right['pi_opp']:.6f} "
               f"l={right['l']:.6f} W={right['W']:.6f} "
               f"dR={right['delta_R']:.6f}")
 
-    keys = sorted(set(summaries["OOS"]) | set(summaries["v4"]))
+    keys = sorted(set(summaries["OOS"]) | set(summaries["LOTR"]))
     print()
-    print(f"{'key':22s} {'n_oos':>7s} {'n_v4':>7s} {'p_oos':>7s} {'p_v4':>7s} "
-          f"{'mean_dR_oos':>12s} {'mean_dR_v4':>12s} {'diff':>11s} "
-          f"{'W_oos':>9s} {'W_v4':>9s} {'l_oos':>9s} {'l_v4':>9s} "
-          f"{'pi_oos':>9s} {'pi_v4':>9s}")
+    print(f"{'key':22s} {'n_oos':>7s} {'n_lotr':>7s} {'p_oos':>7s} {'p_lotr':>7s} "
+          f"{'mean_dR_oos':>12s} {'mean_dR_lotr':>12s} {'diff':>11s} "
+          f"{'W_oos':>9s} {'W_lotr':>9s} {'l_oos':>9s} {'l_lotr':>9s} "
+          f"{'pi_oos':>9s} {'pi_lotr':>9s}")
     diffs = []
     for key in keys:
         left = summaries["OOS"].get(key)
-        right = summaries["v4"].get(key)
+        right = summaries["LOTR"].get(key)
         if left is None:
-            left = _zero_like_summary(summaries["v4"])
+            left = _zero_like_summary(summaries["LOTR"])
         if right is None:
             right = _zero_like_summary(summaries["OOS"])
         diff = right["mean_delta"] - left["mean_delta"]
@@ -469,7 +469,7 @@ def compare(label, history):
               f"{left['mean_l']:9.4f} {right['mean_l']:9.4f} "
               f"{left['mean_pi_opp']:9.4f} {right['mean_pi_opp']:9.4f}")
 
-    tv = 0.5 * sum(abs(summaries["v4"].get(key, {"p": 0.0})["p"] -
+    tv = 0.5 * sum(abs(summaries["LOTR"].get(key, {"p": 0.0})["p"] -
                        summaries["OOS"].get(key, {"p": 0.0})["p"])
                    for key in keys)
     total_mass = {
@@ -487,18 +487,18 @@ def compare(label, history):
     print()
     print(f"key-distribution TV distance: {tv:.5f}")
     print(f"E[delta_R per action-record]: OOS={total_mass['OOS']:+.5f} "
-          f"v4={total_mass['v4']:+.5f} diff={total_mass['v4'] - total_mass['OOS']:+.5f}")
+          f"LOTR={total_mass['LOTR']:+.5f} diff={total_mass['LOTR'] - total_mass['OOS']:+.5f}")
     print(f"E[|delta_R| per action-record]: OOS={total_abs_mass['OOS']:.5f} "
-          f"v4={total_abs_mass['v4']:.5f} diff={total_abs_mass['v4'] - total_abs_mass['OOS']:+.5f}")
+          f"LOTR={total_abs_mass['LOTR']:.5f} diff={total_abs_mass['LOTR'] - total_abs_mass['OOS']:+.5f}")
     print(f"E[delta_R^2 per action-record]: OOS={total_sq_mass['OOS']:.5f} "
-          f"v4={total_sq_mass['v4']:.5f} diff={total_sq_mass['v4'] - total_sq_mass['OOS']:+.5f}")
+          f"LOTR={total_sq_mass['LOTR']:.5f} diff={total_sq_mass['LOTR'] - total_sq_mass['OOS']:+.5f}")
     print("largest mean delta_R differences:")
     for _abs_diff, key, left, right, diff in sorted(diffs, reverse=True)[:6]:
         print(f"  {_fmt_key(key):22s} diff={diff:+.5f}  "
               f"OOS(dR={left['mean_delta']:+.5f}, c={left['mean_c']:.4f}, "
               f"x={left['mean_x']:.4f}, pi_opp={left['mean_pi_opp']:.4f}, "
               f"l={left['mean_l']:.4f})  "
-              f"v4(dR={right['mean_delta']:+.5f}, c={right['mean_c']:.4f}, "
+              f"LOTR(dR={right['mean_delta']:+.5f}, c={right['mean_c']:.4f}, "
               f"x={right['mean_x']:.4f}, pi_opp={right['mean_pi_opp']:.4f}, "
               f"l={right['mean_l']:.4f})")
 

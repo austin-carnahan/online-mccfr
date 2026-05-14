@@ -38,7 +38,7 @@ from src.oos import OOSBot
 from src.depth_lotr import DepthLOTRBot, step as depth_step
 from src.every_node_lotr import EveryNodeLOTRBot, step as every_step
 from src.observable_node_lotr import ObservableNodeLOTRBot, step as obs_step
-from src.mixture_lotr import MixtureLOTRBot, step as mix_step
+from src.lotr import LOTRBot, step as lotr_step
 from src.metrics import exploitability
 from eval.aggregate_exploitability import AggregatePolicy, _merge_bot_strategy
 
@@ -51,10 +51,10 @@ GAMES = ["kuhn_poker"]
 BUDGETS = [10_000, 20_000, 50_000, 100_000]
 MATCHES_PER_BUDGET = 100
 
-ALGORITHMS = ["oos_d05", "v1_step_r05", "v2_step_r05", "v3_step_r05", "v4_step_r05"]
+ALGORITHMS = ["oos_d05", "v1_step_r05", "v2_step_r05", "v3_step_r05", "lotr_step_r05"]
 
 OOS_DELTAS = {"oos_d05": 0.5}
-LOTR_RHOS = {"v1_step_r05": 0.5, "v2_step_r05": 0.5, "v3_step_r05": 0.5, "v4_step_r05": 0.5}
+LOTR_RHOS = {"v1_step_r05": 0.5, "v2_step_r05": 0.5, "v3_step_r05": 0.5, "lotr_step_r05": 0.5}
 
 EPSILON = 0.4
 GAMMA = 0.01
@@ -118,9 +118,9 @@ def _build_bot(algo, game, player, sims, seed):
             epsilon=EPSILON, gamma=GAMMA, schedule=schedule,
             seed=seed, tracking=True,
         )
-    if algo.startswith("v4"):
-        schedule = mix_step(LOTR_RHOS[algo], depth=0)
-        return MixtureLOTRBot(
+    if algo.startswith("lotr"):
+        schedule = lotr_step(LOTR_RHOS[algo], depth=0)
+        return LOTRBot(
             game, player,
             num_simulations=sims,
             epsilon=EPSILON, gamma=GAMMA, schedule=schedule,
@@ -168,7 +168,7 @@ def _run_job(job: dict) -> dict:
         "n_iters_total": 0,
         "prefix_survival_fraction": [],
     }
-    if algo.startswith(("v1", "v2", "v3", "v4")):
+    if algo.startswith(("v1", "v2", "v3", "lotr")):
         all_tracking["on_path_fraction"] = []
         all_tracking["on_path_given_chance_stayed"] = []
         all_tracking["chance_diverged_fraction"] = []
@@ -241,7 +241,7 @@ def _run_job(job: dict) -> dict:
                         if "prefix_survival_fraction" in summary:
                             all_tracking["prefix_survival_fraction"].append(
                                 summary["prefix_survival_fraction"])
-                        if algo.startswith(("v1", "v2", "v3", "v4")):
+                        if algo.startswith(("v1", "v2", "v3", "lotr")):
                             all_tracking["on_path_fraction"].append(summary["on_path_fraction"])
                             all_tracking["on_path_given_chance_stayed"].append(
                                 summary["on_path_given_chance_stayed"])
@@ -315,7 +315,7 @@ def _run_job(job: dict) -> dict:
             result["tracking"]["mean_prefix_survival"] = float(arr_psurv.mean())
             result["tracking"]["std_prefix_survival"] = float(arr_psurv.std())
 
-        if algo.startswith(("v1", "v2", "v3", "v4")) and all_tracking["on_path_fraction"]:
+        if algo.startswith(("v1", "v2", "v3", "lotr")) and all_tracking["on_path_fraction"]:
             arr_on_path = np.array(all_tracking["on_path_fraction"])
             arr_on_path_cond = np.array(all_tracking["on_path_given_chance_stayed"])
             arr_chance_div = np.array(all_tracking["chance_diverged_fraction"])
